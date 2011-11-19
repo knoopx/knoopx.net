@@ -1,6 +1,8 @@
 # About
 
-Hello, I'm Víctor Martínez, a <%= age(Date.civil(1985, 12, 29)) %> years old computer enthusiast from Barcelona, Spain.
+Hello, I'm Víctor Martínez, a <%= age(Date.civil(1985, 12, 29)) %> years old ruby hacker from Barcelona, Spain.
+
+<%= thumb "me.jpg", :resize => "400x400", :class => "right" %>
 
 I'm a perfectionist and a constantly learning autodidact. I breathe technology in my daily job and in my spare time as part of my most passionate hobby.
 
