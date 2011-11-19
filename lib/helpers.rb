@@ -1,8 +1,15 @@
 require 'active_support/all'
 
+require 'helpers/output_helpers'
+require 'helpers/tag_helpers'
+
 module Helpers
-  def link_to(title, href)
-    "<a href=\"#{href}\">#{title}</a>"
+  include TagHelpers
+  include OutputHelpers
+
+  def link_to(content, href, opts = {})
+    content_tag(:a, content, opts.merge(:href => href))
+  end
   end
 
   def google_analytics(account)
