@@ -45,7 +45,7 @@ class App < Sinatra::Base
 end
 
 use Rack::Thumb
-use Rack::Static, :urls => ["/galleries"]
+use Rack::Static, :urls => ["/galleries", "/images"]
 
 map '/assets' do
   environment = Sprockets::Environment.new
