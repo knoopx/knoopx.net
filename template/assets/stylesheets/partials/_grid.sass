@@ -1,0 +1,20 @@
+$grid-columns: 16
+$grid-column-width: 40px
+$grid-gutter-width: 20px
+$grid-extra-space: ($grid-gutter-width * 2)
+
+#row
+  +clearfix
+  margin-left: -1 * $grid-gutter-width
+
+[class*="span"]
+  display: inline
+  float: left
+  margin-left: $grid-gutter-width
+
+@for $i from 1 through 16
+  #span-#{$i}
+    width: ($grid-column-width * $i) + ($grid-gutter-width * ($i - 1))
+
+  #offset-#{$i}
+    margin-left: ($grid-column-width * $i) + ($grid-gutter-width * ($i - 1)) + $grid-extra-space

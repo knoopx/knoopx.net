@@ -1,0 +1,102 @@
+body
+  font-size: 1.15em
+  line-height: 1.5em
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  color: #404040
+
+hr
+  border: 1px solid #ccc
+  margin: 2em 0
+
+a
+  +link-colors(#0069D6, #00438A)
+  text-decoration: none
+  border-bottom: 1px dotted #d3dfee
+
+  &:hover
+    border-bottom: 1px dotted #004491
+
+p
+  margin-bottom: 1.3em
+
+h1
+  font-size: 1.6em
+  line-height: 0.8em
+  margin: .6em 0
+
+h2
+  font-size: 1.3em
+  line-height: 1em
+  margin: .6em 0
+
+h3
+  font-size: 1.1em
+  font-weight: normal
+
+h1, h2, h3
+  font-weight: bold
+  a
+    border: none
+
+.container
+  +clearfix
+  width: 960px
+
+#content
+  float: left
+  width: 650px
+  font-size: 100%
+  line-height: 1.6em
+
+  img
+    max-width: 100%
+    height: auto
+
+    &.left
+      float: left
+      margin-right: 1.5em
+      margin-bottom: .8em
+
+    &.right
+      float: right
+      margin-left: 1.5em
+      margin-bottom: .8em
+
+    &.center
+      display: block
+      margin: 0 auto
+
+[data-pullquote]::before
+  padding: 0
+  border: none
+  content: attr(data-pullquote)
+  float: right
+  width: 45%
+  margin: .5em 0 1em 1.5em
+  position: relative
+  top: 7px
+  font-size: 1.4em
+  line-height: 1.45em
+
+#sidebar
+  float: right
+  width: 250px
+
+  ul
+    color: #444
+    font-size: 0.8em
+    line-height: 1.5em
+
+    li
+      border-bottom: 1px solid #ddd
+      padding-bottom: 0.25em
+      margin-bottom: 0.25em
+
+      &:last-child
+        border: none
+
+      p
+        margin: 0
+
+div.comments
+  margin-bottom: 1em

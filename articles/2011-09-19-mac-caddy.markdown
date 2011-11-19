@@ -1,0 +1,8 @@
+title: New Mac Caddy Installed
+created_at: 2011-09-19
+excerpt:
+gallery: mac-caddy
+----
+
+I've just bought a cheap Mac Daddy clone on ebay and got rid of the unuseful optical drive of my MacBook Pro.
+Now enjoying a blazing fast Corsair F60 solid state disk plus an additional 500GB disk for storage.

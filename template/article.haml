@@ -1,0 +1,26 @@
+!!! XML
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'application/xhtml+xml; charset=UTF-8'}
+    %title= @article[:title]
+    %link{:href => "/assets/screen.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "/feed.xml", :rel => "alternate", :type => "application/atom+xml"}
+    %script{:type => "text/javascript", :src => "/assets/application.js"}
+    = google_analytics("UA-3031580-7")
+  %body
+    #main
+      = haml :_header
+      .container
+        #sidebar= haml :_sidebar
+
+        #content
+          %h1= @article[:title]
+          ~ yield
+
+          - if @article[:gallery]
+            = haml :_gallery, {}, :name => @article[:gallery]
+
+      #main_footer
+
+    = haml :_footer

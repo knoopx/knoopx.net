@@ -1,0 +1,5 @@
+- Project.all.each do |project|
+  .project
+    %h2= link_to project[:name], project.url
+    %span.meta= link_to project[:url], project[:url]
+    %p= project[:description]

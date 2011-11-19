@@ -1,0 +1,99 @@
+=contrasting($color)
+  @if lightness($color) > 51
+    +single-text-shadow(lighten($color, 25), 1px, 1px, 0)
+    color: darken($color, 50)
+  @else
+    +single-text-shadow(darken($color, 25), 1px, 1px, 0)
+    color: lighten($color, 50)
+
+=light-shadow($color, $amount: 25)
+  +single-text-shadow(darken($color, $amount), 1px, 1px, 0)
+
+=wrapper($vpadding:20px, $hpadding:0px)
+  padding: $vpadding $hpadding
+
+=container($width:960px)
+  +clearfix
+  width: $width
+  margin: 0 auto
+
+=button($radius:5px, $color:#eee, $amount:10, $invert:false)
+  +inline-block
+  +border-radius($radius)
+
+  $bg_from: $color
+  $bg_to: darken($color,$amount)
+
+  @if $invert
+    +background-image(linear-gradient($bg_to, $bg_from))
+  @else
+    +background-image(linear-gradient($bg_from, $bg_to))
+
+  font-weight: bold
+  border: 1px solid darken($color,$amount)
+
+  line-height: 18px
+  padding: 5px 20px
+
+  +contrasting($color)
+
+  &:link, &:visited, &:active, &:hover
+    text-decoration: none
+
+  &:hover
+    @if $invert
+      +background-image(linear-gradient($bg_to, lighten($bg_from, 5)))
+    @else
+      +background-image(linear-gradient(lighten($bg_from, 5), $bg_to))
+
+=dark-background-color($color, $amount:10, $invert:false)
+  @if $invert
+    +background-image(linear-gradient($color, darken($color, $amount)))
+  @else
+    +background-image(linear-gradient(darken($color, $amount), $color))
+
+=light-background-color($color, $amount:10, $invert:false)
+  @if $invert
+    +background-image(linear-gradient($color, lighten($color, $amount)))
+  @else
+    +background-image(linear-gradient(lighten($color, $amount), $color))
+
+=button-bevel($radius:4px)
+  +button($radius)
+
+.button-bevel
+  +button(5px, #DC1303)
+
+.button-alt
+  +button(5px, #ffcc00)
+
+.button
+  +button
+
+=box
+  +border-radius(5px)
+  padding: 10px
+  background-color: #FFFBDE
+
+.container
+  +container
+
+.wrapper
+  +wrapper
+
+=override-color($color)
+  color: $color
+  a
+    color: $color
+
+=alt
+  +override-color(#eee)
+
+=sub
+  +override-color(#696969)
+
+.alt
+  +alt
+
+.sub
+  +sub

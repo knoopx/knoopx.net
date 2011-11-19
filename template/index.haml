@@ -1,0 +1,13 @@
+%h1 Blog archive
+- if Article.by_date.any?
+  - Article.by_date.each do |date, articles|
+    - year, month = date
+    %h2 #{Date::MONTHNAMES[month]}, #{year}
+    %ul
+      - articles.each do |article|
+        %li
+          = link_to article[:title], article.url
+          %br
+          = article[:excerpt]
+- else
+  %h3 No entries yet.

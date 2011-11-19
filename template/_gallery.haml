@@ -1,0 +1,6 @@
+%ul.media-grid
+  - Dir.glob(File.join(App.root, "galleries", name, "*.jpg")).each do |image|
+    - url = "/galleries/#{name}/#{File.basename(image, ".*")}"
+    %li
+      %a{:rel => name, :href => "#{url}.jpg" }
+        %img.thumbnail{:src => "#{url}_180x120.jpg", :width => 180, :height => 120}

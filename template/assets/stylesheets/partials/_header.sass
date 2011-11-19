@@ -1,0 +1,53 @@
+#header
+  +light-background-color(#eee, 25)
+  border-bottom: 1px solid #ccc
+  margin-bottom: 2em
+
+  .container
+    position: relative
+
+    h1
+      margin: 0
+      font-family: "Droid Sans", "Myriad Pro",Myriad,Arial,Helvetica,Verdana,sans-serif
+      font-size: 34px
+      font-weight: bold
+      line-height: 50px
+      letter-spacing: -2px
+
+      a
+        color: #444
+        border: none
+        +single-text-shadow(white, 1px, 1px, 0)
+        text-decoration: none
+        &:hover
+          border: none
+          color: black
+
+    #navigation
+      position: absolute
+      right: 0
+      top: 0.5em
+      font-family: Arial, Verdana, sans-serif
+      font-size: .8em
+      padding-top: .3em
+      margin-bottom: 1em
+
+      ul
+        +horizontal-list(.2em)
+        a
+          +inline-block
+          +border-radius(25px)
+          font-weight: bold
+          background-color: #666
+          +contrasting(#666)
+          padding: 0 15px
+
+          &:link, &:visited, &:active, &:hover
+            text-decoration: none
+
+          &:hover
+            color: white
+
+        li.active
+          a
+            +single-box-shadow(darken(#eee, 50), 0px, 0px, 5px, 0px, inset)
