@@ -10,6 +10,20 @@ module Helpers
   def link_to(content, href, opts = {})
     content_tag(:a, content, opts.merge(:href => href))
   end
+
+  def image(name, opts = {})
+    if size = opts.delete(:resize)
+      name = name.gsub(/\..+$/, "_#{size}\\0")
+    end
+    content_tag(:img, opts.merge(:src => image_path(name)))
+  end
+
+  def thumb(name, opts = {})
+    link_to(image(name, opts), image_path(name), :class => "thumbnail")
+  end
+
+  def image_path(name)
+    "/images/#{name}"
   end
 
   def google_analytics(account)
