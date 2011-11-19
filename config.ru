@@ -4,8 +4,6 @@ require 'bundler/setup'
 Bundler.require
 
 require 'helpers'
-require 'compass'
-
 require 'article'
 require 'project'
 
