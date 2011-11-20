@@ -14,7 +14,7 @@
       .container
         #sidebar= haml :_sidebar
 
-        #content
+        #content{"data-title" => @article[:title]}
           %h1= @article[:title]
           ~ yield
 

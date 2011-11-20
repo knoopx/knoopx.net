@@ -8,7 +8,7 @@ module Helpers
   include OutputHelpers
 
   def link_to(content, href, opts = {})
-    content_tag(:a, content, opts.merge(:href => href))
+    content_tag(:a, content, opts.merge("data-pjax" => true, :href => href))
   end
 
   def image(name, opts = {})
