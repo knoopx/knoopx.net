@@ -11,7 +11,7 @@ Sass::Engine::DEFAULT_OPTIONS[:load_paths].push *Compass.sass_engine_options[:lo
 Kramdown::Options.definitions[:coderay_css].default = :class
 Kramdown::Options.definitions[:coderay_line_numbers].default = nil
 
-class App < Sinatra::Base
+class BlogEngine < Sinatra::Base
   set :root, File.expand_path(File.dirname(__FILE__))
   set :views, File.join(root, "template")
   set :default_encoding, "utf-8"
@@ -44,17 +44,21 @@ class App < Sinatra::Base
   end
 end
 
-use Rack::Thumb
-use Rack::Static, :urls => ["/galleries", "/images"]
+BlogApplication = Rack::Builder.new do
+  use Rack::Thumb
+  use Rack::Static, :urls => ['/galleries', '/images']
 
-map '/assets' do
-  environment = Sprockets::Environment.new
-  environment.append_path(File.join(File.dirname(__FILE__), 'template', 'assets', 'stylesheets'))
-  environment.append_path(File.join(File.dirname(__FILE__), 'template', 'assets', 'javascripts'))
-  environment.append_path(File.join(File.dirname(__FILE__), 'template', 'assets', 'images'))
-  run environment
-end
+  map '/' do
+    run BlogEngine
+  end
 
-map '/' do
-  run App
-end
+  map '/assets' do
+    env = Sprockets::Environment.new(BlogEngine.root)
+    env.append_path(File.join('template', 'assets', 'stylesheets'))
+    env.append_path(File.join('template', 'assets', 'javascripts'))
+    env.append_path(File.join('template', 'assets', 'images'))
+    run env
+  end
+end.to_app
+
+run BlogApplication

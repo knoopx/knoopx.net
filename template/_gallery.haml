@@ -1,5 +1,5 @@
 %ul.media-grid
-  - Dir.glob(File.join(App.root, "galleries", name, "*.jpg")).each do |image|
+  - Dir.glob(File.join(BlogEngine.root, "galleries", name, "*.jpg")).each do |image|
     - url = "/galleries/#{name}/#{File.basename(image, ".*")}"
     %li
       %a{:rel => name, :href => "#{url}.jpg" }
