@@ -32,3 +32,7 @@ An utility to assist scene MP3 library maintenance
 		Global options
 
 		-?/--help                     # Print help message
+
+## Screenshot
+
+![Jukebox](/images/scene-toolkit.png)
