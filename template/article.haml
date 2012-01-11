@@ -21,6 +21,23 @@
           - if @article[:gallery]
             = haml :_gallery, {}, :name => @article[:gallery]
 
+          - if [nil, true].include?(@article[:comments])
+            #disqus_thread
+            :javascript
+              var disqus_shortname = 'knoopx';
+              var disqus_identifier = '#{@article.slug}';
+              (function() {
+                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+            %noscript
+              Please enable JavaScript to view the
+              %a{:href => "http://disqus.com/?ref_noscript"} comments powered by Disqus.
+            %a.dsq-brlink{:href => "http://disqus.com"}
+              blog comments powered by
+              %span.logo-disqus Disqus
+
       #main_footer
 
     = haml :_footer
