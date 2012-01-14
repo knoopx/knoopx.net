@@ -10,4 +10,4 @@ MITM sniffing with `ettercap-ng`
 
     sudo sysctl -w net.inet.ip.forwarding=1
     sudo sysctl -w net.inet.ip.fw.enable=1
-    sudo ettercap -T -q -i en1 -M ARP // //
+    sudo ettercap -T -q -i en1 -M ARP:REMOTE /192.168.1.1/ //
