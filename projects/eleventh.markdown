@@ -1,6 +1,6 @@
 name: eleventh
 url: http://github.com/knoopx/eleventh
-description: A proof of concept ruby-based IEE802.11 WEP password cracker
+description: Eleventh is a proof of concept ruby-based IEE802.11 WEP password cracker inspired by wepattack. It uses a pre-defined dictionary to guess known vulnerable WEP passwords based on their BSSID and ESSID.
 ----
 
 # Eleventh

@@ -1,6 +1,6 @@
 name: mobilesync
 url: http://github.com/knoopx/mobilesync
-description: An utility to mount iTunes iDevice backups as a Fuse filesystem
+description: A collection of utilities for working with MobileSync (iPod, iPhone, iPad…) backups. Right now it only supports mounting backups via FuseFS. Tested only under OSX Lion and with iOS 5 Backups (at this time I found no other utility compatible).
 ----
 
 # MobileSync
