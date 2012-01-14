@@ -4,7 +4,7 @@
   margin-bottom: 2em
 
   .container
-    position: relative
+    +clearfix
 
     h1
       margin: 0
@@ -24,22 +24,21 @@
           color: black
 
     #navigation
-      position: absolute
-      right: 0
-      top: 0.5em
+      float: right
       font-family: Arial, Verdana, sans-serif
       font-size: .8em
-      padding-top: .3em
-      margin-bottom: 1em
+      line-height: 50px
 
       ul
         +horizontal-list(.2em)
         a
           +inline-block
           +border-radius(25px)
+          +contrasting(#666)
+          +box-shadow(1px 1px 4px rgba(0, 0, 0, 0.5) inset, 0 0 1px rgba(0, 0, 0, 0.25) inset)
+          line-height: 25px
           font-weight: bold
           background-color: #666
-          +contrasting(#666)
           padding: 0 15px
 
           &:link, &:visited, &:active, &:hover
