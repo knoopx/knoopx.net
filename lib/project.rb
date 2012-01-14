@@ -2,8 +2,8 @@ class Project
   attr_reader :meta, :slug, :path, :url, :body
 
   def initialize(path)
-    meta, body = File.read(path, :mode => "rb").split("----", 2)
-    @meta = YAML.load(meta)
+    raw_meta, body = File.read(path, :mode => "rb").force_encoding("utf-8").split("----", 2)
+    @meta = YAML.load(raw_meta)
     @body = body.force_encoding("utf-8")
     @slug = self[:name].to_slug.normalize.to_s
     @path = path

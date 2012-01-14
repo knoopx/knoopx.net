@@ -2,8 +2,8 @@ class Article
   attr_reader :meta, :slug, :path, :url, :body
 
   def initialize(path)
-    meta, @body = File.read(path, :mode => "rb").split("----", 2)
-    @meta = YAML.load(meta)
+    raw_meta, @body = File.read(path, :mode => "rb").force_encoding("utf-8").split("----", 2)
+    @meta = YAML.load(raw_meta)
     @slug = self[:title].to_slug.normalize.to_s
     @path = path
     @url = "/%04d/%02d/%02d/%s" % [self[:created_at].year, self[:created_at].month, self[:created_at].day, @slug]
