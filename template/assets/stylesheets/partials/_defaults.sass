@@ -17,7 +17,7 @@ a
     border-bottom: 1px dotted #004491
 
 p
-  margin-bottom: 1.3em
+  margin-bottom: 0.8em
 
 b, strong
   font-weight: bold
@@ -44,6 +44,7 @@ h1, h2, h3
 .container
   +clearfix
   width: 960px
+  overflow: visible
 
 #content
   float: left
@@ -104,5 +105,13 @@ h1, h2, h3
 div.comments
   margin-bottom: 1em
 
-img.polaroid
-  +box-shadow(0 0 0 10px white, 5px 5px 25px rgba(0,0,0,0.75))
+img
+  &.drop-shadow
+    +box-shadow(0 0 25px rgba(0,0,0,0.75))
+    margin: 25px 0
+
+  &.polaroid
+    +box-shadow(0 0 0 10px white, 5px 5px 25px rgba(0,0,0,0.75))
+
+a.thumbnail
+  border: none
