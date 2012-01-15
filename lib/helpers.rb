@@ -19,6 +19,7 @@ module Helpers
   end
 
   def thumb(name, opts = {})
+    opts.reverse_merge!(:resize => "x650")
     link_to(image(name, opts), image_path(name), :class => "thumbnail")
   end
 
