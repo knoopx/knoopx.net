@@ -4,7 +4,7 @@ created_at: 2011-12-14
 
 With the release of Mac OSX 10.7 a new method was made available trough the `CoreWLAN` framework, allowing you to associate to networks with the specified passphrase. It's called `associateToNetwork`.
 
-The point is that there's a lot of hype about WPA/WPA2 cracking lately, involving statistical calculation, multi-threaded and cloud-based bruteforce attacks just to conclude in how easy is to break into protected networks using a stupid bruteforce attack like the following:
+The point is that there's a lot of hype about WPA/WPA2 cracking lately, involving statistical calculation, multi-threaded and cloud-based bruteforce attacks just to conclude in how easy is to break into protected networks using a stupid dictionary attack like the following:
 
 {:lang="ruby"}
     framework "CoreWLAN"
