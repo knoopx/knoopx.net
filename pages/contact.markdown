@@ -2,9 +2,7 @@
 
 Feel free to contact me by email at the address:
 
-{:lang="ruby"}
-    #!/usr/bin/env ruby
-    puts "moc.liamg@xpoonk".reverse
+    $ ruby -e 'puts "moc.liamg@xpoonk".reverse'
 
 # Elsewhere
 
