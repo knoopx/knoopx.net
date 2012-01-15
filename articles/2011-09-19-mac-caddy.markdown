@@ -4,5 +4,5 @@ excerpt:
 gallery: mac-caddy
 ----
 
-I've just bought a cheap Mac Daddy clone on ebay and got rid of the unuseful optical drive of my MacBook Pro.
-Now enjoying a blazing fast Corsair F60 solid state disk plus an additional 500GB disk for storage.
+I've just bought a cheap [OptiBay](http://store.mcetech.com/Merchant2/merchant.mvc?Screen=CTGY&Category_Code=STORHDOPTIBAY) clone on [ebay](http://www.ebay.com/) and got rid of the unuseful optical drive of my MacBook Pro.
+Now enjoying a blazing fast [Corsair F60](http://www.newegg.com/Product/Product.aspx?Item=N82E16820233124) solid state disk plus an additional 500GB disk for storage. Happy! :D
