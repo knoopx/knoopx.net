@@ -55,10 +55,6 @@ Here are a bunch of tweaks I apply to clean installs of OS Lion.
 
 * Enable full keyboard access for all controls (so you can navigate through the UI using keyboard)
 
-      defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
-* Enable full keyboard access for all controls (so you can navigate through the UI using keyboard)
-
       defaults write NSGlobalDomain AppleKeyboardUIMode -int 3 
 
 * Enable subpixel font rendering on non-Apple LCDs
@@ -100,8 +96,7 @@ Here are a bunch of tweaks I apply to clean installs of OS Lion.
 
 * Set a blazingly fast keyboard repeat rate
 
-      defaults write NSGlobalDomain KeyRepeat -int 0 
-
+      defaults write NSGlobalDomain KeyRepeat -int 0.02
 
 * Increase window resize speed for Cocoa applications
 
