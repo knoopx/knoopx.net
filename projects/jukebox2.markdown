@@ -2,9 +2,6 @@ name: Jukebox2
 url: http://github.com/knoopx/jukebox2
 description: Jukebox2 is a revamped version of my previous self-hosted Grooveshark-alike music streaming web application.
 ----
-
-# Jukebox2
-
 Jukebox2 is a revamped version of my previous self-hosted [Grooveshark](http://www.grooveshark.com)-alike music streaming web application.
 Point your mp3 library path and it will scan and index your mp3 tracks along with [last.fm](http://last.fm) metadata.
 

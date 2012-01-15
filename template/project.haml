@@ -3,7 +3,7 @@
 %html{:xmlns => "http://www.w3.org/1999/xhtml"}
   %head
     %meta{'http-equiv' => 'Content-Type', :content => 'application/xhtml+xml; charset=UTF-8'}
-    %title= @article[:title]
+    %title= @project[:name]
     %link{:href => "/assets/screen.css", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "/feed.xml", :rel => "alternate", :type => "application/atom+xml"}
     %script{:type => "text/javascript", :src => "/assets/application.js"}
@@ -14,17 +14,18 @@
       .container
         #sidebar= haml :_sidebar
 
-        #content{"data-title" => @article[:title]}
-          %h1= @article[:title]
+        #content{"data-title" => @project[:name]}
+          %h1= @project[:name]
+
           ~ yield
 
-          - if @article[:gallery]
-            = haml :_gallery, {}, :name => @article[:gallery]
+          - if @project[:gallery]
+            = haml :_gallery, {}, :name => @project[:gallery]
 
           = haml :_share_buttons
 
-          - if [nil, true].include?(@article[:comments])
-            = haml :_comments, {}, :slug => @article.slug
+          - if @project[:comments] == true
+            = haml :_comments, {}, :slug => @project.slug
 
       #main_footer
 

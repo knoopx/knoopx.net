@@ -2,9 +2,6 @@ name: Jukebox
 url: http://github.com/knoopx/jukebox
 description: Jukebox is a self-hosted Grooveshark-alike music streaming web application. Point your mp3 library path and it will scan and index your mp3 track along with last.fm metadata.
 ----
-
-# Jukebox
-
 Jukebox is a self-hosted [Grooveshark](http://www.grooveshark.com)-alike music streaming web application.
 Point your mp3 library path and it will scan and index your mp3 track along with [last.fm](http://last.fm) metadata.
 

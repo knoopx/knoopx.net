@@ -2,9 +2,6 @@ name: Scene Toolkit
 url: http://github.com/knoopx/scene-toolkit
 description: An utility to assist scene MP3 library maintenance
 ----
-
-# Scene-Toolkit
-
 An utility to assist scene MP3 library maintenance
 
 ## Installation

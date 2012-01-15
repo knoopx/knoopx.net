@@ -31,7 +31,7 @@ class BlogEngine < Sinatra::Base
   get "/projects/:slug" do
     @project = Project.find(params[:slug])
     body = render(:erb, @project.body)
-    markdown(body, :layout => :default, :layout_engine => :haml)
+    markdown(body, :layout => :project, :layout_engine => :haml)
   end
 
   get "/pages/:name" do

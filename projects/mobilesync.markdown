@@ -2,9 +2,6 @@ name: mobilesync
 url: http://github.com/knoopx/mobilesync
 description: A collection of utilities for working with MobileSync (iPod, iPhone, iPad…) backups. Right now it only supports mounting backups via FuseFS. Tested only under OSX Lion and with iOS 5 Backups (at this time I found no other utility compatible).
 ----
-
-# MobileSync
-
 A collection of utilities for working with MobileSync (iPod, iPhone, iPad…) backups. Right now it only supports mounting backups via FuseFS. Tested only under OSX Lion and with iOS 5 Backups (at this time I found no other utility compatible).
 
 {:.alert}

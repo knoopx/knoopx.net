@@ -2,8 +2,6 @@ name: imp3
 url: http://github.com/knoopx/imp3
 description: iMp3 is an application for batch processing and fixing common issues when dealing with a large iTunes library.
 ----
-# iMp3
-
 iMp3 is an application for batch processing and fixing common issues when dealing with a large iTunes library.
 
 {:.alert}
