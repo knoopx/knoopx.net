@@ -2,7 +2,7 @@
 
 Feel free to contact me by email at the address:
 
-    $ ruby -e 'puts "moc.liamg@xpoonk".reverse'
+![Email](http://safemail.justlikeed.net/e/d5a4930b54dc9d447d3c1321c4b63746.png)
 
 # Elsewhere
 
