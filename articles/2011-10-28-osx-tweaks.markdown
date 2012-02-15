@@ -25,11 +25,11 @@ Here are a bunch of tweaks I apply to clean installs of OS Lion.
 
 * Display hidden applications as transulcent icons
 
-      defaults write com.apple.dock showhidden -bool true 
+      defaults write com.apple.dock showhidden -bool true
 
 * Show indicator lights for open applications
 
-      defaults write com.apple.dock show-process-indicators -bool true 
+      defaults write com.apple.dock show-process-indicators -bool true
 
 * Enable highlight hover effect for the grid view of a stack
 
@@ -38,6 +38,10 @@ Here are a bunch of tweaks I apply to clean installs of OS Lion.
 * Don't animate opening applications
 
       defaults write com.apple.dock launchanim -bool false
+
+* Don't animate mission control
+
+      defaults write com.apple.dock expose-animation-duration -float 0
 
 * Enable spring loading for all Dock items ([Demo](http://www.youtube.com/watch?v=b-emYJpxmgc))
 
@@ -55,44 +59,43 @@ Here are a bunch of tweaks I apply to clean installs of OS Lion.
 
 * Enable full keyboard access for all controls (so you can navigate through the UI using keyboard)
 
-      defaults write NSGlobalDomain AppleKeyboardUIMode -int 3 
+      defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 * Enable subpixel font rendering on non-Apple LCDs
 
-      defaults write NSGlobalDomain AppleFontSmoothing -int 2 
+      defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 * Disable menu bar transparency
 
-      defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false 
+      defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
 * Always show scrollbars
 
-      defaults write NSGlobalDomain AppleShowScrollBars -string "Always" 
+      defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 * Show all filename extensions in Finder
 
-      defaults write NSGlobalDomain AppleShowAllExtensions -bool true 
+      defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 * Expand save panel by default
 
-      defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true 
+      defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
 * Expand print panel by default
 
-      defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true 
+      defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
 * Disable auto-correct
 
-      defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false 
+      defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 * Disable window animations
 
-      defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false 
-
+      defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
 * Disable press-and-hold (character picker) for keys in favor of key repeat
 
-      defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false 
+      defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 * Set a blazingly fast keyboard repeat rate
 
@@ -100,37 +103,37 @@ Here are a bunch of tweaks I apply to clean installs of OS Lion.
 
 * Increase window resize speed for Cocoa applications
 
-      defaults write NSGlobalDomain NSWindowResizeTime -float 0.001 
+      defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 * Disable resume system-wide
 
-      defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false 
+      defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
 * Disable New Window animations
 
-      defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool NO 
+      defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool NO
 
 ## Finder
 
 * Allow quitting Finder via `⌘ + Q` (so will also hide desktop icons)
 
-      defaults write com.apple.finder QuitMenuItem -bool true 
+      defaults write com.apple.finder QuitMenuItem -bool true
 
 * Display full POSIX path as Finder window title
 
-      defaults write com.apple.finder _FXShowPosixPathInTitle -bool true 
+      defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 * Disable the warning when changing a file extension
 
-      defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false 
+      defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 * Disable the warning before emptying the Trash
 
-      defaults write com.apple.finder WarnOnEmptyTrash -bool false 
+      defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 * Empty Trash securely by default
 
-      defaults write com.apple.finder EmptyTrashSecurely -bool true 
+      defaults write com.apple.finder EmptyTrashSecurely -bool true
 
 * Use current directory as default search scope
 
@@ -173,33 +176,33 @@ Here are a bunch of tweaks I apply to clean installs of OS Lion.
 
 * Disable Safari’s thumbnail cache for History and Top Sites
 
-      defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2 
+      defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
 * Enable Safari’s debug menu
 
-      defaults write com.apple.Safari IncludeInternalDebugMenu -bool true 
+      defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 * Empty bookmarks bar
 
-      defaults write com.apple.Safari ProxiesInBookmarksBar "()" 
+      defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 ## Terminal.app
 
 
 * Only use UTF-8 in Terminal.app
 
-      defaults write com.apple.terminal StringEncodings -array 4 
+      defaults write com.apple.terminal StringEncodings -array 4
 
 ## iTunes
 
 
 * Hide the Ping sidebar
 
-      defaults write com.apple.iTunes disablePingSidebar -bool true 
+      defaults write com.apple.iTunes disablePingSidebar -bool true
 
 * Disable all the other Ping stuff in iTunes
 
-      defaults write com.apple.iTunes disablePing -bool true 
+      defaults write com.apple.iTunes disablePing -bool true
 
 ## Mail.app
 
@@ -252,7 +255,7 @@ Here are a bunch of tweaks I apply to clean installs of OS Lion.
 
 * Enable AirDrop over Ethernet and on unsupported Macs running Lion
 
-      defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true 
+      defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 * Disable window restore
 
@@ -260,7 +263,7 @@ Here are a bunch of tweaks I apply to clean installs of OS Lion.
 
 * Avoid creating `.DS_Store` files on network volumes
 
-      defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true 
+      defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 * Disable Dashboard
 
@@ -279,9 +282,13 @@ Here are a bunch of tweaks I apply to clean installs of OS Lion.
 
       sudo nvram boot-args="-v"
 
-* Show the ~/Library folder
+* Show the `~/Library` directory
 
-      chflags nohidden ~/Library 
+      chflags nohidden ~/Library
+
+* Hide `~/bin` directory
+
+      chflags hidden ~/bin
 
 * Disable Spotlight
 
