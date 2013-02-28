@@ -8,19 +8,19 @@ module Helpers
   include OutputHelpers
 
   def link_to(content, href, opts = {})
-    content_tag(:a, content, opts.merge("data-pjax" => true, :href => href))
+    content_tag(:a, content, opts.merge("data-pjax" => true, href: href))
   end
 
   def image(name, opts = {})
     if size = opts.delete(:resize)
       name = name.gsub(/\..+$/, "_#{size}\\0")
     end
-    content_tag(:img, opts.merge(:src => image_path(name)))
+    content_tag(:img, opts.merge(src: image_path(name)))
   end
 
   def thumb(name, opts = {})
-    opts.reverse_merge!(:resize => "x650")
-    link_to(image(name, opts), image_path(name), :class => "thumbnail")
+    opts.reverse_merge!(resize: "x650")
+    link_to(image(name, opts), image_path(name), class: "thumbnail")
   end
 
   def image_path(name)
@@ -49,17 +49,17 @@ module Helpers
     distance_in_seconds = ((to_time - from_time).abs).round
 
     messages = {
-        :half_a_minute => "half a minute",
-        :less_than_x_seconds => "less than %d seconds",
-        :x_seconds=>"%d seconds",
-        :less_than_x_minutes=> "less than %d minutes",
-        :x_minutes=>"%d minutes",
-        :about_x_hours=>"about %d hours",
-        :x_days=>"%d days",
-        :about_x_months=>"about %d months",
-        :x_months=>"%d months",
-        :about_x_years=>"about %d year",
-        :over_x_years=>"over %d years"
+        half_a_minute: "half a minute",
+        less_than_x_seconds: "less than %d seconds",
+        x_seconds:"%d seconds",
+        less_than_x_minutes: "less than %d minutes",
+        x_minutes:"%d minutes",
+        about_x_hours:"about %d hours",
+        x_days:"%d days",
+        about_x_months:"about %d months",
+        x_months:"%d months",
+        about_x_years:"about %d year",
+        over_x_years:"over %d years"
     }
 
     case distance_in_minutes

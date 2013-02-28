@@ -2,7 +2,7 @@ class Article
   attr_reader :meta, :slug, :path, :url, :body
 
   def initialize(path)
-    raw_meta, @body = File.read(path, :mode => "rb").force_encoding("utf-8").split("----", 2)
+    raw_meta, @body = File.read(path, mode: "rb").force_encoding("utf-8").split("----", 2)
     @meta = YAML.load(raw_meta)
     @slug = self[:title].to_slug.normalize.to_s
     @path = path
