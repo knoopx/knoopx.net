@@ -1,7 +1,6 @@
----
 title: Cracking WPA networks with MacRuby
 created_at: 2011-12-14
----
+----
 
 With the release of Mac OSX 10.7 a new method was made available trough the `CoreWLAN` framework, allowing you to associate to networks with the specified passphrase. It's called `associateToNetwork`.
 
