@@ -31,67 +31,70 @@ By default, `nanoc3::Item#identifier` automatically strips file extensions and a
 So, the identifier for a file on the `content` directory `/content/posts/awesome_post.markdown` returns `/posts/awesome_post/`
 forcing us to append `index.html` when routing it:
 
-{:lang="ruby"}
-    route "/posts/*" do
-      item.identifier + "index.html"
-    end
+~~~ ruby
+route "/posts/*" do
+  item.identifier + "index.html"
+end
+~~~
 
 While this may be cool for having pretty urls like `http://www.example.com/post/awesome_post/` I found it a bit cumbersome.
 Moreover I wanted to create a projects page, which would be picking the files from `content/projects` and generating a single master page from them.
 There was no need to generate per-project pages but this totally failed:
 
-{:lang="ruby"}
-    route "/projects/*" do
-      # Just skip per-project pages
-    end
+~~~ ruby
+route "/projects/*" do
+  # Just skip per-project pages
+end
 
-    route "/projects" do
-      "/projects.html"
-    end
+route "/projects" do
+  "/projects.html"
+end
+~~~
 
 The first rule matched the master page too, no `projects/index.html` or `projects/awesome_project/index.html` where compiled at all.
 So I decided to monkey-patch nanoc3 to completly disable this behavour and put this into `lib/ugly_urls.rb`:
 
-{:lang="ruby"}
-    module Nanoc3
-      class ItemRep
-        def layout_with_identifier(layout_identifier)
-          @item.site.layouts.find { |l| File.basename(l.identifier, ".*") == layout_identifier } or
-                  raise Nanoc3::Errors::UnknownLayout.new(layout_identifier)
-        end
-      end
+~~~ ruby
+module Nanoc3
+  class ItemRep
+    def layout_with_identifier(layout_identifier)
+      @item.site.layouts.find { |l| File.basename(l.identifier, ".*") == layout_identifier } or
+              raise Nanoc3::Errors::UnknownLayout.new(layout_identifier)
+    end
+  end
+end
+
+class Nanoc3::DataSources::FilesystemUnified
+  def identifier_for_filename(filename)
+    path = filename.split("/")
+    filename = path.pop
+    extensions = filename.split(".")
+    basename = extensions.shift
+
+    case extensions.size
+      when 0
+        path << filename
+      when 1
+        extensions.insert(0, basename)
+        path << extensions.join(".")
+      when 2
+        extension = extensions.pop
+        extensions.insert(0, basename)
+        path << extensions.join(".")
+      else
+        raise Exception.new("Dots in filenames are not allowed")
     end
 
-    class Nanoc3::DataSources::FilesystemUnified
-      def identifier_for_filename(filename)
-        path = filename.split("/")
-        filename = path.pop
-        extensions = filename.split(".")
-        basename = extensions.shift
+    path.join("/")
+  end
+end
 
-        case extensions.size
-          when 0
-            path << filename
-          when 1
-            extensions.insert(0, basename)
-            path << extensions.join(".")
-          when 2
-            extension = extensions.pop
-            extensions.insert(0, basename)
-            path << extensions.join(".")
-          else
-            raise Exception.new("Dots in filenames are not allowed")
-        end
-
-        path.join("/")
-      end
-    end
-
-    module Nanoc3::StringExtensions
-      def cleaned_identifier
-        "/#{self}".gsub(/^\/+|\/+$/, '/')
-      end
-    end
+module Nanoc3::StringExtensions
+  def cleaned_identifier
+    "/#{self}".gsub(/^\/+|\/+$/, '/')
+  end
+end
+~~~
 
 So what is this supposed to do? Well, If you are familiar with Rails you may known that view templates have two extensions in the filename (`my_page.html.erb`).
 The last one is the source format and the second one the compiled format. Wouldn't it be nice if we could just follow the same principle?
@@ -100,31 +103,33 @@ This patch makes a file `content/posts/awesome_post.html.markdown` have an ident
 
 Now I can perform what I really wanted to do with projects:
 
-{:lang="ruby"}
-    route "/projects/*" do
-      # Just skip per-project pages
-    end
+~~~ ruby
+route "/projects/*" do
+  # Just skip per-project pages
+end
 
-    route "/projects.html" do
-      item.identifier
-    end
+route "/projects.html" do
+  item.identifier
+end
+~~~
 
 and automatically apply filters based on the extension:
 
-{:lang="ruby"}
-    compile '*' do
-      case item[:extension]
-        when "html.markdown"
-          filter :kramdown
-        when "html.haml"
-          filter :haml
-      end
-      layout 'default'
-    end
+~~~ ruby
+compile '*' do
+  case item[:extension]
+    when "html.markdown"
+      filter :kramdown
+    when "html.haml"
+      filter :haml
+  end
+  layout 'default'
+end
 
-    route '*' do
-      item.identifier
-    end
+route '*' do
+  item.identifier
+end
+~~~
 
 ## Compass integration
 
@@ -133,18 +138,19 @@ Since then I never wrote a single line of HTML/CSS. This time wouldn't be differ
 
 It was as easy as pasting this at the top of the `Rules` file:
 
-{:lang="ruby"}
-    require 'compass'
+~~~ ruby
+require 'compass'
 
-    Compass.configuration do |config|
-      config.project_path = File.dirname(__FILE__)
-      config.http_path = "/"
+Compass.configuration do |config|
+  config.project_path = File.dirname(__FILE__)
+  config.http_path = "/"
 
-      config.css_dir = "public/stylesheets"
-      config.sass_dir = "stylesheets"
-      config.images_dir = "public/images"
-      config.javascripts_dir = "public/javascripts"
-    end
+  config.css_dir = "public/stylesheets"
+  config.sass_dir = "stylesheets"
+  config.images_dir = "public/images"
+  config.javascripts_dir = "public/javascripts"
+end
+~~~
 
 creating a directory structure like this:
 
@@ -159,19 +165,20 @@ creating a directory structure like this:
 
 and adding some rules for skipping `partials` and `mixins` and compiling the root stylesheets:
 
-{:lang="ruby"}
-    compile '/stylesheets/partials|mixins/*' do
-      # Skip partials
-    end
+~~~ ruby
+compile '/stylesheets/partials|mixins/*' do
+  # Skip partials
+end
 
-    route '/stylesheets/partials|mixins/*' do
-      # Skip partials
-    end
+route '/stylesheets/partials|mixins/*' do
+  # Skip partials
+end
 
-    compile '/stylesheets/*' do
-      filter :sass, Compass.sass_engine_options
-    end
+compile '/stylesheets/*' do
+  filter :sass, Compass.sass_engine_options
+end
 
-    route '/stylesheets/*' do
-      item.identifier
-    end
+route '/stylesheets/*' do
+  item.identifier
+end
+~~~
