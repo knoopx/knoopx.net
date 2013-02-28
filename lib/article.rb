@@ -15,8 +15,7 @@ class Article
 
   class << self
     def find(slug)
-      self.all.find { |a| a.slug == slug } or
-          raise Sinatra::NotFound
+      self.all.find { |a| a.slug == slug }
     end
 
     def all

@@ -15,8 +15,7 @@ class Project
   end
 
   def self.find(slug)
-    self.all.find { |a| a.slug == slug } or
-        raise Sinatra::NotFound
+    self.all.find { |a| a.slug == slug }
   end
 
   def self.all
