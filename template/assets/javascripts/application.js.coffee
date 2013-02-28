@@ -3,9 +3,9 @@
 #= require_self
 
 $(->
-    $.getJSON "http://github.com/api/v2/json/repos/show/knoopx?callback=?", (data) ->
-      $.each data.repositories.reverse(), ->
-        $("ul#github").append $("<li>").append($("<a>").text(@name).attr("href", @url).after($("<p>").text(@description))) unless @fork
+    $.getJSON "https://api.github.com/users/knoopx/repos?type=owner&sort=updated&callback=?", (response) ->
+      $.each response.data ->
+        $("ul#github").append $("<li>").append($("<a>").text(@name).attr("href", @html_url).after($("<p>").text(@description)))
 
     $.getJSON "http://api.twitter.com/1/statuses/user_timeline/knoopx.json?callback=?", (tweets) ->
       $.each tweets, ->
