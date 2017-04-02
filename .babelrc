@@ -1,0 +1,26 @@
+{
+  "presets": [
+    "react",
+    ["latest", {
+      "es2015": {
+        "modules": false,
+      },
+    }],
+    "stage-1"
+  ],
+  "plugins": [
+    "transform-decorators-legacy"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    },
+    "production": {
+      "presets": [
+        "react-optimize"
+      ]
+    }
+  }
+}

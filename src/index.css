@@ -1,0 +1,25 @@
+@import "tachyons/src/tachyons";
+@import "open-color/open-color";
+@import "react-activity/dist/react-activity";
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.headroom {
+  z-index: 99999 !important;
+}
+
+img {
+  max-width: initial !important;
+}
+
+.ts {
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 30em) {
+  .flex-wrap-s {
+    flex-wrap: wrap;
+  }
+}
