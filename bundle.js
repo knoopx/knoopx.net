@@ -105709,45 +105709,44 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var _ref = _jsx(__WEBPACK_IMPORTED_MODULE_3_ui_layout__["b" /* Container */], {}, void 0, _jsx('div', {
-  className: 'cf'
+var _ref = _jsx(__WEBPACK_IMPORTED_MODULE_3_ui_layout__["b" /* Container */], {
+  className: 'cf w-75'
 }, void 0, _jsx('div', {
-  className: 'fl w-100 w-third-ns pr6-ns mb4'
+  className: 'fl w-100 w-50-ns pr7-ns mb4'
 }, void 0, _jsx('header', {
   className: 'mb4'
 }, void 0, _jsx('h1', {
   className: 'f1 mb1 white mt0'
 }, void 0, 'Contact'), _jsx('h2', {
   className: 'f3 mt1 fw4 white-90'
-}, void 0, 'Let\'s get in touch')), _jsx('div', {
-  className: 'lh-copy f4 white-50 measure'
-}, void 0, _jsx('p', {
-  className: 'mb4'
+}, void 0, 'Let\'s get in touch')), _jsx('div', {}, void 0, _jsx('p', {
+  className: 'lh-copy f4 white-50 mb4'
 }, void 0, 'Do you like what I do? Don\'t hesitate to contact me about your project, idea or requirements.'), _jsx('div', {
-  className: 'flex w-100 w-75-l justify-around'
+  className: 'flex w-100 w-50-l'
 }, void 0, _jsx('a', {
-  className: 'white',
+  className: 'white pa2',
   href: 'https://www.linkedin.com/in/victormartinezgarcia/'
 }, void 0, _jsx(__WEBPACK_IMPORTED_MODULE_4_react_icons_lib_fa__["FaLinkedin"], {
   size: 48
 })), _jsx('a', {
-  className: 'white',
+  className: 'white pa2',
   href: 'http://github.com/knoopx'
 }, void 0, _jsx(__WEBPACK_IMPORTED_MODULE_4_react_icons_lib_fa__["FaGithub"], {
   size: 48
 })), _jsx('a', {
-  className: 'white',
+  className: 'white pa2',
   href: 'http://twitter.com/knoopx'
 }, void 0, _jsx(__WEBPACK_IMPORTED_MODULE_4_react_icons_lib_fa__["FaTwitter"], {
   size: 48
 })), _jsx('a', {
-  className: 'white',
+  className: 'white pa2',
   href: 'http://stackoverflow.com/users/62368/knoopx'
 }, void 0, _jsx(__WEBPACK_IMPORTED_MODULE_4_react_icons_lib_fa__["FaStackOverflow"], {
   size: 48
 }))))), _jsx('div', {
-  className: 'fl w-100 w-third-ns'
+  className: 'fl w-100 w-50-ns'
 }, void 0, _jsx('form', {
+  className: 'measure',
   action: 'https://formspree.io/knoopx@gmail.com',
   method: 'post'
 }, void 0, _jsx('div', {
@@ -105759,7 +105758,7 @@ var _ref = _jsx(__WEBPACK_IMPORTED_MODULE_3_ui_layout__["b" /* Container */], {}
   type: 'text',
   name: 'name',
   required: true,
-  className: 'db border-box w-100 measure ba b--white-20 pa2 br2 mb2'
+  className: 'db border-box w-100 ba b--white-20 pa2 br2 mb2'
 })), _jsx('div', {
   className: 'mb3'
 }, void 0, _jsx('label', {
@@ -105769,7 +105768,7 @@ var _ref = _jsx(__WEBPACK_IMPORTED_MODULE_3_ui_layout__["b" /* Container */], {}
   type: 'email',
   name: '_replyto',
   required: true,
-  className: 'db border-box w-100 measure ba b--white-20 pa2 br2 mb2'
+  className: 'db border-box w-100 ba b--white-20 pa2 br2 mb2'
 })), _jsx('div', {
   className: 'mb4'
 }, void 0, _jsx('label', {
@@ -105778,12 +105777,12 @@ var _ref = _jsx(__WEBPACK_IMPORTED_MODULE_3_ui_layout__["b" /* Container */], {}
 }, void 0, 'Message'), _jsx('textarea', {
   name: 'message',
   required: true,
-  className: 'db border-box w-100 measure ba b--white-20 pa2 br2 mb2'
+  className: 'db border-box w-100 ba b--white-20 pa2 br2 mb2'
 })), _jsx('input', {
   type: 'submit',
   value: 'Send',
-  className: 'input-reset bg-transparent pointer ph5 pv2 white b br-pill ba ba-2 b--white'
-})))));
+  className: 'db input-reset bg-transparent pointer ph5 pv2 white b br-pill ba ba-2 b--white w-100'
+}))));
 
 var Contact = function (_React$PureComponent) {
   _inherits(Contact, _React$PureComponent);
@@ -105827,7 +105826,7 @@ var Contact = function (_React$PureComponent) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ui_time_line__ = __webpack_require__("./src/ui/time-line/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ui_tag_list__ = __webpack_require__("./src/ui/tag-list.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ui_markdown__ = __webpack_require__("./src/ui/markdown.jsx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_content_experience__ = __webpack_require__("./src/content/experience/index.yaml");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_content_experience__ = __webpack_require__("./src/content/experience.yaml");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_content_experience___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_content_experience__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Experience; });
 var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
@@ -105858,7 +105857,7 @@ var _ref = _jsx('header', {
   className: 'f1 mb1 black-90'
 }, void 0, 'Professional Experience'), _jsx('h2', {
   className: 'f3 mt1 fw4'
-}, void 0, 'More than twelve years of web development'));
+}, void 0, 'More than ten years of web development behind my back'));
 
 var Experience = function (_React$PureComponent) {
   _inherits(Experience, _React$PureComponent);
@@ -105893,16 +105892,18 @@ var Experience = function (_React$PureComponent) {
           }, void 0, _jsx('h4', {
             className: 'mv0'
           }, void 0, name))
-        }, index, _jsx('em', {}, void 0, range, ' '), _jsx('div', {
+        }, index, _jsx('em', {
+          className: 'black-50'
+        }, void 0, range, ' '), _jsx('div', {
           className: 'cf mb2 lh-copy'
-        }, void 0, _jsx('div', {
-          className: 'fl w-50-ns'
         }, void 0, _jsx(__WEBPACK_IMPORTED_MODULE_6_ui_markdown__["a" /* default */], {
-          className: 'measure',
+          className: 'fl w-50-ns pr4',
           body: description
-        })), challenges && _jsx('div', {
+        }), challenges && _jsx('div', {
           className: 'fl w-50-ns'
-        }, void 0, _jsx('ul', {}, void 0, challenges.map(function (challenge, i) {
+        }, void 0, _jsx('ul', {
+          className: 'pl3'
+        }, void 0, challenges.map(function (challenge, i) {
           return _jsx('li', {}, i, challenge);
         })))), _jsx(__WEBPACK_IMPORTED_MODULE_5_ui_tag_list__["a" /* default */], {
           tags: tags
@@ -106221,6 +106222,13 @@ var App = function (_React$PureComponent) {
 
 /***/ }),
 
+/***/ "./src/app/open-source/images/eleventh.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "721b301550304f75f2c0e248bdc3aa7f.png";
+
+/***/ }),
+
 /***/ "./src/app/open-source/images/pebble-watchface.jpg":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -106285,7 +106293,7 @@ function Project(_ref) {
       image = _ref.image;
 
   return _jsx('a', {
-    className: 'fl w-100 w-50-m w-third-ns pa2-ns link',
+    className: 'ph2 fl w-50 w-third-ns pa2-ns link',
     href: url
   }, void 0, _jsx('div', {
     className: 'aspect-ratio aspect-ratio--1x1'
@@ -106293,11 +106301,11 @@ function Project(_ref) {
     style: { backgroundImage: 'url("' + image + '")' },
     className: 'db bg-center cover aspect-ratio--object br2 overflow-hidden'
   })), _jsx('div', {
-    className: 'ph2 ph0-ns pb3 db'
+    className: 'ph0-ns pb3 db'
   }, void 0, _jsx('h3', {
-    className: 'f5 fw4 f4-ns mb0 black-70'
+    className: 'f5 fw5 mb0 black-70'
   }, void 0, name), _jsx('h3', {
-    className: 'f6 f5 fw3 mt2 black-60'
+    className: 'f6 fw3 mt2 black-60'
   }, void 0, children)));
 }
 
@@ -106359,7 +106367,11 @@ var OpenSource = function (_React$PureComponent) {
         name: 'Poloniex App',
         url: 'https://github.com/knoopx/poloniex-watch-app/',
         image: __webpack_require__("./src/app/open-source/images/poloniex.png")
-      }, void 0, 'A desktop client for poloniex.com. Watch markets and track your orders from the menu bar.'))), _ref4))));
+      }, void 0, 'A desktop client for poloniex.com. Watch markets and track your orders from the menu bar.'), _jsx(Project, {
+        name: 'Eleventh',
+        url: 'https://github.com/knoopx/eleventh/',
+        image: __webpack_require__("./src/app/open-source/images/eleventh.png")
+      }, void 0, 'An automated, all-in-one dictionary generator and WEP cracker'))), _ref4))));
     }
   }]);
 
@@ -106527,7 +106539,7 @@ var Projects = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_mobx_react__["o
               _context.t1 = _context.sent;
               _context.t2 = ['pushed_at'];
               _context.t3 = ['desc'];
-              this.repos = _context.t0.chain.call(_context.t0, _context.t1).reject('fork').orderBy(_context.t2, _context.t3).take(5).value();
+              this.repos = _context.t0.chain.call(_context.t0, _context.t1).reject('fork').orderBy(_context.t2, _context.t3).take(10).value();
 
               this.isLoading = false;
 
@@ -106546,7 +106558,7 @@ var Projects = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_mobx_react__["o
       }
 
       return _jsx('div', {
-        className: 'ba br2 bg-white b--black-10 mb4'
+        className: 'ba br2 bg-white b--black-10 mb3 mb4-ns'
       }, void 0, this.repos.map(function (repo) {
         return _jsx('div', {
           className: 'pa3 bb b--black-10'
@@ -106593,7 +106605,7 @@ var Projects = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_mobx_react__["o
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/react.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ui_layout__ = __webpack_require__("./src/ui/layout/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_content_recommendations__ = __webpack_require__("./src/content/recommendations/index.yaml");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_content_recommendations__ = __webpack_require__("./src/content/recommendations.yaml");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_content_recommendations___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_content_recommendations__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Recommendations; });
 var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
@@ -106749,38 +106761,38 @@ var Talks = function (_React$PureComponent) {
 
 /***/ }),
 
-/***/ "./src/app/technology/images/android.svg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "02e6bfb985da7ade1f2e3e4bbfba00b9.svg";
-
-/***/ }),
-
 /***/ "./src/app/technology/images/angular.svg":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "1c0c349ad9921e0675e6d7a2920d4c72.svg";
-
-/***/ }),
-
-/***/ "./src/app/technology/images/apple.svg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "4d3eb39eec4c2b00cc8183c9ae322d96.svg";
+module.exports = __webpack_require__.p + "02097325afc9c896114639604e1385cb.svg";
 
 /***/ }),
 
 /***/ "./src/app/technology/images/css3.svg":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "dd6260f9ff845539a37b3be006c6c605.svg";
+module.exports = __webpack_require__.p + "b4bb15b87da81733049a29fb1c050874.svg";
+
+/***/ }),
+
+/***/ "./src/app/technology/images/electron.svg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "81f8a98460ee2f267c6cc22e163f5b51.svg";
+
+/***/ }),
+
+/***/ "./src/app/technology/images/git.svg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "aa38188a8d9a713db071a2a4992ac5a1.svg";
 
 /***/ }),
 
 /***/ "./src/app/technology/images/html5.svg":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "7e6a3434d96c6fa26aa5fffe80430e92.svg";
+module.exports = __webpack_require__.p + "e81182e67c3541e1b1960e117aa5e82a.svg";
 
 /***/ }),
 
@@ -106791,38 +106803,38 @@ module.exports = __webpack_require__.p + "78ae2bca53eb7550944a7f1011e94e59.svg";
 
 /***/ }),
 
-/***/ "./src/app/technology/images/less.svg":
+/***/ "./src/app/technology/images/mongodb.svg":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "36889cb5ff773b87270a7c829734a6ec.svg";
+module.exports = __webpack_require__.p + "8a148cf7e3d4b5dbb0cf3bfc33fedcec.svg";
 
 /***/ }),
 
-/***/ "./src/app/technology/images/linux.svg":
+/***/ "./src/app/technology/images/mysql.svg":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "c85794f937fd69592a9924ba63dd8600.svg";
+module.exports = __webpack_require__.p + "bd6c757b244eb6049fb5f31e959c6f82.svg";
 
 /***/ }),
 
-/***/ "./src/app/technology/images/mobx.svg":
+/***/ "./src/app/technology/images/nodejs.svg":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "bc7cfdf1ae528b23ab746216aa7be4d1.svg";
+module.exports = __webpack_require__.p + "e945f5f065fdaa40f3101a8e2fbc8396.svg";
 
 /***/ }),
 
-/***/ "./src/app/technology/images/postcss.svg":
+/***/ "./src/app/technology/images/postgresql.svg":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "987c714c9fc33ee539d5cd3ecb4b776b.svg";
+module.exports = __webpack_require__.p + "14e94403ec571445bcd50ac3b3d64731.svg";
 
 /***/ }),
 
 /***/ "./src/app/technology/images/rails.svg":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "b1a0e943a609bb337199ec28dc3420ee.svg";
+module.exports = __webpack_require__.p + "c399b22cb462c9af3e2c2f0f69690d7a.svg";
 
 /***/ }),
 
@@ -106833,6 +106845,13 @@ module.exports = __webpack_require__.p + "69cde2b5273ca7d05f10e60cf058ba46.svg";
 
 /***/ }),
 
+/***/ "./src/app/technology/images/redis.svg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "4472a437a8c69e68866ecbec781c13c6.svg";
+
+/***/ }),
+
 /***/ "./src/app/technology/images/ruby.svg":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -106840,24 +106859,10 @@ module.exports = __webpack_require__.p + "1ee91e410b62cd823c6acd853f9bf6fa.svg";
 
 /***/ }),
 
-/***/ "./src/app/technology/images/sass.svg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "ef5253b386fffc928a0951ae0981c7d5.svg";
-
-/***/ }),
-
-/***/ "./src/app/technology/images/typescript.svg":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "e16f69a9a10c158d1602a698c9b87411.svg";
-
-/***/ }),
-
 /***/ "./src/app/technology/images/webpack.svg":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "7e4f97899e0d88498f54b45e3d173cd0.svg";
+module.exports = __webpack_require__.p + "0a428c1b8da1b59ec0c41c9b3321f6bf.svg";
 
 /***/ }),
 
@@ -106871,9 +106876,9 @@ module.exports = __webpack_require__.p + "7e4f97899e0d88498f54b45e3d173cd0.svg";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_scrollable_anchor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_scrollable_anchor__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ui_layout__ = __webpack_require__("./src/ui/layout/index.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Technology; });
-var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -106885,7 +106890,20 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var _ref = _jsx('header', {
+function Image(_ref) {
+  var src = _ref.src;
+
+  return _jsx('div', {
+    className: 'dib w3'
+  }, void 0, _jsx('div', {
+    className: 'ma1 aspect-ratio aspect-ratio--1x1'
+  }, void 0, _jsx('div', {
+    className: 'aspect-ratio--object contain',
+    style: { background: 'url("' + src + '") center no-repeat' }
+  })));
+}
+
+var _ref2 = _jsx('header', {
   className: 'tc mb4'
 }, void 0, _jsx('h1', {
   className: 'f1 mb1 black-90'
@@ -106893,29 +106911,27 @@ var _ref = _jsx('header', {
   className: 'f3 mt1 fw4'
 }, void 0, 'The right tools for the right project'));
 
-var _ref2 = _jsx('h2', {
+var _ref3 = _jsx('div', {
+  className: 'cf'
+}, void 0, _jsx('div', {
+  className: 'fl pa4 w-third-ns tc'
+}, void 0, _jsx('h2', {
   className: 'fw4 black-90'
-}, void 0, 'Front-end development');
-
-var _ref3 = _jsx('p', {
+}, void 0, 'Front-end development'), _jsx('p', {
   className: 'lh-copy mb5'
-}, void 0, 'Heavily experienced in Ruby 1.8/1.9, PHP 4.0/5.0 and C# 2.0/3.0 as backend languages and HTML5, XHTML, CSS2/3 and Javascript (ECMA-262) as client-side languages. Developed many applications using the most popular frameworks and CMS\'s out there: Ruby on Rails, Sinatra, Zend Framework, CakePHP, Code Igniter, WordPress, Drupal. Database: I work most frequently with the LAMP stack, so MySQL is my go-to. I have highest regard for SQLite, and have also used Redis as a primary datastore. Front-end: I\'ve built projects with Backbone and Angular 1, but have moved on to Vue.js. jQuery is still a de facto choice. Back-end: Outside of PHP I have projects in Python 2 and 3, and others in Node JS using Express and Restify. I\'ve worked on Django and Rails projects in the past. Within PHP I\'ve used Cake, CodeIgniter, and Symfony. Web servers: Nginx or Apache. Version control: I started out with CVS, moved to Subversion, tried out Mercurial briefly but now use Git like everyone else. As well as: Composer, PHPUnit, Mocha/Karma Ansible, Vagrant, the Atlassian suite, Photoshop/Illustrator/InDesign. Minor experiences with Java, Python, Perl, Pascal, C and MASM.');
-
-var _ref4 = _jsx('h2', {
+}, void 0, 'Rich web applications using the latest technologies HTML5, CSS3, ES6. Preprocessors SASS, Less and PostCSS.')), _jsx('div', {
+  className: 'fl pa4 w-third-ns tc'
+}, void 0, _jsx('h2', {
   className: 'fw4 black-90'
-}, void 0, 'Back-end development and databases');
-
-var _ref5 = _jsx('p', {
+}, void 0, 'Back-end development and databases'), _jsx('p', {
   className: 'lh-copy mb5'
-}, void 0, 'Strongly experienced on well-known relational database systems such as MySQL, SQLite, PosgreSQL and SQL Server. Knowledge to successfully model databases in order to fit the application needs and to properly index and efficiently query the information contained. Also experienced in key-value stores like Memcache and Redis, mostly used as caching layers.');
-
-var _ref6 = _jsx('h2', {
+}, void 0, 'MySQL and PosgreSQL MongoDB')), _jsx('div', {
+  className: 'fl pa4 w-third-ns tc'
+}, void 0, _jsx('h2', {
   className: 'fw4 black-90'
-}, void 0, 'DevOps and SysAdmin');
-
-var _ref7 = _jsx('p', {
+}, void 0, 'Other tools of trade'), _jsx('p', {
   className: 'lh-copy mb5'
-}, void 0, 'Experienced on CVS and SVN. After discovering Git I\'m no longer interested in any other VCS. Super user on almost all flavors and versions of Linux, Windows and Mac OS X. More comfortable on Debian-based Linux distributions. Familiar with FreeBSD-based UNIX such as OS X\'s Darwin. Strong experience on server setup, service configuration, application deployment and maintenance. Experience in load balancing, high availability and clustering setups.');
+}, void 0, 'Git and GitHub')));
 
 var Technology = function (_React$PureComponent) {
   _inherits(Technology, _React$PureComponent);
@@ -106931,69 +106947,39 @@ var Technology = function (_React$PureComponent) {
     value: function render() {
       return _jsx(__WEBPACK_IMPORTED_MODULE_1_react_scrollable_anchor___default.a, {
         id: 'technology'
-      }, void 0, _jsx(__WEBPACK_IMPORTED_MODULE_2_ui_layout__["b" /* Container */], {}, void 0, _ref, _jsx('div', {
-        className: 'dt-ns dt--fixed-ns'
-      }, void 0, _jsx('div', {
-        className: 'dtc-ns pv2 tc'
-      }, void 0, _ref2, _ref3, _jsx('div', {
-        className: 'flex justify-around'
-      }, void 0, _jsx('img', {
-        height: 50,
+      }, void 0, _jsx(__WEBPACK_IMPORTED_MODULE_2_ui_layout__["b" /* Container */], {}, void 0, _ref2, _ref3, _jsx('div', {
+        className: 'flex-ns justify-around tc'
+      }, void 0, _jsx(Image, {
         src: __webpack_require__("./src/app/technology/images/html5.svg")
-      }), _jsx('img', {
-        height: 50,
+      }), _jsx(Image, {
         src: __webpack_require__("./src/app/technology/images/css3.svg")
-      }), _jsx('img', {
-        height: 50,
+      }), _jsx(Image, {
         src: __webpack_require__("./src/app/technology/images/javascript.svg")
-      }), _jsx('img', {
-        height: 50,
-        src: __webpack_require__("./src/app/technology/images/typescript.svg")
-      }), _jsx('img', {
-        height: 50,
-        src: __webpack_require__("./src/app/technology/images/ruby.svg")
-      }), _jsx('img', {
-        height: 50,
-        src: __webpack_require__("./src/app/technology/images/sass.svg")
-      }), _jsx('img', {
-        height: 50,
-        src: __webpack_require__("./src/app/technology/images/less.svg")
-      }))), _jsx('div', {
-        className: 'dtc-ns pv2 tc'
-      }, void 0, _ref4, _ref5, _jsx('div', {
-        className: 'flex justify-around'
-      }, void 0, _jsx('img', {
-        height: 50,
+      }), _jsx(Image, {
         src: __webpack_require__("./src/app/technology/images/react.svg")
-      }), _jsx('img', {
-        height: 50,
+      }), _jsx(Image, {
         src: __webpack_require__("./src/app/technology/images/angular.svg")
-      }), _jsx('img', {
-        height: 50,
+      }), _jsx(Image, {
+        src: __webpack_require__("./src/app/technology/images/ruby.svg")
+      }), _jsx(Image, {
         src: __webpack_require__("./src/app/technology/images/rails.svg")
-      }), _jsx('img', {
-        height: 50,
-        src: __webpack_require__("./src/app/technology/images/mobx.svg")
-      }))), _jsx('div', {
-        className: 'dtc-ns pv2 tc'
-      }, void 0, _ref6, _ref7, _jsx('div', {
-        className: 'flex justify-around'
-      }, void 0, _jsx('img', {
-        height: 50,
+      }), _jsx(Image, {
+        src: __webpack_require__("./src/app/technology/images/nodejs.svg")
+      }), _jsx(Image, {
+        src: __webpack_require__("./src/app/technology/images/mysql.svg")
+      }), _jsx(Image, {
+        src: __webpack_require__("./src/app/technology/images/postgresql.svg")
+      }), _jsx(Image, {
+        src: __webpack_require__("./src/app/technology/images/mongodb.svg")
+      }), _jsx(Image, {
+        src: __webpack_require__("./src/app/technology/images/redis.svg")
+      }), _jsx(Image, {
         src: __webpack_require__("./src/app/technology/images/webpack.svg")
-      }), _jsx('img', {
-        height: 50,
-        src: __webpack_require__("./src/app/technology/images/postcss.svg")
-      }), _jsx('img', {
-        height: 50,
-        src: __webpack_require__("./src/app/technology/images/android.svg")
-      }), _jsx('img', {
-        height: 50,
-        src: __webpack_require__("./src/app/technology/images/apple.svg")
-      }), _jsx('img', {
-        height: 50,
-        src: __webpack_require__("./src/app/technology/images/linux.svg")
-      }))))));
+      }), _jsx(Image, {
+        src: __webpack_require__("./src/app/technology/images/electron.svg")
+      }), _jsx(Image, {
+        src: __webpack_require__("./src/app/technology/images/git.svg")
+      }))));
     }
   }]);
 
@@ -107004,7 +106990,7 @@ var Technology = function (_React$PureComponent) {
 
 /***/ }),
 
-/***/ "./src/content/experience/index.yaml":
+/***/ "./src/content/experience.yaml":
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -107138,23 +107124,12 @@ module.exports = [
 			"Development of a CRM targeted for marketing",
 			"Re-implementation of a learning portal in order to improve conversion rates"
 		]
-	},
-	{
-		"name": "Electronica LAB",
-		"description": null,
-		"range": "July 2001 - September 2001",
-		"tags": [
-			"Hardware hacking"
-		],
-		"challenges": [
-			"Assembling computers and fixing miscellaneous hardware parts on TVs, video consoles and mobile phones"
-		]
 	}
 ];
 
 /***/ }),
 
-/***/ "./src/content/recommendations/index.yaml":
+/***/ "./src/content/recommendations.yaml":
 /***/ (function(module, exports) {
 
 module.exports = [
