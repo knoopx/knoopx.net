@@ -6,10 +6,9 @@ import { AppContainer } from 'react-hot-loader'
 
 import App from './app'
 
-const colors = ['red', 'pink', 'grape', 'violet', 'indigo', 'blue', 'cyan', 'teal', 'green', 'lime', 'yellow', 'orange']
+const colors = ['red', 'pink', 'violet', 'indigo', 'blue', 'cyan', 'teal', 'lime', 'orange']
 const colorIndex = Math.floor((Math.random() * (colors.length - 1)))
 const baseColor = OpenColor[colors[colorIndex]]
-// const baseColor = OpenColor.teal
 
 function render() {
   ReactDOM.render(
