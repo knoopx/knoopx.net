@@ -56,10 +56,10 @@ module.exports = {
         use: ['json-loader', 'yaml-loader'],
       }, {
         test: /\.(svg)$/i,
-        use: 'file-loader?name=assets/[name].[ext]?[hash:20]',
+        use: 'file-loader?name=assets/[name]-[hash:20].[ext]',
       }, {
         test: /\.(gif|png|jpe?g)(\?.*)?$/i,
-        use: ['file-loader?name=assets/[name].[ext]?[hash:20]', 'image-maxsize-webpack-loader'],
+        use: ['file-loader?name=assets/[name]-[hash:20].[ext]', 'image-maxsize-webpack-loader'],
       },
     ],
   },
