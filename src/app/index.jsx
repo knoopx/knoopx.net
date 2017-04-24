@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet'
 import Header from './header'
 import About from './about'
 import Skills from './skills'
+import Technology from './technology'
 import Experience from './experience'
 import Talks from './talks'
 import OpenSource from './open-source'
@@ -27,6 +28,8 @@ export default class App extends React.PureComponent {
         <About />
         <Divider />
         <Skills />
+        <Divider />
+        <Technology />
         <Divider />
         <Experience />
         <Divider />

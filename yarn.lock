@@ -4378,6 +4378,10 @@ react-dom@^15.5.4:
     object-assign "^4.1.0"
     prop-types "~15.5.7"
 
+react-flip-move@^2.9.2:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/react-flip-move/-/react-flip-move-2.9.2.tgz#cac7b40c3a764b43495175bd5ad2588fd10b199c"
+
 react-headroom@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/react-headroom/-/react-headroom-2.1.4.tgz#9a227b05e375d9f7c8948d12fbb685b1135cb6bb"
