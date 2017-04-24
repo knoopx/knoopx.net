@@ -18,10 +18,6 @@ module.exports = {
     new ExtractTextPlugin('assets/bundle-[hash].css'),
     new webpack.NamedModulesPlugin(),
     new webpack.ExternalsPlugin('commonjs', []),
-    new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development',
-      DEBUG: false,
-    }),
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
