@@ -20,7 +20,7 @@ export default class Experience extends React.PureComponent {
             <h2 className="f3 mt1 fw4 black-50">more than ten years of web development</h2>
           </header>
 
-          <TimeLine activeColor={this.props.baseColor[6]}>
+          <TimeLine className="mb4" activeColor={this.props.baseColor[6]}>
             {experience.map(({ range, name, url, description, challenges, tags, images }, index) => (
               <TimeLineEvent
                 key={index}

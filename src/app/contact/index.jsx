@@ -15,7 +15,7 @@ export default class Contact extends React.PureComponent {
           <Container size="w-75-l">
             <div className="fl w-100 w-50-ns pr5-ns mb4 tc tl-m tl-l">
               <header className="mb4">
-                <h1 className="f1 mb1 white mt0">Contact</h1>
+                <h1 className="f1 mb1 white mt0-m mt0-l">Contact</h1>
                 <h2 className="f3 mt1 fw4 white-80">Let's get in touch</h2>
               </header>
               <div>
@@ -31,7 +31,7 @@ export default class Contact extends React.PureComponent {
               </div>
             </div>
 
-            <div className="fl w-100 w-50-ns">
+            <div className="fl w-100 w-50-ns mb4">
               <form className="measure" action="https://formspree.io/knoopx@gmail.com" method="post">
                 <div className="mb3">
                   <label htmlFor="name" className="f6 b db mb2">Name</label>
