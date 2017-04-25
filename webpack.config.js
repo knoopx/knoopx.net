@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 const { productName } = require('./package.json')
 
 module.exports = {
@@ -18,6 +19,7 @@ module.exports = {
     new ExtractTextPlugin('assets/bundle-[hash].css'),
     new webpack.NamedModulesPlugin(),
     new webpack.ExternalsPlugin('commonjs', []),
+    new CompressionPlugin(),
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),

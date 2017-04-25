@@ -6,7 +6,7 @@ import { observer } from 'mobx-react'
 import FaStar from 'react-icons/lib/fa/star'
 import FaCodeFork from 'react-icons/lib/fa/code-fork'
 
-import Activity from 'react-activity'
+import { Bounce } from 'react-activity'
 
 import Link from 'ui/link'
 
@@ -45,7 +45,7 @@ export default class Projects extends React.PureComponent {
     if (this.isLoading) {
       return (
         <div className="flex justify-center items-center h4">
-          <Activity.Bounce size={22} />
+          <Bounce size={22} />
         </div>
       )
     }

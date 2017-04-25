@@ -3,7 +3,7 @@
   "scripts": {
     "start": "webpack-dev-server --hot",
     "clean": "rimraf dist",
-    "build": "yarn run clean && webpack -p",
+    "build": "yarn run clean && webpack -p --progress",
     "push": "gh-pages -d dist",
     "deploy": "yarn run build && yarn run push"
   },
@@ -34,6 +34,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-optimize": "^1.0.1",
     "babel-preset-stage-1": "^6.24.1",
+    "compression-webpack-plugin": "^0.4.0",
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",

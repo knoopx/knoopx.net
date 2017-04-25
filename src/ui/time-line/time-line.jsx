@@ -1,7 +1,7 @@
 import React from 'react'
 import OpenColor from 'open-color'
 import { findDOMNode } from 'react-dom'
-import { sortBy } from 'lodash'
+import sortBy from 'lodash/sortBy'
 
 export default class TimeLine extends React.PureComponent {
   static defaultProps = {
