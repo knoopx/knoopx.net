@@ -45,7 +45,7 @@ export default class Contact extends React.PureComponent {
                   <label htmlFor="message" className="f6 b db mb2">Message</label>
                   <textarea name="message" required rows="6" className="db border-box w-100 ba b--white-20 pa2 br2 mb2" />
                 </div>
-                <input type="submit" value="Send" className="db input-reset bg-transparent pointer ph5 pv2 white b br-pill ba ba-2 b--white w-100" />
+                <input type="submit" value="Send" className="db input-reset bg-transparent pointer ph5 pv2 white b br-pill ba ba-2 b--white w-100 f5" />
               </form>
             </div>
           </Container>

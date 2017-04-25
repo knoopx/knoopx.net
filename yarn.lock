@@ -278,7 +278,7 @@ babel-core@^6.24.1:
     slash "^1.0.0"
     source-map "^0.5.0"
 
-babel-eslint@^7.2.2:
+babel-eslint@^7.2.3:
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-7.2.3.tgz#b2fe2d80126470f5c19442dc757253a897710827"
   dependencies:
@@ -430,14 +430,13 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-loader@^6.4.1:
-  version "6.4.1"
-  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-6.4.1.tgz#0b34112d5b0748a8dcdbf51acf6f9bd42d50b8ca"
+babel-loader@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-7.0.0.tgz#2e43a66bee1fff4470533d0402c8a4532fafbaf7"
   dependencies:
     find-cache-dir "^0.1.1"
-    loader-utils "^0.2.16"
+    loader-utils "^1.0.2"
     mkdirp "^0.5.1"
-    object-assign "^4.0.1"
 
 babel-messages@^6.23.0:
   version "6.23.0"
@@ -4391,7 +4390,7 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-activity@^1.0.16:
+react-activity@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/react-activity/-/react-activity-1.1.2.tgz#e0e32c6334ea9fac1674274476df29bd92780603"
   dependencies:
@@ -4414,7 +4413,7 @@ react-flip-move@^2.9.2:
   version "2.9.2"
   resolved "https://registry.yarnpkg.com/react-flip-move/-/react-flip-move-2.9.2.tgz#cac7b40c3a764b43495175bd5ad2588fd10b199c"
 
-react-headroom@^2.1.4:
+react-headroom@^2.1.5:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/react-headroom/-/react-headroom-2.1.5.tgz#7db2cd9dae597fccc0a010281e55a649e668faba"
   dependencies:
@@ -4452,7 +4451,7 @@ react-icons@^2.2.3:
   dependencies:
     react-icon-base "2.0.4"
 
-react-move@^1.0.1:
+react-move@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/react-move/-/react-move-1.1.6.tgz#55f9e05b240a1dc4136cbe39163d7c2bce848a0c"
   dependencies:
@@ -5108,9 +5107,9 @@ table@^3.7.8:
     slice-ansi "0.0.4"
     string-width "^2.0.0"
 
-tachyons@4.6.2:
-  version "4.6.2"
-  resolved "https://registry.yarnpkg.com/tachyons/-/tachyons-4.6.2.tgz#cf006fd516763e735b33565fc21b8b3616a012c8"
+tachyons@4.7.1:
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/tachyons/-/tachyons-4.7.1.tgz#2ca7295f3eb081470e54d23ef94fffe4322153b4"
 
 tapable@^0.2.5, tapable@~0.2.5:
   version "0.2.6"
@@ -5377,7 +5376,7 @@ webpack-dev-middleware@^1.10.2:
     path-is-absolute "^1.0.0"
     range-parser "^1.0.3"
 
-webpack-dev-server@^2.4.2:
+webpack-dev-server@^2.4.4:
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.4.4.tgz#1adb41640970421ec7b866e82384e8cebeed85de"
   dependencies:
