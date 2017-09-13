@@ -1,11 +1,12 @@
 {
   "presets": [
     "react",
-    ["latest", {
-      "es2015": {
-        "loose": true,
-        "modules": false,
-      },
+    ["env", {
+      "modules": false,
+      "loose": true,
+      "targets": {
+        "browsers": ["last 2 versions", "safari >= 7"]
+      }
     }],
     "stage-1"
   ],
