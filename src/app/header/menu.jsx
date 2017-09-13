@@ -26,7 +26,7 @@ class MenuItem extends React.PureComponent {
 export default class Menu extends React.PureComponent {
   render() {
     return (
-      <nav className="flex items-center mv2 mv0-l mv0-m overflow-x-scroll-ns nowrap overflow-x-auto">
+      <nav className="flex items-center mv2 mv0-l mv0-m nowrap overflow-x-auto">
         <MenuItem onClick={() => goToAnchor('skills')}>Skills</MenuItem>
         <MenuItem onClick={() => goToAnchor('experience')}>Experience</MenuItem>
         <MenuItem onClick={() => goToAnchor('open-source')}>Open Source</MenuItem>
