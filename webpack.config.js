@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const HappyPack = require('happypack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
@@ -15,6 +16,7 @@ module.exports = {
   ],
 
   plugins: [
+    new HappyPack({ threads: 4, loaders: ['babel-loader'] }),
     new HtmlWebpackPlugin({ title: productName, template: 'src/index.ejs' }),
     new ExtractTextPlugin('assets/bundle-[hash].css'),
     new webpack.NamedModulesPlugin(),
@@ -46,7 +48,7 @@ module.exports = {
         }),
       }, {
         test: /\.jsx?$/,
-        use: 'babel-loader',
+        use: 'happypack/loader',
         include: [
           path.resolve('./src'),
         ],
