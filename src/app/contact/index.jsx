@@ -32,7 +32,7 @@ export default class Contact extends React.PureComponent {
             </div>
 
             <div className="fl w-100 w-50-ns mb4">
-              <form className="measure" action="https://formspree.io/knoopx@gmail.com" method="post">
+              <form className="measure" action="https://formspree.io/contact@knoopx.net" method="post">
                 <div className="mb3">
                   <label htmlFor="name" className="f6 b db mb2">Name</label>
                   <input type="text" name="name" required className="db border-box w-100 ba b--white-20 pa2 br2 mb2" />

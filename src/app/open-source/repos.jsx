@@ -11,7 +11,7 @@ import { Bounce } from 'react-activity'
 import Link from 'ui/link'
 
 @observer
-export default class Projects extends React.PureComponent {
+export default class Projects extends React.Component {
   static defaultProps = {
     limit: 8,
     username: 'knoopx',
