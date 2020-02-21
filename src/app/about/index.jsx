@@ -1,15 +1,16 @@
 import React from "react"
-import { inject } from "mobx-react"
 import { animated } from "react-spring"
 
 import usePopSpring from "hooks/usePopSpring"
 import { Container } from "ui/layout"
+import useTheme from "hooks/useTheme"
 
-const About = (props) => {
+const About = () => {
   const spring = usePopSpring()
+  const { baseColor } = useTheme()
 
   return (
-    <div className="ts white" style={{ backgroundColor: props.baseColor[6] }}>
+    <div className="ts white" style={{ backgroundColor: baseColor[6] }}>
       <Container>
         <animated.div
           style={spring}
@@ -56,4 +57,4 @@ const About = (props) => {
   )
 }
 
-export default inject("baseColor")(About)
+export default About

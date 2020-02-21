@@ -1,9 +1,11 @@
 import React from "react"
-import PropTypes from "prop-types"
 import classNames from "classnames"
-import { inject } from "mobx-react"
 
-const Button = ({ baseColor, className, ...props }) => {
+import useTheme from "hooks/useTheme"
+
+const Button = ({ className, ...props }) => {
+  const { baseColor } = useTheme()
+
   return (
     <a
       className={classNames(
@@ -16,8 +18,4 @@ const Button = ({ baseColor, className, ...props }) => {
   )
 }
 
-Button.propTypes = {
-  baseColor: PropTypes.array.isRequired,
-}
-
-export default inject("baseColor")(Button)
+export default Button

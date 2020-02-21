@@ -1,8 +1,8 @@
 import React from "react"
-import { inject } from "mobx-react"
 import { Helmet } from "react-helmet"
 
 import { Divider } from "ui/layout"
+import useTheme from "hooks/useTheme"
 
 import Header from "./header"
 import About from "./about"
@@ -15,7 +15,9 @@ import Recommendations from "./recommendations"
 import Contact from "./contact"
 import Footer from "./footer"
 
-const App = ({ baseColor }) => {
+const App = () => {
+  const { baseColor } = useTheme()
+
   return (
     <div className="overflow-hidden black-70 sans-serif">
       <Helmet>
@@ -43,4 +45,4 @@ const App = ({ baseColor }) => {
   )
 }
 
-export default inject("baseColor")(App)
+export default App

@@ -1,9 +1,10 @@
 const path = require("path")
-const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const ExtractCssChunks = require("extract-css-chunks-webpack-plugin")
 const CompressionPlugin = require("compression-webpack-plugin")
+const purgecss = require("@fullhuman/postcss-purgecss")
 
 const { productName } = require("./package.json")
 
@@ -19,7 +20,6 @@ module.exports = (env, argv) => {
       "file-loader?name=[name]!./src/CNAME",
     ],
     plugins: [
-      !isDevelopment && new CleanWebpackPlugin(),
       isDevelopment &&
         new ReactRefreshWebpackPlugin({ disableRefreshCheck: true }),
       new HtmlWebpackPlugin({ title: productName, template: "src/index.ejs" }),
@@ -27,11 +27,11 @@ module.exports = (env, argv) => {
         filename: isDevelopment ? "[name].css" : "[hash:8].css",
         chunkFilename: isDevelopment ? "[name].[id].css" : "[hash:8].[id].css",
       }),
-      new CompressionPlugin(),
+      !isDevelopment && new CompressionPlugin(),
     ].filter(Boolean),
     output: {
       path: path.resolve(__dirname, "dist"),
-      filename: isDevelopment ? "[name].js" : "[hash:8].js",
+      filename: isDevelopment ? "[name].js" : "[chunkhash:8].js",
     },
     resolve: {
       modules: [path.resolve(__dirname, "./src"), "node_modules"],
@@ -53,6 +53,17 @@ module.exports = (env, argv) => {
                 plugins: [
                   require("postcss-import"),
                   require("postcss-cssnext"),
+                  purgecss({
+                    whitelist: ["html", "body"],
+                    content: [path.join(__dirname, "./src/**/*.{js,jsx}")],
+                    extractors: [
+                      {
+                        extractor: (content) =>
+                          content.match(/[A-Za-z0-9-_:/]+/g),
+                        extensions: ["js", "jsx"],
+                      },
+                    ],
+                  }),
                 ],
               },
             },
@@ -60,7 +71,27 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.jsx?$/,
-          use: "babel-loader",
+          use: {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                "@babel/preset-react",
+                [
+                  "@babel/preset-env",
+                  {
+                    modules: false,
+                    loose: true,
+                  },
+                ],
+              ],
+              plugins: [isDevelopment && "react-refresh/babel"].filter(Boolean),
+              env: {
+                production: {
+                  presets: ["react-optimize"],
+                },
+              },
+            },
+          },
           include: [path.resolve("./src")],
         },
         {
@@ -72,7 +103,7 @@ module.exports = (env, argv) => {
           use: {
             loader: "file-loader",
             options: {
-              name: "assets/[name]-[hash:20].[ext]",
+              name: "assets/[name]-[hash:8].[ext]",
               esModule: false,
             },
           },
@@ -83,7 +114,7 @@ module.exports = (env, argv) => {
             {
               loader: "file-loader",
               options: {
-                name: "assets/[name]-[hash:20].[ext]",
+                name: "assets/[name]-[hash:8].[ext]",
                 esModule: false,
               },
             },

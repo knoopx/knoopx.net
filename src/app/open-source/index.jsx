@@ -24,7 +24,7 @@ const Project = ({ name, url, children, image }) => {
   )
 }
 
-const OpenSource = (props) => {
+const OpenSource = () => {
   return (
     <ScrollableAnchor id="open-source">
       <div className="bg-near-white">
@@ -32,8 +32,7 @@ const OpenSource = (props) => {
           <header className="mb4 tc">
             <h1 className="black-90 f1 mb1">Open Source</h1>
             <h2 className="black-50 f3 fw4 mt1">
-              projects made with
-              <FaHeart className="red" />
+              projects made with <FaHeart className="red" />
             </h2>
           </header>
 

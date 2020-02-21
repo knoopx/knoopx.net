@@ -21,14 +21,20 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
 
-    - name: build
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: prepare
       run: |
+        sudo apt-get install -y graphicsmagick
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git worktree add -f dist gh-pages
-        yarn web:compile
-        cd dist/web
-        git commit -a -m "$tag"
-        git push -f
+        git fetch --no-tags --prune --depth=1 origin gh-pages
+        git worktree add dist gh-pages
+        yarn install
+
+    - name: build
+      run: |
+        rm -rf dist/**/*
+        yarn build
+        cd dist
+        git add -f .
+        git commit -m "$(date +%Y%m%d)"
+        git push

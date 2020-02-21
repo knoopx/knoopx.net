@@ -1,5 +1,5 @@
 import React from "react"
-import { Animate } from "react-move"
+import { useSpring, animated } from "react-spring"
 
 import Marker from "./marker"
 
@@ -13,7 +13,7 @@ const TimeLineEvent = (
     gutterSize,
     lineWidth,
     markerSize,
-    color,
+    color: baseColor,
     activeColor,
     children,
     ...props
@@ -32,58 +32,59 @@ const TimeLineEvent = (
       return "transparent"
     }
 
-    return color
+    return baseColor
   }
 
-  return (
-    <Animate
-      ref={ref}
-      data={{
-        scale: isActive ? 1.1 : 1,
-        color: index === activeIndex ? activeColor : color,
-        lineColor: getLineColor(index, activeIndex),
-        prevLineColor: getLineColor(index, activeIndex - 1),
-      }}
-    >
-      {({ scale, color, lineColor, prevLineColor }) => (
-        <div className="relative flex">
-          <div
-            style={{
-              width: lineWidth,
-              background: isLast
-                ? `linear-gradient(${color} 60%, transparent)`
-                : `linear-gradient(${lineColor} 60%, ${prevLineColor})`,
-              marginTop: markerSize - lineWidth / 2,
-              marginBottom: -(lineWidth / 2),
-              marginLeft: markerSize / 2,
-            }}
-          />
+  const color = index === activeIndex ? activeColor : baseColor
+  const lineColor = getLineColor(index, activeIndex)
+  const prevLineColor = getLineColor(index, activeIndex - 1)
 
-          <Marker
-            color={color}
-            size={markerSize}
-            borderWidth={lineWidth}
-            isActive={isActive}
-            style={{
-              position: "absolute",
-              top: 0,
-              left: lineWidth / 2,
-              transform: `scale(${scale})`,
-            }}
-          />
-          <div
-            style={{
-              flex: 1,
-              paddingLeft: gutterSize,
-              paddingBottom: gutterSize,
-            }}
-          >
-            <div style={{ lineHeight: `${markerSize}px` }}>{right}</div>
-            {children}
-          </div>
-        </div>
-      )}
-    </Animate>
+  const spring = useSpring({
+    background: isLast
+      ? `linear-gradient(${color} 60%, transparent)`
+      : `linear-gradient(${lineColor} 60%, ${prevLineColor})`,
+  })
+
+  const markerSpring = useSpring({
+    transform: `scale(${isActive ? 1.1 : 1})`,
+  })
+
+  return (
+    <div ref={ref} className="relative flex">
+      <animated.div
+        style={{
+          width: lineWidth,
+          marginTop: markerSize - lineWidth / 2,
+          marginBottom: -(lineWidth / 2),
+          marginLeft: markerSize / 2,
+          ...spring,
+        }}
+      />
+
+      <Marker
+        color={index === activeIndex ? activeColor : baseColor}
+        size={markerSize}
+        borderWidth={lineWidth}
+        isActive={isActive}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: lineWidth / 2,
+          ...markerSpring,
+        }}
+      />
+
+      <div
+        style={{
+          flex: 1,
+          paddingLeft: gutterSize,
+          paddingBottom: gutterSize,
+        }}
+      >
+        <div style={{ lineHeight: `${markerSize}px` }}>{right}</div>
+        {children}
+      </div>
+    </div>
   )
 }
 

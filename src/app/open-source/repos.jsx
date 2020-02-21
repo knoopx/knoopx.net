@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { observer } from "mobx-react"
 import { FaStar, FaCode } from "react-icons/fa"
 import { Bounce } from "react-activity"
 
@@ -76,4 +75,4 @@ const Projects = ({ limit = 8, username = "knoopx" }) => {
   )
 }
 
-export default observer(Projects)
+export default Projects

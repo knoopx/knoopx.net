@@ -9,7 +9,7 @@ import {
 
 import { Container } from "ui/layout"
 
-const Contact = (props) => (
+const Contact = () => (
   <ScrollableAnchor id="contact">
     <div className="bg-black-80 b--white-10 bb white-80">
       <Container size="w-75-l">

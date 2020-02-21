@@ -1,9 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import ScrollableAnchor from "react-scrollable-anchor"
 import classNames from "classnames"
-import { inject, observer, useLocalStore } from "mobx-react"
 import FlipMove from "react-flip-move"
 
+import useTheme from "hooks/useTheme"
 import Pill from "ui/pill"
 import { Container } from "ui/layout"
 
@@ -73,9 +73,10 @@ const technologies = {
 
 const categories = Object.keys(technologies)
 
-const Technology = ({ baseColor }) => {
-  const store = useLocalStore(() => ({ category: categories[0] }))
-  const children = technologies[store.category]
+const Technology = () => {
+  const { baseColor } = useTheme()
+  const [activeCategory, setActiveCategory] = useState(categories[0])
+  const children = technologies[activeCategory]
   return (
     <ScrollableAnchor id="technology">
       <Container size="w-75-ns">
@@ -86,12 +87,12 @@ const Technology = ({ baseColor }) => {
 
         <nav className="flex justify-center mb3">
           {categories.map((key, i) => {
-            const isActive = key === store.category
+            const isActive = key === activeCategory
             return (
               <div
                 key={key}
                 onClick={() => {
-                  store.category = key
+                  setActiveCategory(key)
                 }}
                 className={classNames(
                   "br-pill b dib ph3 pv2 ba tc pointer truncate",
@@ -136,7 +137,7 @@ const Technology = ({ baseColor }) => {
               },
             }}
           >
-            {technologies[store.category].sort().map((key, i) => (
+            {technologies[activeCategory].sort().map((key, i) => (
               <div
                 key={key}
                 className={classNames("dib mv1", {
@@ -153,4 +154,4 @@ const Technology = ({ baseColor }) => {
   )
 }
 
-export default inject("baseColor")(observer(Technology))
+export default Technology

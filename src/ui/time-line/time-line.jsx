@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react"
 import OpenColor from "open-color"
 import { findDOMNode } from "react-dom"
-import sortBy from "lodash/sortBy"
+
+const distanceFrom = (offset) =>
+  Math.abs(offset - window.scrollY - window.innerHeight / 2)
 
 const TimeLine = ({
   color = OpenColor.gray[5],
@@ -17,13 +19,12 @@ const TimeLine = ({
   const nodes = []
   const [activeIndex, setActiveIndex] = useState(-1)
 
-  const onScroll = (e) => {
+  const onScroll = () => {
     const offsets = nodes.map((node) => node.offsetTop)
-    const index = offsets.indexOf(
-      sortBy(offsets, (offset) =>
-        Math.abs(offset - window.scrollY - window.innerHeight / 2),
-      )[0],
-    )
+    const sorted = offsets
+      .concat()
+      .sort((a, b) => distanceFrom(a) - distanceFrom(b))
+    const index = offsets.indexOf(sorted[0])
     setActiveIndex(index)
   }
 

@@ -1,9 +1,10 @@
 import React from "react"
-import PropTypes from "prop-types"
 import classNames from "classnames"
-import { inject } from "mobx-react"
 
-const Link = ({ baseColor, className, ...props }) => {
+import useTheme from "hooks/useTheme"
+
+const Link = ({ className, ...props }) => {
+  const { baseColor } = useTheme()
   return (
     <a
       className={classNames(className)}
@@ -14,8 +15,4 @@ const Link = ({ baseColor, className, ...props }) => {
   )
 }
 
-Link.propTypes = {
-  baseColor: PropTypes.array.isRequired,
-}
-
-export default inject("baseColor")(Link)
+export default Link

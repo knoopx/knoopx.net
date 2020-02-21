@@ -1,2 +1,4 @@
-export TimeLine from './time-line'
-export TimeLineEvent from './timeline-event'
+import TimeLine from "./time-line"
+import TimeLineEvent from "./timeline-event"
+
+export { TimeLine, TimeLineEvent }

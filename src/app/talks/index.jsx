@@ -1,66 +1,50 @@
-import React from "react"
+import React, { useRef, useState } from "react"
 import ScrollableAnchor from "react-scrollable-anchor"
-import { inject, useLocalStore } from "mobx-react"
-import { Animate } from "react-move"
+import { useSpring, animated } from "react-spring"
 
+import useHover from "hooks/useHover"
+import useTheme from "hooks/useTheme"
 import Link from "ui/link"
 import { Container } from "ui/layout"
 
-const Talk = inject("baseColor")((props) => {
-  const store = useLocalStore(() => ({
-    isHovered: false,
-    rotate: -10 + Math.random() * 5,
-  }))
+const Talk = ({ title, url, image, children }) => {
+  const ref = useRef()
+  const { baseColor } = useTheme()
+  const isHovered = useHover(ref)
+  const rotate = -10 + Math.random() * 5
 
-  const { title, url, image, children, baseColor } = props
   const backgroundColor = baseColor[7]
-
+  const spring = useSpring({
+    transform: `rotate(${rotate}deg) scale(${isHovered ? 1.6 : 1.5})`,
+    filter: `blur(${isHovered ? 1 : 2}px) contrast(30%)`,
+  })
   return (
-    <Animate
-      data={{
-        scale: store.isHovered ? 1.6 : 1.5,
-        blur: store.isHovered ? 1 : 2,
-      }}
-    >
-      {({ scale, blur }) => (
-        <a
-          className="w-100 w-50-ns db fl-ns link mb2 pa2"
-          href={url}
-          onMouseOver={() => {
-            store.isHovered = true
+    <a ref={ref} className="w-100 w-50-ns db fl-ns link mb2 pa2" href={url}>
+      <div className="overflow-hidden aspect-ratio aspect-ratio--1x1 br3">
+        <animated.div
+          className="aspect-ratio--object"
+          style={{
+            background: `url("${image}") center no-repeat`,
+            backgroundSize: "contain",
+            ...spring,
           }}
-          onMouseOut={() => {
-            store.isHovered = false
-          }}
-        >
-          <div className="overflow-hidden aspect-ratio aspect-ratio--1x1 br3">
-            <div
-              className="aspect-ratio--object"
-              style={{
-                background: `url("${image}") center no-repeat`,
-                backgroundSize: "contain",
-                transform: `rotate(${store.rotate}deg) scale(${scale})`,
-                filter: `blur(${blur}px) contrast(30%)`,
-              }}
-            />
-            <div
-              className="aspect-ratio--object"
-              style={{ backgroundColor, opacity: 0.8 }}
-            />
-            <div className="flex items-center justify-center w-100 aspect-ratio--object pa4-m pa5 tc ts white">
-              <div className="measure">
-                <h3 className="f3 fw5">{title}</h3>
-                <p className="lh-copy">{children}</p>
-              </div>
-            </div>
+        />
+        <div
+          className="aspect-ratio--object"
+          style={{ backgroundColor, opacity: 0.8 }}
+        />
+        <div className="flex items-center justify-center w-100 aspect-ratio--object pa4-m pa5 tc ts white">
+          <div className="measure">
+            <h3 className="f3 fw5">{title}</h3>
+            <p className="lh-copy">{children}</p>
           </div>
-        </a>
-      )}
-    </Animate>
+        </div>
+      </div>
+    </a>
   )
-})
+}
 
-const Talks = (props) => {
+const Talks = () => {
   return (
     <ScrollableAnchor id="talks">
       <Container size="w-75-l">

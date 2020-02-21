@@ -8,7 +8,7 @@ const MenuItem = (props) => {
   const ref = useRef()
   const isHovered = useHover(ref)
   const spring = useSpring({
-    borderColor: isHovered ? `rgba(255,255,255,1)` : `rgba(255,255,255,0)`,
+    borderColor: `rgba(255,255,255,${isHovered ? 1 : 0})`,
   })
   return (
     <animated.div
