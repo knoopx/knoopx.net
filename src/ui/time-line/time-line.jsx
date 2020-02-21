@@ -1,59 +1,64 @@
-import React from 'react'
-import OpenColor from 'open-color'
-import { findDOMNode } from 'react-dom'
-import sortBy from 'lodash/sortBy'
+import React, { useState, useEffect } from "react"
+import OpenColor from "open-color"
+import { findDOMNode } from "react-dom"
+import sortBy from "lodash/sortBy"
 
-export default class TimeLine extends React.PureComponent {
-  static defaultProps = {
-    color: OpenColor.gray[5],
-    gutterSize: 40,
-    lineWidth: 8,
-    markerSize: 36,
-  }
+const TimeLine = ({
+  color = OpenColor.gray[5],
+  gutterSize = 40,
+  lineWidth = 8,
+  markerSize = 36,
+  markerColor,
+  baseColor,
+  activeColor,
+  children,
+  ...props
+}) => {
+  const nodes = []
+  const [activeIndex, setActiveIndex] = useState(-1)
 
-  nodes = []
-  state = { activeIndex: -1 }
-
-  componentWillMount() {
-    window.addEventListener('scroll', this.onScroll)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.onScroll)
-  }
-
-  render() {
-    const { color, markerColor, baseColor, activeColor, children, gutterSize, lineWidth, markerSize, ...props } = this.props
-
-    return (
-      <div {...props}>
-        {
-          React.Children.map(children, (child, index) => (
-            React.cloneElement(child, {
-              ref: this.appendNode,
-              index,
-              activeIndex: this.state.activeIndex,
-              lastIndex: children.length - 1,
-              color,
-              gutterSize,
-              lineWidth,
-              markerSize,
-              activeColor,
-              ...child.props,
-            })
-          ))
-        }
-      </div>
+  const onScroll = (e) => {
+    const offsets = nodes.map((node) => node.offsetTop)
+    const index = offsets.indexOf(
+      sortBy(offsets, (offset) =>
+        Math.abs(offset - window.scrollY - window.innerHeight / 2),
+      )[0],
     )
+    setActiveIndex(index)
   }
 
-  appendNode = (node) => {
-    this.nodes.push(findDOMNode(node))
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll)
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+    }
+  }, [])
+
+  const appendRef = (ref) => {
+    const node = findDOMNode(ref)
+    if (node) {
+      nodes.push(node)
+    }
   }
 
-  onScroll = (e) => {
-    const offsets = this.nodes.map(node => node.offsetTop)
-    const activeIndex = offsets.indexOf(sortBy(offsets, offset => Math.abs(offset - window.scrollY - (window.innerHeight / 2)))[0])
-    this.setState({ activeIndex })
-  }
+  return (
+    <div {...props}>
+      {React.Children.map(children, (child, index) =>
+        React.cloneElement(child, {
+          ref: appendRef,
+          index,
+          activeIndex,
+          lastIndex: children.length - 1,
+          color,
+          gutterSize,
+          lineWidth,
+          markerSize,
+          activeColor,
+          ...child.props,
+        }),
+      )}
+    </div>
+  )
 }
+
+export default TimeLine

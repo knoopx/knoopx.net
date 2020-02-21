@@ -1,89 +1,79 @@
-import React from 'react'
+import React, { useState, useEffect } from "react"
+import { observer } from "mobx-react"
+import { FaStar, FaCode } from "react-icons/fa"
+import { Bounce } from "react-activity"
 
-import { observable } from 'mobx'
-import { observer } from 'mobx-react'
+import Link from "ui/link"
 
-import FaStar from 'react-icons/lib/fa/star'
-import FaCodeFork from 'react-icons/lib/fa/code-fork'
+const Projects = ({ limit = 8, username = "knoopx" }) => {
+  const [hasError, setError] = useState(false)
+  const [isLoading, setLoading] = useState(false)
+  const [repos, setRepos] = useState([])
 
-import { Bounce } from 'react-activity'
-
-import Link from 'ui/link'
-
-@observer
-export default class Projects extends React.Component {
-  static defaultProps = {
-    limit: 8,
-    username: 'knoopx',
-  }
-
-  @observable repos = []
-  @observable isLoading = false
-  @observable hasError = false
-
-  componentWillMount() {
-    this.fetch()
-  }
-
-  fetch() {
-    this.isLoading = true
-    fetch(`https://api.github.com/users/${this.props.username}/repos?sort=pushed`)
-      .then(res => (
+  const fetchRepos = () => {
+    setLoading(true)
+    fetch(`https://api.github.com/users/${username}/repos?sort=pushed`)
+      .then((res) =>
         res.json().then((json) => {
-          this.isLoading = false
-          this.hasError = false
-          this.repos = json
-        })
-      )).catch((err) => {
+          setLoading(false)
+          setError(false)
+          setRepos(json)
+        }),
+      )
+      .catch((err) => {
         console.error(err)
-        this.hasError = true
-        this.isLoading = false
+        setError(true)
+        setLoading(false)
       })
   }
 
-  render() {
-    if (this.isLoading) {
-      return (
-        <div className="flex justify-center items-center h4">
-          <Bounce size={22} />
-        </div>
-      )
-    }
+  useEffect(() => {
+    fetchRepos()
+  }, [])
 
-    if (this.hasError) {
-      return (
-        <div className="mb3 mb4-ns flex justify-center items-center ba b--red br2">
-          <h5 className="red">Unable to fetch repositories from GitHub</h5>
-        </div>
-      )
-    }
-
-    const repos = this.repos
-      .filter(repo => !repo.fork)
-      .slice(0, this.props.limit)
-
+  if (isLoading) {
     return (
-      <div className="ba br2 bg-white b--black-10 mb3 mb4-ns">
-        {repos.map(repo => (
-          <div key={repo.id} className="pa3 bb b--black-10">
-            <div>
-              <Link href={repo.html_url}>{repo.name}</Link>
-              <p className="lh-copy measure f6 black-70 mt1 truncate">{repo.description}</p>
-            </div>
-            <div className="dt f6 black-40 dt--fixed">
-              <div className="dtc">{repo.language}</div>
-              <div className="dtc">
-                <div className="flex justify-end items-end">
-                  <FaStar className="mr1" />
-                  <span className="mr2">{repo.stargazers_count}</span>
-                  <FaCodeFork className="mr1" />
-                  {repo.forks_count}
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className="flex items-center justify-center h4">
+        <Bounce size={22} />
       </div>
     )
   }
+
+  if (hasError) {
+    return (
+      <div className="flex items-center justify-center b--red ba br2 mb3 mb4-ns">
+        <h5 className="red">Unable to fetch repositories from GitHub</h5>
+      </div>
+    )
+  }
+
+  const sourceRepos = repos.filter((repo) => !repo.fork).slice(0, limit)
+
+  return (
+    <div className="bg-white b--black-10 ba br2 mb3 mb4-ns">
+      {sourceRepos.map((repo) => (
+        <div key={repo.id} className="b--black-10 bb pa3">
+          <div>
+            <Link href={repo.html_url}>{repo.name}</Link>
+            <p className="truncate black-70 f6 lh-copy measure mt1">
+              {repo.description}
+            </p>
+          </div>
+          <div className="dt--fixed black-40 dt f6">
+            <div className="dtc">{repo.language}</div>
+            <div className="dtc">
+              <div className="flex items-end justify-end">
+                <FaStar className="mr1" />
+                <span className="mr2">{repo.stargazers_count}</span>
+                <FaCode className="mr1" />
+                {repo.forks_count}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
 }
+
+export default observer(Projects)

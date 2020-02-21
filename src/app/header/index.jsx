@@ -4,22 +4,19 @@ import { inject } from 'mobx-react'
 
 import Menu from './menu'
 
-@inject('baseColor')
-export default class Header extends React.PureComponent {
-  render() {
-    return (
-      <Headroom>
-        <header className="white" style={{ backgroundColor: this.props.baseColor[6] }}>
-          <div className="bb bw1 cf" style={{ borderColor: this.props.baseColor[5] }}>
-            <div className="pa3 pa4-m pa5-l mw9 center pv0 pv0-l pv0-m pv0-s flex-ns">
-              <div className="flex-ns flex-wrap items-baseline pv3 flex-auto dn">
-                <h1 className="mr3-ns w-100 w-auto-l w-auto-m mv0">Víctor Martínez</h1>
-              </div>
-              <Menu />
-            </div>
+const Header = (props) => (
+  <Headroom>
+    <header className="white" style={{ backgroundColor: props.baseColor[6] }}>
+      <div className="bb bw1 cf" style={{ borderColor: props.baseColor[5] }}>
+        <div className="pa3 pa4-m pa5-l mw9 center pv0 pv0-l pv0-m pv0-s flex-ns">
+          <div className="flex-ns flex-wrap items-baseline pv3 flex-auto dn">
+            <h1 className="mr3-ns w-100 w-auto-l w-auto-m mv0">Víctor Martínez</h1>
           </div>
-        </header>
-      </Headroom>
-    )
-  }
-}
+          <Menu />
+        </div>
+      </div>
+    </header>
+  </Headroom>
+)
+
+export default inject('baseColor')(Header)

@@ -1,10 +1,18 @@
-import React from 'react'
-import OpenColor from 'open-color'
-export default class Pill extends React.PureComponent {
-  render() {
-    const { className, style, ...props } = this.props
-    return (
-      <div className={`flex items-center justify-center ph3 pv1 white f7 b br-pill ${className}`} style={{ backgroundColor: OpenColor.gray[6], ...style }} {...props} />
-    )
-  }
+import React from "react"
+import classNames from "classnames"
+import OpenColor from "open-color"
+
+const Pill = ({ className, style, ...props }) => {
+  return (
+    <div
+      className={classNames(
+        `flex items-center justify-center b br-pill f7 ph3 pv1 white`,
+        className,
+      )}
+      style={{ backgroundColor: OpenColor.gray[6], ...style }}
+      {...props}
+    />
+  )
 }
+
+export default Pill
