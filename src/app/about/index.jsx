@@ -1,6 +1,5 @@
 import React from "react"
 import { animated } from "react-spring"
-
 import usePopSpring from "hooks/usePopSpring"
 import { Container } from "ui/layout"
 import useTheme from "hooks/useTheme"
@@ -35,18 +34,15 @@ const About = () => {
 
             <div className="f3 fw3 lh-copy measure">
               <p>
-                I'm a self-taught
-                <span className="fw6">computer hacker</span>. I build
-                <span className="fw6">successful</span> Internet businesses with
-                the
-                <span className="fw6">best-of-breed</span> languages and
-                libraries.
+                I'm a self-taught <span className="fw6">computer hacker</span>.
+                I build <span className="fw6">successful</span> Internet
+                businesses with the <span className="fw6">best-of-breed</span>{" "}
+                languages and libraries.
               </p>
               <p>
-                I develop both
-                <span className="fw6">back-end</span> and
-                <span className="fw6">front-end</span> and deliver
-                <span className="fw6">engaging</span> user experiences in a
+                I develop both <span className="fw6">back-end</span> and{" "}
+                <span className="fw6">front-end</span> and deliver{" "}
+                <span className="fw6">engaging</span> user experiences in a{" "}
                 <span className="fw6">timely manner</span>.
               </p>
             </div>
