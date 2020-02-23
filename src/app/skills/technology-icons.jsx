@@ -41,7 +41,8 @@ const TechnologyIcons = (props) => {
   }
 
   const trail = useTrail(images.length, {
-    config: { mass: 1, tension: 500, friction: 25 },
+    reverse: !isVisible,
+    config: { mass: 1, tension: 500, friction: 50 },
     opacity: isVisible ? 1 : 0,
     transform: `translateY(${isVisible ? 0 : -20}px)`,
     from: { opacity: 0, transform: `translateY(-20px)` },
