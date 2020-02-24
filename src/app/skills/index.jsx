@@ -1,5 +1,4 @@
 import React from "react"
-import ScrollableAnchor from "react-scrollable-anchor"
 
 import { Container } from "ui/layout"
 import Link from "ui/link"
@@ -17,7 +16,7 @@ const Block = ({ title, children }) => {
 
 const Skills = (props) => {
   return (
-    <ScrollableAnchor id="skills">
+    <section id="skills">
       <Container className="py-12">
         <header className="mb-12 text-center">
           <h1 className="mb-2 text-5xl text-gray-9 font-bold leading-none">
@@ -75,7 +74,7 @@ const Skills = (props) => {
 
         <TechnologyIcons />
       </Container>
-    </ScrollableAnchor>
+    </section>
   )
 }
 

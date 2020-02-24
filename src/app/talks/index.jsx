@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react"
-import ScrollableAnchor from "react-scrollable-anchor"
 import { useSpring, animated } from "react-spring"
 
 import useHover from "hooks/useHover"
@@ -47,7 +46,7 @@ const Talk = ({ title, url, image, children }) => {
 
 const Talks = () => {
   return (
-    <ScrollableAnchor id="talks">
+    <section id="talks">
       <Container className="py-12">
         <header className="mb-8 text-center">
           <h1 className="mb-1 mb-2 text-5xl text-gray-9 font-bold leading-none">
@@ -81,7 +80,7 @@ const Talks = () => {
           </Talk>
         </div>
       </Container>
-    </ScrollableAnchor>
+    </section>
   )
 }
 

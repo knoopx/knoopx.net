@@ -1,5 +1,4 @@
 import React from "react"
-import ScrollableAnchor from "react-scrollable-anchor"
 import { FaHeart } from "react-icons/fa"
 
 import { Container } from "ui/layout"
@@ -26,7 +25,7 @@ const Project = ({ name, url, children, image }) => {
 
 const OpenSource = () => {
   return (
-    <ScrollableAnchor id="open-source">
+    <section id="open-source">
       <div className="bg-gray-1">
         <Container className="py-12">
           <header className="mb-8 text-center">
@@ -89,7 +88,7 @@ const OpenSource = () => {
           </div>
         </Container>
       </div>
-    </ScrollableAnchor>
+    </section>
   )
 }
 

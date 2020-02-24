@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import ScrollableAnchor from "react-scrollable-anchor"
 import classNames from "classnames"
 import FlipMove from "react-flip-move"
 
@@ -78,7 +77,7 @@ const Technology = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0])
   const children = technologies[activeCategory]
   return (
-    <ScrollableAnchor id="technology">
+    <section id="technology">
       <Container className="py-12">
         <header className="mb-8 text-center">
           <h1 className="mb-1 mb-2 text-5xl text-gray-9 font-bold leading-none">
@@ -154,7 +153,7 @@ const Technology = () => {
           </FlipMove>
         </div>
       </Container>
-    </ScrollableAnchor>
+    </section>
   )
 }
 

@@ -1,8 +1,21 @@
 import React, { useRef } from "react"
 import { useSpring, animated } from "react-spring"
-import { goToAnchor } from "react-scrollable-anchor"
 
 import useHover from "hooks/useHover"
+
+const goToAnchor = (anchor, offset = 0) => {
+  try {
+    const node = document.querySelector(anchor)
+    if (node) {
+      window.scroll({
+        top: node.offsetTop - offset,
+        behavior: "smooth",
+      })
+    }
+  } catch (e) {
+    // ignore
+  }
+}
 
 const MenuItem = (props) => {
   const ref = useRef()
@@ -25,11 +38,11 @@ const MenuItem = (props) => {
 
 const Menu = () => (
   <nav className="flex items-center overflow-x-auto py-2 lg:py-0 leading-none whitespace-no-wrap">
-    <MenuItem onClick={() => goToAnchor("skills")}>Skills</MenuItem>
-    <MenuItem onClick={() => goToAnchor("experience")}>Experience</MenuItem>
-    <MenuItem onClick={() => goToAnchor("open-source")}>Open Source</MenuItem>
-    <MenuItem onClick={() => goToAnchor("talks")}>Talks</MenuItem>
-    <MenuItem onClick={() => goToAnchor("contact")}>Contact</MenuItem>
+    <MenuItem onClick={() => goToAnchor("#skills")}>Skills</MenuItem>
+    <MenuItem onClick={() => goToAnchor("#experience")}>Experience</MenuItem>
+    <MenuItem onClick={() => goToAnchor("#open-source")}>Open Source</MenuItem>
+    <MenuItem onClick={() => goToAnchor("#talks")}>Talks</MenuItem>
+    <MenuItem onClick={() => goToAnchor("#contact")}>Contact</MenuItem>
   </nav>
 )
 

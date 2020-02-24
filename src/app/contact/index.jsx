@@ -1,5 +1,4 @@
 import React from "react"
-import ScrollableAnchor from "react-scrollable-anchor"
 import {
   FaLinkedin,
   FaGithub,
@@ -10,7 +9,7 @@ import {
 import { Container } from "ui/layout"
 
 const Contact = () => (
-  <ScrollableAnchor id="contact">
+  <section id="contact">
     <div className="border-b-2 border-gray-7 bg-gray-8 text-gray-2">
       <Container className="py-12 lg:gap-12 lg:grid lg:grid-cols-2">
         <div className="text-center lg:text-left">
@@ -105,7 +104,7 @@ const Contact = () => (
         </div>
       </Container>
     </div>
-  </ScrollableAnchor>
+  </section>
 )
 
 export default Contact

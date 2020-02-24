@@ -1,5 +1,4 @@
 import React from "react"
-import ScrollableAnchor from "react-scrollable-anchor"
 
 import { Container } from "ui/layout"
 import { TimeLine, TimeLineEvent } from "ui/time-line"
@@ -10,7 +9,7 @@ import useTheme from "hooks/useTheme"
 const Experience = () => {
   const { baseColor } = useTheme()
   return (
-    <ScrollableAnchor id="experience">
+    <section id="experience">
       <Container className="py-12">
         <header className="mb-12 text-center">
           <h1 className="mb-1 mb-2 text-5xl text-gray-9 font-bold leading-none">
@@ -56,7 +55,7 @@ const Experience = () => {
           )}
         </TimeLine>
       </Container>
-    </ScrollableAnchor>
+    </section>
   )
 }
 export default Experience
