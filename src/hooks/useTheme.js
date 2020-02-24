@@ -23,4 +23,3 @@ const useTheme = () => {
 }
 
 export { useTheme, ThemeContext }
-export default useTheme

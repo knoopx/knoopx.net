@@ -4,7 +4,7 @@ import { Container } from "ui/layout"
 import { TimeLine, TimeLineEvent } from "ui/time-line"
 import TagList from "ui/tag-list"
 import experience from "content/experience"
-import useTheme from "hooks/useTheme"
+import { useTheme } from "hooks/useTheme"
 
 const Experience = () => {
   const { baseColor } = useTheme()

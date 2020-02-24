@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import classNames from "classnames"
 import FlipMove from "react-flip-move"
 
-import useTheme from "hooks/useTheme"
+import { useTheme } from "hooks/useTheme"
 import Pill from "ui/pill"
 import { Container } from "ui/layout"
 

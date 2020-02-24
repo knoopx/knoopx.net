@@ -3,7 +3,7 @@ import { animated } from "react-spring"
 
 import usePopSpring from "hooks/usePopSpring"
 import { Container } from "ui/layout"
-import useTheme from "hooks/useTheme"
+import { useTheme } from "hooks/useTheme"
 
 const About = () => {
   const ref = useRef()

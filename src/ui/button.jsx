@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 
-import useTheme from "hooks/useTheme"
+import { useTheme } from "hooks/useTheme"
 
 const Button = ({ className, ...props }) => {
   const { baseColor } = useTheme()

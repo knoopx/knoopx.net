@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from "react"
 
 import { Divider } from "ui/layout"
-import useTheme from "hooks/useTheme"
+import { useTheme } from "hooks/useTheme"
 
 import Header from "./header"
 import About from "./about"

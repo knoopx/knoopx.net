@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react"
 import { useSpring, animated } from "react-spring"
 
 import useHover from "hooks/useHover"
-import useTheme from "hooks/useTheme"
+import { useTheme } from "hooks/useTheme"
 import Link from "ui/link"
 import { Container } from "ui/layout"
 
