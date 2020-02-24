@@ -1,19 +1,9 @@
-import { useState, useEffect } from "react"
 import { useSpring } from "react-spring"
 
-const usePopSpring = () => {
-  const [isVisible, setVisible] = useState(false)
+import useVisibility from "./useVisibility"
 
-  const onLoad = (value) => {
-    setVisible(value)
-  }
-
-  useEffect(() => {
-    window.addEventListener("load", onLoad)
-    return () => {
-      window.removeEventListener("load", onLoad)
-    }
-  }, [])
+const usePopSpring = (ref) => {
+  const isVisible = useVisibility(ref)
 
   return useSpring({
     opacity: isVisible ? 1 : 0,

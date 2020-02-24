@@ -1,6 +1,7 @@
-import React, { useState } from "react"
-import VisibilitySensor from "react-visibility-sensor"
+import React, { useRef } from "react"
 import { useTrail, animated } from "react-spring"
+
+import useVisiblity from "hooks/useVisibility"
 
 const images = [
   require("./images/html5.svg"),
@@ -31,11 +32,8 @@ const Image = ({ src, ...props }) => {
 }
 
 const TechnologyIcons = (props) => {
-  const [isVisible, setVisible] = useState(false)
-
-  const onVisibilityChange = (state) => {
-    setVisible(state)
-  }
+  const ref = useRef()
+  const isVisible = useVisiblity(ref)
 
   const trail = useTrail(images.length, {
     reverse: !isVisible,
@@ -46,13 +44,11 @@ const TechnologyIcons = (props) => {
   })
 
   return (
-    <VisibilitySensor delayedCall onChange={onVisibilityChange}>
-      <div className="sm:flex justify-around mb-8 text-center">
-        {trail.map((style, index) => {
-          return <Image key={images[index]} src={images[index]} style={style} />
-        })}
-      </div>
-    </VisibilitySensor>
+    <div ref={ref} className="sm:flex justify-around mb-8 text-center">
+      {trail.map((style, index) => {
+        return <Image key={images[index]} src={images[index]} style={style} />
+      })}
+    </div>
   )
 }
 

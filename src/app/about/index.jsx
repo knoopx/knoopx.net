@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 import { animated } from "react-spring"
 
 import usePopSpring from "hooks/usePopSpring"
@@ -6,13 +6,15 @@ import { Container } from "ui/layout"
 import useTheme from "hooks/useTheme"
 
 const About = () => {
-  const spring = usePopSpring()
+  const ref = useRef()
+  const spring = usePopSpring(ref)
   const { baseColor } = useTheme()
 
   return (
     <div style={{ backgroundColor: baseColor[6] }}>
       <Container className="pb-12 text-white leading-none ts">
         <animated.div
+          ref={ref}
           style={spring}
           className="flex flex-wrap lg:flex-no-wrap justify-center"
         >
