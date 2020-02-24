@@ -9,16 +9,16 @@ import Repos from "./repos"
 
 const Project = ({ name, url, children, image }) => {
   return (
-    <a className="w-50 w-50-ns link pa2-ns ph2" href={url}>
-      <div className="aspect-ratio aspect-ratio--1x1">
+    <a className="block link" href={url}>
+      <div className="relative mb-4" style={{ paddingBottom: "100%" }}>
         <img
-          style={{ backgroundImage: `url("${image}")` }}
-          className="overflow-hidden bg-center aspect-ratio--object br2 cover db"
+          src={image}
+          className="object-cover absolute h-full w-full border border-gray-4 rounded"
         />
       </div>
-      <div className="db pb3 ph0-ns">
-        <h3 className="black-70 f5 fw5 mb0">{name}</h3>
-        <h3 className="black-60 f6 fw3 mt2">{children}</h3>
+      <div className="block pb-4 sm:px-0">
+        <h3 className="mb-0 text-base font-medium gray-7">{name}</h3>
+        <h3 className="mt-2 text-sm font-light gray-6">{children}</h3>
       </div>
     </a>
   )
@@ -27,20 +27,23 @@ const Project = ({ name, url, children, image }) => {
 const OpenSource = () => {
   return (
     <ScrollableAnchor id="open-source">
-      <div className="bg-near-white">
-        <Container size="w-75-l">
-          <header className="mb4 tc">
-            <h1 className="black-90 f1 mb1">Open Source</h1>
-            <h2 className="black-50 f3 fw4 mt1">
-              projects made with <FaHeart className="red" />
+      <div className="bg-gray-1">
+        <Container className="py-12">
+          <header className="mb-8 text-center">
+            <h1 className="mb-1 mb-2 text-5xl text-gray-9 font-bold leading-none">
+              Open Source
+            </h1>
+            <h2 className="mt-1 text-2xl text-gray-6 font-normal leading-none">
+              projects made with <FaHeart className="inline text-red-6" />
             </h2>
           </header>
 
-          <div className="w-100 cf">
-            <div className="w-50-l w-60-m w-70-ns fl-ns fn pr4-ns tl-ns">
-              <h2 className="fw6 tc">Featured Projects</h2>
-
-              <div className="flex flex-wrap mb4 na2">
+          <div className="lg:gap-8 lg:grid lg:grid-cols-2">
+            <div>
+              <h2 className="mb-4 text-2xl text-center text-gray-7 font-semibold">
+                Featured Projects
+              </h2>
+              <div className="mb-8 lg:gap-4 lg:grid lg:grid-cols-2">
                 <Project
                   name="Pebble Watchface"
                   url="https://github.com/knoopx/pebble-48h-weather-forecast-watchface-rockyjs/"
@@ -74,8 +77,10 @@ const OpenSource = () => {
               </div>
             </div>
 
-            <div className="w-30-ns w-40-m w-50-l fl-ns fn tl-ns">
-              <h2 className="fw6 tc">Recent Projects</h2>
+            <div>
+              <h2 className="mb-4 text-2xl text-center text-gray-7 font-semibold">
+                Recent Projects
+              </h2>
               <Repos />
               <Button href="https://github.com/knoopx" target="__blank">
                 Visit my GitHub profile

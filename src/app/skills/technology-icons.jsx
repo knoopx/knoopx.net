@@ -22,12 +22,9 @@ const images = [
 
 const Image = ({ src, ...props }) => {
   return (
-    <animated.div className="dib w3" {...props}>
-      <div className="aspect-ratio aspect-ratio--1x1 ma1">
-        <div
-          className="aspect-ratio--object contain"
-          style={{ background: `url("${src}") center no-repeat` }}
-        />
+    <animated.div className="inline-block w-16" {...props}>
+      <div className="relative m-1" style={{ paddingBottom: "100%" }}>
+        <img className="object-contain absolute h-full w-full" src={src} />
       </div>
     </animated.div>
   )
@@ -50,7 +47,7 @@ const TechnologyIcons = (props) => {
 
   return (
     <VisibilitySensor delayedCall onChange={onVisibilityChange}>
-      <div className="flex-ns justify-around mb4 tc">
+      <div className="sm:flex justify-around mb-8 text-center">
         {trail.map((style, index) => {
           return <Image key={images[index]} src={images[index]} style={style} />
         })}

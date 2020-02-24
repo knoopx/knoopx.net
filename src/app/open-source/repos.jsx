@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react"
-import { FaStar, FaCode } from "react-icons/fa"
-import { Bounce } from "react-activity"
+import { MdStar, MdShare } from "react-icons/md"
 
+import Spinner from "ui/spinner"
 import Link from "ui/link"
 
 const Projects = ({ limit = 8, username = "knoopx" }) => {
   const [hasError, setError] = useState(false)
-  const [isLoading, setLoading] = useState(false)
+  const [isLoading, setLoading] = useState(true)
   const [repos, setRepos] = useState([])
 
   const fetchRepos = () => {
@@ -32,16 +32,18 @@ const Projects = ({ limit = 8, username = "knoopx" }) => {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center h4">
-        <Bounce size={22} />
+      <div className="relative" style={{ paddingBottom: "100%" }}>
+        <div className="absolute flex items-center justify-center h-full w-full">
+          <Spinner className="bg-gray-5" size={48} />
+        </div>
       </div>
     )
   }
 
   if (hasError) {
     return (
-      <div className="flex items-center justify-center b--red ba br2 mb3 mb4-ns">
-        <h5 className="red">Unable to fetch repositories from GitHub</h5>
+      <div className="flex items-center justify-center mb-4 sm:mb-8 border border-red-5 rounded">
+        <h5 className="text-red">Unable to fetch repositories from GitHub</h5>
       </div>
     )
   }
@@ -49,24 +51,22 @@ const Projects = ({ limit = 8, username = "knoopx" }) => {
   const sourceRepos = repos.filter((repo) => !repo.fork).slice(0, limit)
 
   return (
-    <div className="bg-white b--black-10 ba br2 mb3 mb4-ns">
+    <div className="mb-4 sm:mb-8 border border-gray-4 rounded bg-white">
       {sourceRepos.map((repo) => (
-        <div key={repo.id} className="b--black-10 bb pa3">
+        <div key={repo.id} className="p-4 border-b border-gray-4">
           <div>
             <Link href={repo.html_url}>{repo.name}</Link>
-            <p className="truncate black-70 f6 lh-copy measure mt1">
+            <p className="max-w-md mt-1 text-sm leading-normal truncate gray-7">
               {repo.description}
             </p>
           </div>
-          <div className="dt--fixed black-40 dt f6">
-            <div className="dtc">{repo.language}</div>
-            <div className="dtc">
-              <div className="flex items-end justify-end">
-                <FaStar className="mr1" />
-                <span className="mr2">{repo.stargazers_count}</span>
-                <FaCode className="mr1" />
-                {repo.forks_count}
-              </div>
+          <div className="flex text-gray-5 text-sm">
+            <div className="flex-auto">{repo.language}</div>
+            <div className="flex items-center justify-end">
+              <MdStar className="mr-1" />
+              <span className="mr-2">{repo.stargazers_count}</span>
+              <MdShare className="mr-1" />
+              {repo.forks_count}
             </div>
           </div>
         </div>

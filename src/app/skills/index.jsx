@@ -8,9 +8,9 @@ import TechnologyIcons from "./technology-icons"
 
 const Block = ({ title, children }) => {
   return (
-    <div className="w-100 w-third-ns fl ph4 tc">
-      <h2 className="black-90 db fw5">{title}</h2>
-      <div className="f5 lh-copy mb4">{children}</div>
+    <div className="px-8 text-center">
+      <h2 className="block mb-4 text-2xl text-gray-9 font-medium">{title}</h2>
+      <div className="mb-8 text-base leading-normal">{children}</div>
     </div>
   )
 }
@@ -18,15 +18,17 @@ const Block = ({ title, children }) => {
 const Skills = (props) => {
   return (
     <ScrollableAnchor id="skills">
-      <Container>
-        <header className="mb4 tc">
-          <h1 className="black-90 f1 mb1">Top-notch web development</h1>
-          <h2 className="black-50 f3 fw4 mt1">
+      <Container className="py-12">
+        <header className="mb-12 text-center">
+          <h1 className="mb-2 text-5xl text-gray-9 font-bold leading-none">
+            Top-notch web development
+          </h1>
+          <h2 className="text-2xl text-gray-6 font-normal leading-none">
             with industry-leading technologies
           </h2>
         </header>
 
-        <div className="cf nl4 nr4">
+        <div className="gap-4 grid lg:grid-cols-3">
           <Block title="Front-end development">
             <p>
               Rich, interactive,{" "}

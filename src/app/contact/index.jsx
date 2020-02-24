@@ -11,33 +11,44 @@ import { Container } from "ui/layout"
 
 const Contact = () => (
   <ScrollableAnchor id="contact">
-    <div className="bg-black-80 b--white-10 bb white-80">
-      <Container size="w-75-l">
-        <div className="w-100 w-50-ns fl mb4 pr5-ns tc tl-l tl-m">
-          <header className="mb4">
-            <h1 className="f1 mb1 mt0-l mt0-m white">Contact</h1>
-            <h2 className="f3 fw4 mt1 white-80">Let's get in touch</h2>
+    <div className="border-b-2 border-gray-7 bg-gray-8 text-gray-2">
+      <Container className="py-12 lg:gap-12 lg:grid lg:grid-cols-2">
+        <div className="text-center lg:text-left">
+          <header className="mb-8">
+            <h1 className="mb-1 mb-2 lg:mt-0 text-5xl text-white font-bold leading-none">
+              Contact
+            </h1>
+            <h2 className="mt-1 text-2xl text-gray-4 font-normal leading-none">
+              Let's get in touch
+            </h2>
           </header>
-          <div>
-            <p className="f4 lh-copy mb4 white-50">
+
+          <div className="flex-auto mb-8">
+            <p className="mb-8 text-gray-4 text-xl leading-normal">
               Do you like what I do? Don't hesitate to contact me about your
               project, idea or requirements.
             </p>
-            <div className="cf nl2 nr2">
+            <div className="-m-2">
               <a
-                className="dib pa2 white"
+                className="inline-block p-2 text-white"
                 href="https://www.linkedin.com/in/victormartinezgarcia/"
               >
                 <FaLinkedin size={48} />
               </a>
-              <a className="dib pa2 white" href="http://github.com/knoopx">
+              <a
+                className="inline-block p-2 text-white"
+                href="http://github.com/knoopx"
+              >
                 <FaGithub size={48} />
               </a>
-              <a className="dib pa2 white" href="http://twitter.com/knoopx">
+              <a
+                className="inline-block p-2 text-white"
+                href="http://twitter.com/knoopx"
+              >
                 <FaTwitter size={48} />
               </a>
               <a
-                className="dib pa2 white"
+                className="inline-block p-2 text-white"
                 href="http://stackoverflow.com/users/62368/knoopx"
               >
                 <FaStackOverflow size={48} />
@@ -46,49 +57,49 @@ const Contact = () => (
           </div>
         </div>
 
-        <div className="w-100 w-50-ns fl mb4">
+        <div>
           <form
-            className="measure"
+            className="max-w-md"
             action="https://formspree.io/contact@knoopx.net"
             method="post"
           >
-            <div className="mb3">
-              <label htmlFor="name" className="b db f6 mb2">
+            <div className="mb-4">
+              <label htmlFor="name" className="block mb-2 text-sm font-bold">
                 Name
               </label>
               <input
                 type="text"
                 name="name"
                 required
-                className="w-100 border-box b--white-20 ba br2 db mb2 pa2"
+                className="block w-full mb-2 p-2 border border-box rounded"
               />
             </div>
-            <div className="mb3">
-              <label htmlFor="name" className="b db f6 mb2">
+            <div className="mb-4">
+              <label htmlFor="name" className="block mb-2 text-sm font-bold">
                 E·mail
               </label>
               <input
                 type="email"
                 name="_replyto"
                 required
-                className="w-100 border-box b--white-20 ba br2 db mb2 pa2"
+                className="block w-full mb-2 p-2 border border-box rounded"
               />
             </div>
-            <div className="mb4">
-              <label htmlFor="message" className="b db f6 mb2">
+            <div className="mb-8">
+              <label htmlFor="message" className="block mb-2 text-sm font-bold">
                 Message
               </label>
               <textarea
                 name="message"
                 required
                 rows="6"
-                className="w-100 border-box b--white-20 ba br2 db mb2 pa2"
+                className="block w-full mb-2 p-2 border border-box rounded"
               />
             </div>
             <input
               type="submit"
               value="Send"
-              className="w-100 bg-transparent b b--white ba ba-2 br-pill db f5 input-reset ph5 pointer pv2 white"
+              className="appearance-none cursor-pointer block w-full px-16 py-2 border border-white rounded-full bg-transparent text-base text-white font-bold ba-2"
             />
           </form>
         </div>

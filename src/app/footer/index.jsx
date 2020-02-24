@@ -2,14 +2,15 @@ import React from "react"
 import { FaHeart } from "react-icons/fa"
 
 const Footer = () => (
-  <footer className="bg-black-80 ph3 ph5-m ph6-l pv4 tc white-80">
-    <p className="db f6 fw6">
+  <footer className="px-4 py-8 lg:px-16 lg:px-32 bg-gray-8 text-center text-gray-1">
+    <p className="block mb-2 text-sm font-semibold">
       © {new Date(Date.now()).getFullYear()} Víctor Martínez García. All rights
       reserved.
     </p>
     <p>
-      <small className="db f6">
-        Made with <FaHeart className="red" /> in Barcelona, Spain.
+      <small className="block text-sm">
+        Made with <FaHeart className="inline text-red-6" /> in Barcelona,
+        Spain.
       </small>
     </p>
   </footer>

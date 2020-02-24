@@ -11,15 +11,17 @@ const Experience = () => {
   const { baseColor } = useTheme()
   return (
     <ScrollableAnchor id="experience">
-      <Container size="w-75-l">
-        <header className="mb4 tc">
-          <h1 className="black-90 f1 mb1">Professional Experience</h1>
-          <h2 className="black-50 f3 fw4 mt1">
+      <Container className="py-12">
+        <header className="mb-12 text-center">
+          <h1 className="mb-1 mb-2 text-5xl text-gray-9 font-bold leading-none">
+            Professional Experience
+          </h1>
+          <h2 className="mt-1 text-2xl text-gray-6 font-normal leading-none">
             more than ten years of web development
           </h2>
         </header>
 
-        <TimeLine className="mb4" activeColor={baseColor[6]}>
+        <TimeLine className="mb-8" activeColor={baseColor[6]}>
           {experience.map(
             ({ range, name, url, description, challenges, tags }, index) => (
               <TimeLineEvent
@@ -27,27 +29,25 @@ const Experience = () => {
                 right={
                   <a
                     href={url}
-                    className="black-90 f3 fw5 link"
+                    className="text-2xl text-gray-9 font-bold link"
                     target="__blank"
                     rel="nofollow"
                   >
-                    <h4 className="mv0">{name}</h4>
+                    <h4>{name}</h4>
                   </a>
                 }
               >
-                <em className="black-50">{range} </em>
-                <div className="cf lh-copy mb2">
-                  <div className="w-50-ns fl pr4">
-                    <p className="measure">{description}</p>
+                <div className="mb-4 text-gray-6">{range}</div>
+                <div className="mb-2 leading-normal lg:gap-4 lg:grid lg:grid-cols-2">
+                  <div className="pr-8">
+                    <p className="max-w-md mb-8">{description}</p>
                   </div>
                   {challenges && (
-                    <div className="w-50-ns fl">
-                      <ul className="measure pl3">
-                        {challenges.map((challenge, i) => (
-                          <li key={i}>{challenge}</li>
-                        ))}
-                      </ul>
-                    </div>
+                    <ul className="list-disc max-w-md mb-8 pl-4">
+                      {challenges.map((challenge, i) => (
+                        <li key={i}>{challenge}</li>
+                      ))}
+                    </ul>
                   )}
                 </div>
                 <TagList tags={tags} />

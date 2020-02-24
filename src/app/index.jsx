@@ -19,7 +19,7 @@ const App = () => {
   const { baseColor } = useTheme()
 
   return (
-    <div className="overflow-hidden black-70 sans-serif">
+    <div className="overflow-hidden text-gray-7 font-sans">
       <Helmet>
         <meta name="theme-color" content={baseColor[6]} />
       </Helmet>

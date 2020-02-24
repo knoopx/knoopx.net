@@ -8,7 +8,7 @@ const Link = ({ className, ...props }) => {
   return (
     <a
       className={classNames(className)}
-      style={{ color: baseColor[8] }}
+      style={{ color: baseColor[6] }}
       target="__blank"
       {...props}
     />

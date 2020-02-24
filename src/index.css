@@ -1,26 +1,23 @@
-@import "tachyons/src/tachyons";
-@import "open-color/open-color";
-@import "react-activity/dist/react-activity";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  margin: 0;
   -webkit-font-smoothing: antialiased;
 }
 
-.headroom {
-  z-index: 99999 !important;
-}
-
-img {
-  max-width: initial !important;
+.headroom--pinned {
+  z-index: 9999 !important;
 }
 
 .ts {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
-@media (max-width: 30em) {
-  .flex-wrap-s {
-    flex-wrap: wrap;
-  }
+a {
+  @apply .underline;
+}
+
+a.link {
+  @apply .no-underline;
 }

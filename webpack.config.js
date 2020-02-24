@@ -1,5 +1,4 @@
 const path = require("path")
-
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const ExtractCssChunks = require("extract-css-chunks-webpack-plugin")
@@ -46,25 +45,28 @@ module.exports = (env, argv) => {
               loader: ExtractCssChunks.loader,
               options: { hot: isDevelopment },
             },
-            "css-loader",
+            {
+              loader: "css-loader",
+              options: { modules: { mode: "global" } },
+            },
             {
               loader: "postcss-loader",
               options: {
                 plugins: [
-                  require("postcss-import"),
-                  require("postcss-cssnext"),
-                  purgecss({
-                    whitelist: ["html", "body"],
-                    content: [path.join(__dirname, "./src/**/*.{js,jsx}")],
-                    extractors: [
-                      {
-                        extractor: (content) =>
-                          content.match(/[A-Za-z0-9-_:/]+/g),
-                        extensions: ["js", "jsx"],
-                      },
-                    ],
-                  }),
-                ],
+                  require("tailwindcss"),
+                  !isDevelopment &&
+                    purgecss({
+                      whitelist: ["html", "body"],
+                      content: [path.join(__dirname, "./src/**/*.{js,jsx}")],
+                      extractors: [
+                        {
+                          extractor: (content) =>
+                            content.match(/[A-Za-z0-9-_:/]+/g),
+                          extensions: ["js", "jsx"],
+                        },
+                      ],
+                    }),
+                ].filter(Boolean),
               },
             },
           ],

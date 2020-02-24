@@ -79,13 +79,17 @@ const Technology = () => {
   const children = technologies[activeCategory]
   return (
     <ScrollableAnchor id="technology">
-      <Container size="w-75-ns">
-        <header className="mb4 tc">
-          <h1 className="black-90 f1 mb1">Skills</h1>
-          <h2 className="black-50 f3 fw5 mt1">and technologies</h2>
+      <Container className="py-12">
+        <header className="mb-8 text-center">
+          <h1 className="mb-1 mb-2 text-5xl text-gray-9 font-bold leading-none">
+            Skills
+          </h1>
+          <h2 className="mt-1 text-2xl text-gray-6 font-medium leading-none">
+            and technologies
+          </h2>
         </header>
 
-        <nav className="flex justify-center mb3">
+        <nav className="flex justify-center mb-4">
           {categories.map((key, i) => {
             const isActive = key === activeCategory
             return (
@@ -95,11 +99,11 @@ const Technology = () => {
                   setActiveCategory(key)
                 }}
                 className={classNames(
-                  "br-pill b dib ph3 pv2 ba tc pointer truncate",
+                  "font-bold inline-block px-4 py-2 border text-center cursor-pointer truncate",
                   {
-                    "br--right": i !== 0,
-                    "br-0": i !== categories.length - 1,
-                    "br--left": i !== categories.length - 1,
+                    "border-r-0": i !== categories.length - 1,
+                    "rounded-l-full": i === 0,
+                    "rounded-r-full": i === categories.length - 1,
                   },
                 )}
                 style={{
@@ -114,7 +118,7 @@ const Technology = () => {
           })}
         </nav>
 
-        <div className="relative center cf mb3 measure tc">
+        <div className="relative max-w-md mb-4 mx-auto text-center">
           <FlipMove
             staggerDelayBy={10}
             duration={200}
@@ -140,8 +144,8 @@ const Technology = () => {
             {technologies[activeCategory].sort().map((key, i) => (
               <div
                 key={key}
-                className={classNames("dib mv1", {
-                  mr2: i !== children.length,
+                className={classNames("inline-block my-1", {
+                  "mr-2": i !== children.length,
                 })}
               >
                 <Pill>{key}</Pill>

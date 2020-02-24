@@ -3,28 +3,31 @@ import React from "react"
 import { Container } from "ui/layout"
 import recommendations from "content/recommendations"
 
-const Recommendations = (props) => {
+const Recommendations = () => {
   return (
-    <Container size="w-75-l">
-      <div className="flex flex-wrap-s">
+    <Container>
+      <div className="gap-4 grid lg:grid-cols-2">
         {recommendations.map(({ body, name, avatar, role }, i) => (
           <blockquote
             key={i}
-            className="flex flex-column justify-between black-90 mb4 ml0 mr0 mt0 pr0 tc tl-ns"
+            className="flex flex-auto flex-col justify-between mb-8 text-center text-gray-9 sm:text-left"
           >
-            <p className="f3-l f4-m f5 i lh-copy measure mt0 serif">“{body}”</p>
-            <cite className="self-center self-start-ns dt">
-              <div className="dtc v-mid w2 w3-ns">
+            <cite className="max-w-md mb-4 text-base lg:text-2xl lg:text-xl font-serif leading-normal">
+              “{body}”
+            </cite>
+
+            <div className="flex items-center self-center lg:self-start mt-auto">
+              <div className="w-8 sm:w-16">
                 <img
                   src={require(`./${avatar}`)}
-                  className="b--black-10 ba br-100 db h2 h3-ns w2 w3-ns"
+                  className="block h-8 w-8 sm:h-16 sm:w-16 border rounded-full"
                 />
               </div>
-              <div className="dtc pl3 v-mid">
-                <div className="f6 fs-normal tracked ttu">{name}</div>
-                <div className="gray">{role}</div>
+              <div className="pl-4 leading-none">
+                <div className="text-sm uppercase">{name}</div>
+                <div className="text-gray-6 italic">{role}</div>
               </div>
-            </cite>
+            </div>
           </blockquote>
         ))}
       </div>

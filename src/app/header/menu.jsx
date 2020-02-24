@@ -13,7 +13,7 @@ const MenuItem = (props) => {
   return (
     <animated.div
       ref={ref}
-      className="b bb bw1 ph3 pv2 tc"
+      className="px-4 py-2 border-b-2 text-center font-bold"
       style={{
         cursor: "pointer",
         ...spring,
@@ -24,7 +24,7 @@ const MenuItem = (props) => {
 }
 
 const Menu = () => (
-  <nav className="flex items-center overflow-x-auto mv0-l mv0-m mv2 nowrap">
+  <nav className="flex items-center overflow-x-auto py-2 lg:py-0 leading-none whitespace-no-wrap">
     <MenuItem onClick={() => goToAnchor("skills")}>Skills</MenuItem>
     <MenuItem onClick={() => goToAnchor("experience")}>Experience</MenuItem>
     <MenuItem onClick={() => goToAnchor("open-source")}>Open Source</MenuItem>

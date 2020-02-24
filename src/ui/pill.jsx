@@ -6,13 +6,13 @@ const Pill = ({ className, style, ...props }) => {
   return (
     <div
       className={classNames(
-        `flex items-center justify-center b br-pill f7 ph3 pv1 white`,
+        `flex items-center justify-center font-bold rounded-full text-xs px-4 py-1 text-white`,
         className,
       )}
       style={{ backgroundColor: OpenColor.gray[6], ...style }}
       {...props}
     />
-  )
+  );
 }
 
 export default Pill

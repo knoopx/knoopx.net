@@ -18,27 +18,28 @@ const Talk = ({ title, url, image, children }) => {
     transform: `rotate(${rotate}deg) scale(${isHovered ? 1.6 : 1.5})`,
     filter: `blur(${isHovered ? 1 : 2}px) contrast(30%)`,
   })
+
   return (
-    <a ref={ref} className="w-100 w-50-ns db fl-ns link mb2 pa2" href={url}>
-      <div className="overflow-hidden aspect-ratio aspect-ratio--1x1 br3">
-        <animated.div
-          className="aspect-ratio--object"
-          style={{
-            background: `url("${image}") center no-repeat`,
-            backgroundSize: "contain",
-            ...spring,
-          }}
-        />
-        <div
-          className="aspect-ratio--object"
-          style={{ backgroundColor, opacity: 0.8 }}
-        />
-        <div className="flex items-center justify-center w-100 aspect-ratio--object pa4-m pa5 tc ts white">
-          <div className="measure">
-            <h3 className="f3 fw5">{title}</h3>
-            <p className="lh-copy">{children}</p>
-          </div>
-        </div>
+    <a
+      ref={ref}
+      className="relative block overflow-hidden mb-4 rounded-lg link"
+      href={url}
+      style={{ paddingBottom: "100%" }}
+    >
+      <animated.img
+        className="object-contain absolute h-full w-full"
+        src={image}
+        style={spring}
+      />
+
+      <div
+        className="absolute h-full w-full"
+        style={{ backgroundColor, opacity: 0.8 }}
+      />
+
+      <div className="absolute flex flex-col items-center justify-center h-full w-full p-16 lg:p-8 text-center text-white ts">
+        <h3 className="mb-4 text-2xl font-medium">{title}</h3>
+        <p className="leading-normal">{children}</p>
       </div>
     </a>
   )
@@ -47,16 +48,18 @@ const Talk = ({ title, url, image, children }) => {
 const Talks = () => {
   return (
     <ScrollableAnchor id="talks">
-      <Container size="w-75-l">
-        <header className="mb4 tc">
-          <h1 className="black-90 f1 mb1">Talks</h1>
-          <h2 className="black-50 f3 fw4 mt1">
+      <Container className="py-12">
+        <header className="mb-8 text-center">
+          <h1 className="mb-1 mb-2 text-5xl text-gray-9 font-bold leading-none">
+            Talks
+          </h1>
+          <h2 className="mt-1 text-2xl text-gray-6 font-normal leading-none">
             Slides from the talks I did at{" "}
             <Link href="http://itnig.net/">itnig</Link> coworking space
           </h2>
         </header>
 
-        <div className="cf nl2 nr2">
+        <div className="lg:gap-4 lg:grid lg:grid-cols-2">
           <Talk
             title="Collecting Metrics with Graphite and StatsD"
             image="https://speakerd.s3.amazonaws.com/presentations/f69ca570546b0130e3bd12313d091534/slide_5.jpg"

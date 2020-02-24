@@ -9,7 +9,7 @@ const Button = ({ className, ...props }) => {
   return (
     <a
       className={classNames(
-        "link flex items-center justify-center ph3 pv2 white ba bw1 b br-pill",
+        "link flex items-center justify-center px-4 py-2 text-white border  border-2 font-bold rounded-full",
         className,
       )}
       style={{ color: baseColor[6], borderColor: baseColor[6] }}
