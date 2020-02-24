@@ -1,5 +1,4 @@
-import React from "react"
-import { Helmet } from "react-helmet"
+import React, { useLayoutEffect } from "react"
 
 import { Divider } from "ui/layout"
 import useTheme from "hooks/useTheme"
@@ -18,12 +17,15 @@ import Footer from "./footer"
 const App = () => {
   const { baseColor } = useTheme()
 
+  useLayoutEffect(() => {
+    const meta = document.createElement("meta")
+    meta.name = "theme-color"
+    meta.content = baseColor[6]
+    document.head.append(meta)
+  }, [baseColor])
+
   return (
     <div className="overflow-hidden text-gray-7 font-sans">
-      <Helmet>
-        <meta name="theme-color" content={baseColor[6]} />
-      </Helmet>
-
       <Header />
       <About />
       <Divider />
