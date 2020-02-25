@@ -1,4 +1,5 @@
 import React from "react"
+import classNames from "classnames"
 import { FaHeart } from "react-icons/fa"
 
 import { Container } from "ui/layout"
@@ -7,13 +8,16 @@ import projects from "content/open-source"
 
 import Repos from "./repos"
 
-const Project = ({ name, url, children, image }) => {
+const Project = ({ name, url, children, image, framed = false }) => {
   return (
     <a className="block link" href={url}>
       <div className="relative mb-4" style={{ paddingBottom: "100%" }}>
         <img
           src={image}
-          className="object-cover absolute h-full w-full border border-gray-4 rounded"
+          className={classNames("absolute h-full w-full", {
+            "border border-gray-4 rounded object-cover": framed,
+            "object-contain": !framed,
+          })}
         />
       </div>
       <div className="block pb-4 sm:px-0">
@@ -25,16 +29,13 @@ const Project = ({ name, url, children, image }) => {
 }
 
 const OpenSource = () => {
-  const gridItems = projects.map((project) => (
-    <Project
-      key={project.name}
-      name={project.name}
-      url={project.url}
-      image={require(`./images/${project.image}`)}
-    >
-      {project.description}
-    </Project>
-  ))
+  const gridItems = projects
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map(({ image, description, ...project }) => (
+      <Project {...project} image={require(`./images/${image}`)}>
+        {description}
+      </Project>
+    ))
 
   gridItems.splice(
     2,

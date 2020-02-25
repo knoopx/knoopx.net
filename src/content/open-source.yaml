@@ -1,6 +1,19 @@
+- name: Rent-o-matic
+  url: "https://github.com/knoopx/rentomatic"
+  image: rentomatic.png
+  description: |
+    An app to track and find real state opportunities. Notifies you whenever a new listing is posted matching your search criteria.
+
+- name: Pull.app
+  url: "https://github.com/knoopx/pull.app"
+  image: pull-app-1.png
+  description: |
+    A Google Reader-alike app that allows you to aggregate content all over Internet by scraping content via XPath/CSS selectors.
+
 - name: Alpine Linux for Raspberry PI
   url: "https://github.com/knoopx/alpine-raspberry-pi"
   image: alpine-rpi.png
+  framed: true
   description: |
     Super-lightweight (~200mb) built from scratch Alpine Linux image for RPI 2, 3 and 4. Perfect as a base for customization and distribution of custom software.
 
@@ -13,26 +26,16 @@
 - name: Atom Javascript Intentions
   url: "https://github.com/knoopx/atom-intentions-javascript"
   image: atom-intentions-javascript.png
+  framed: true
   description: |
     Automatic Javascript refactoring: rename identifier, stateful react class to stateless function, string to template string, sort array values, sort object keys, named to default export, de-anonymify class declaration, transform import to require, transform function to arrow function, and many more!
 
 - name: eslint JSX className plugin
   url: "https://github.com/knoopx/eslint-plugin-jsx-classname"
   image: eslint-plugin-jsx-classname.png
+  framed: true
   description: |
     A set of rules (with autofix!) to enforce className consistency on JSX files: disallow empty className, enforce order (includes tailwindcss preset), disallow duplicate classes, disallow extra whitespace.
-
-- name: Rent-o-matic
-  url: "https://github.com/knoopx/rentomatic"
-  image: rentomatic.png
-  description: |
-    An app to track and find real state opportunities. Notifies you whenever a new listing is posted matching your search criteria.
-
-- name: Pull.app
-  url: "https://github.com/knoopx/pull.app"
-  image: pull-app.png
-  description: |
-    A Google Reader-alike app that allows you to aggregate content all over Internet by scraping content via XPath/CSS selectors.
 
 - name: Huelet
   url: "https://github.com/knoopx/huelet"
@@ -43,6 +46,7 @@
 - name: Pebble Watchface
   url: "https://github.com/knoopx/pebble-48h-weather-forecast-watchface-rockyjs"
   image: pebble-watchface.jpg
+  framed: true
   description: |
     48 hour weather forecast watch face pulling data from darksky.net
 
@@ -62,5 +66,6 @@
 - name: Eleventh
   url: "https://github.com/knoopx/eleventh"
   image: eleventh.png
+  framed: true
   description: |
-    An automated, all-in-one dictionary generator and WEP cracker
+    An automated, all-in-one command-line dictionary generator and WEP cracker.
