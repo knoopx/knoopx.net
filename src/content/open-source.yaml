@@ -1,0 +1,22 @@
+- name: Pebble Watchface
+  url: "https://github.com/knoopx/pebble-48h-weather-forecast-watchface-rockyjs/"
+  image: pebble-watchface.jpg
+  description: |
+    48 hour weather forecast watch face pulling data from darksky.net
+
+- name: Plex Music
+  url: "https://github.com/knoopx/plex-music/"
+  image: plex-music-1.png
+  description: |
+    Web and desktop client music player for Plex Media Server
+- name: Poloniex App
+  url: "https://github.com/knoopx/poloniex-watch-app/"
+  image: poloniex.png
+  description: |
+    A desktop client for poloniex.com. Watch markets and track
+    your orders from the menu bar.
+- name: Eleventh
+  url: "https://github.com/knoopx/eleventh/"
+  image: eleventh.png
+  description: |
+    An automated, all-in-one dictionary generator and WEP cracker

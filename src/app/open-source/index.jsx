@@ -3,6 +3,7 @@ import { FaHeart } from "react-icons/fa"
 
 import { Container } from "ui/layout"
 import Button from "ui/button"
+import projects from "content/open-source"
 
 import Repos from "./repos"
 
@@ -43,36 +44,15 @@ const OpenSource = () => {
                 Featured Projects
               </h2>
               <div className="mb-8 lg:gap-4 lg:grid lg:grid-cols-2">
-                <Project
-                  name="Pebble Watchface"
-                  url="https://github.com/knoopx/pebble-48h-weather-forecast-watchface-rockyjs/"
-                  image={require("./images/pebble-watchface.jpg")}
-                >
-                  48 hour weather forecast watch face pulling data from
-                  darksky.net
-                </Project>
-                <Project
-                  name="Plex Music"
-                  url="https://github.com/knoopx/plex-music/"
-                  image={require("./images/plex-music-1.png")}
-                >
-                  Web and desktop client music player for Plex Media Server
-                </Project>
-                <Project
-                  name="Poloniex App"
-                  url="https://github.com/knoopx/poloniex-watch-app/"
-                  image={require("./images/poloniex.png")}
-                >
-                  A desktop client for poloniex.com. Watch markets and track
-                  your orders from the menu bar.
-                </Project>
-                <Project
-                  name="Eleventh"
-                  url="https://github.com/knoopx/eleventh/"
-                  image={require("./images/eleventh.png")}
-                >
-                  An automated, all-in-one dictionary generator and WEP cracker
-                </Project>
+                {projects.map((project) => (
+                  <Project
+                    name={project.name}
+                    url={project.url}
+                    image={require(`./images/${project.image}`)}
+                  >
+                    {project.description}
+                  </Project>
+                ))}
               </div>
             </div>
 
