@@ -51,7 +51,10 @@ const Projects = ({ limit = 8, username = "knoopx" }) => {
     )
   }
 
-  const sourceRepos = repos.filter((repo) => !repo.fork).slice(0, limit)
+  const sourceRepos = repos
+    .filter((repo) => !repo.fork)
+    .sort((a, b) => b.stargazers_count - a.stargazers_count)
+    .slice(0, limit)
 
   return (
     <div className="mb-4 sm:mb-8 border border-gray-4 rounded bg-white">
