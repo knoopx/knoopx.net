@@ -1,3 +1,34 @@
+- name: Jacoti
+  url: https://www.jacoti.com/
+  description: |
+    Jacoti, a Belgium-based hearing software research company seeking to make hearing assistance normative and ubiquitous.
+  range: December 2017 - Now
+  tags:
+    - React
+    - MobX
+    - Javascript
+    - PostgreSQL
+    - Python
+    - Django
+    - TailwindCSS
+    - D3.js
+  challenges:
+    - Full-stack developer
+    - Development of MyJacoti, a web service that allows audiologists and users to store audio profiles in the cloud and share them across devices. Users can connect to a remote Hearing Expert for remote fitting adjustment.
+
+- name: Ironhack Barcelona
+  url: https://www.ironhack.com/
+  description: |
+    Intensive courses & bootcamps in Web Development, UX/UI Design & Data Analytics
+  range: September 2017
+  tags:
+    - HTML
+    - CSS
+    - Javascript
+    - Bootstrap
+  challenges:
+    - Web Development teacher of the UX/UI Design bootcamp
+
 - name: Factorial HR
   url: https://factorialhr.com/
   description: |
