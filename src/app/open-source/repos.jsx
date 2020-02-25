@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { MdStar, MdShare } from "react-icons/md"
+import { MdStar, MdShare, MdWarning } from "react-icons/md"
 
 import Spinner from "ui/spinner"
 import Link from "ui/link"
@@ -42,8 +42,11 @@ const Projects = ({ limit = 8, username = "knoopx" }) => {
 
   if (hasError) {
     return (
-      <div className="flex items-center justify-center mb-4 sm:mb-8 border border-red-5 rounded">
-        <h5 className="text-red">Unable to fetch repositories from GitHub</h5>
+      <div className="flex items-center justify-center mb-4 p-4 border border-red-9 rounded bg-red-5">
+        <h5 className="flex items-center text-white">
+          <MdWarning className="inline mr-4 text-3xl" />
+          Unable to fetch repositories from GitHub
+        </h5>
       </div>
     )
   }
