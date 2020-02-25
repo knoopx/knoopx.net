@@ -46,6 +46,7 @@ const OpenSource = () => {
               <div className="mb-8 lg:gap-4 lg:grid lg:grid-cols-2">
                 {projects.map((project) => (
                   <Project
+                    key={project.name}
                     name={project.name}
                     url={project.url}
                     image={require(`./images/${project.image}`)}
