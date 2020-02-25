@@ -12,24 +12,24 @@ const About = () => {
 
   return (
     <div style={{ backgroundColor: baseColor[6] }}>
-      <Container className="pb-12 text-white leading-none ts">
+      <Container className="pb-12 text-white ts">
         <animated.div
           ref={ref}
           style={spring}
           className="flex flex-wrap lg:flex-no-wrap justify-center"
         >
-          <div className="order-1 lg:order-0">
+          <div className="order-1 lg:order-0 lg:w-1/2 px-12 py-12 lg:py-0">
             <img
-              width={300}
-              height={300}
-              className="border-4 rounded-full"
+              className="flex-auto border-4 rounded-full"
               src={require("./me.jpg?max-width=1000")}
             />
           </div>
 
-          <div className="order-0 lg:order-1 lg:pl-32">
+          <div className="order-0 lg:order-1 lg:pl-16">
             <header className="mb-8">
-              <h1 className="mb-2 text-5xl font-semibold">Hello, I'm Víctor</h1>
+              <h1 className="mb-2 text-5xl font-semibold leading-none">
+                Hello, I'm Víctor
+              </h1>
               <h2 className="text-2xl">
                 a full-stack web developer from Barcelona.
               </h2>
