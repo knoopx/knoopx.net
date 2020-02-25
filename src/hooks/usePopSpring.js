@@ -2,8 +2,8 @@ import { useSpring } from "react-spring"
 
 import useVisibility from "./useVisibility"
 
-const usePopSpring = (ref) => {
-  const isVisible = useVisibility(ref)
+const usePopSpring = (ref, opts = {}) => {
+  const isVisible = useVisibility(ref, opts)
 
   return useSpring({
     opacity: isVisible ? 1 : 0,

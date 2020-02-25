@@ -7,7 +7,7 @@ import { useTheme } from "hooks/useTheme"
 
 const About = () => {
   const ref = useRef()
-  const spring = usePopSpring(ref)
+  const spring = usePopSpring(ref, { partial: true })
   const { baseColor } = useTheme()
 
   return (
