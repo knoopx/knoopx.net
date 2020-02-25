@@ -25,6 +25,28 @@ const Project = ({ name, url, children, image }) => {
 }
 
 const OpenSource = () => {
+  const gridItems = projects.map((project) => (
+    <Project
+      key={project.name}
+      name={project.name}
+      url={project.url}
+      image={require(`./images/${project.image}`)}
+    >
+      {project.description}
+    </Project>
+  ))
+
+  gridItems.splice(
+    2,
+    0,
+    <div className="order-last lg:order-none my-8 lg:my-0 col-span-2 row-span-2">
+      <Repos />
+      <Button href="https://github.com/knoopx" target="__blank">
+        Visit my GitHub profile
+      </Button>
+    </div>,
+  )
+
   return (
     <section id="open-source">
       <div className="bg-gray-1">
@@ -38,34 +60,8 @@ const OpenSource = () => {
             </h2>
           </header>
 
-          <div className="lg:gap-8 lg:grid lg:grid-cols-2">
-            <div>
-              <h2 className="mb-4 text-2xl text-center text-gray-7 font-semibold">
-                Featured Projects
-              </h2>
-              <div className="mb-8 lg:gap-4 lg:grid lg:grid-cols-2">
-                {projects.map((project) => (
-                  <Project
-                    key={project.name}
-                    name={project.name}
-                    url={project.url}
-                    image={require(`./images/${project.image}`)}
-                  >
-                    {project.description}
-                  </Project>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h2 className="mb-4 text-2xl text-center text-gray-7 font-semibold">
-                Recent Projects
-              </h2>
-              <Repos />
-              <Button href="https://github.com/knoopx" target="__blank">
-                Visit my GitHub profile
-              </Button>
-            </div>
+          <div className="flex flex-col lg:gap-8 lg:grid lg:grid-cols-4">
+            {gridItems}
           </div>
         </Container>
       </div>
