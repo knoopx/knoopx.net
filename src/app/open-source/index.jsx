@@ -1,23 +1,32 @@
-import React from "react"
+import React, { useRef } from "react"
 import classNames from "classnames"
 import { FaHeart } from "react-icons/fa"
 
 import { Container } from "ui/layout"
 import Button from "ui/button"
 import projects from "content/open-source"
+import useHover from "hooks/useHover"
+import PanZoom from "ui/pan-zoom"
 
 import Repos from "./repos"
 
 const Project = ({ name, url, children, image, framed = false }) => {
+  const ref = useRef()
+  const isHovered = useHover(ref)
   return (
     <a className="block link" href={url}>
-      <div className="relative mb-4" style={{ paddingBottom: "100%" }}>
-        <img
-          src={image}
-          className={classNames("absolute h-full w-full", {
-            "border border-gray-4 rounded object-cover": framed,
-            "object-contain": !framed,
+      <div
+        ref={ref}
+        className="relative mb-4"
+        style={{ paddingBottom: "100%" }}
+      >
+        <PanZoom
+          className={classNames({
+            "border border-gray-4 rounded bg-cover": framed,
+            "bg-contain": !framed,
           })}
+          active={isHovered}
+          image={image}
         />
       </div>
       <div className="block pb-4 sm:px-0">
