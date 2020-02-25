@@ -20,7 +20,7 @@ const Recommendations = () => {
               <div className="w-8 sm:w-16">
                 <img
                   src={require(`./${avatar}`)}
-                  className="block h-8 w-8 sm:h-16 sm:w-16 border rounded-full"
+                  className="block h-8 w-8 sm:h-16 sm:w-16 border border-gray-4 rounded-full"
                 />
               </div>
               <div className="pl-4 leading-none">
