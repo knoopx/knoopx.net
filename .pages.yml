@@ -2,7 +2,7 @@ content:
   - name: project
     label: Projects
     path: src/content
-    filename: open-source.yaml
+    filename: "{id}.yaml"
     type: collection
     format: yaml
     fields:
