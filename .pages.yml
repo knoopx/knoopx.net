@@ -1,17 +1,16 @@
 content:
   - name: project
     label: Projects
-    path: src/content
-    filename: "{id}.yaml"
-    type: collection
+    path: src/content/open-source.yaml
+    type: file
     format: yaml
-    fields:
-      - name: name
-        label: Name
-        type: string
-      - name: url
-        label: URL
-        type: string
-      - name: description
-        label: Description
-        type: rich-text
+    # fields:
+    #   - name: name
+    #     label: Name
+    #     type: string
+    #   - name: url
+    #     label: URL
+    #     type: string
+    #   - name: description
+    #     label: Description
+    #     type: rich-text
