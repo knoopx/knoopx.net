@@ -1,7 +1,7 @@
 content:
   - name: project
     label: Projects
-    path: src/content/open-source.yaml
+    path: src/content
     type: collection
     fields:
       - name: name
