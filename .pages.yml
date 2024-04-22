@@ -6,7 +6,7 @@ content:
     fields:
       - name: name
         label: Name
-        type: text
+        type: string
       - name: url
         label: URL
         type: string
