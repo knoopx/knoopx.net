@@ -2,7 +2,7 @@ content:
   - name: project
     label: Projects
     path: src/content/open-source.yaml
-    type: object
+    type: code
     fields:
       - name: name
         label: Name
