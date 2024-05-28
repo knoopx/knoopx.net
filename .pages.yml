@@ -1,3 +1,7 @@
+media:
+  input: src
+  output: ""
+
 content:
   - name: project
     label: Projects
