@@ -18,6 +18,8 @@ content:
       - name: image
         label: Image
         type: image
+        options:
+          input: src/app/open-source/images
       - name: description
         label: Description
         type: rich-text
