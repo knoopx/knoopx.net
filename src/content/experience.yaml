@@ -1,12 +1,13 @@
 - name: Jacoti
   url: https://www.jacoti.com/
-  description: |
-    Jacoti, a Belgium-based hearing software research company seeking to make hearing assistance normative and ubiquitous.
+  description: >
+    Jacoti, a Belgium-based hearing software research company seeking to make
+    hearing assistance normative and ubiquitous.
   range: December 2017 - Now
   tags:
     - React
     - MobX
-    - Javascript
+    - Typescript
     - PostgreSQL
     - Python
     - Django
@@ -14,12 +15,14 @@
     - D3.js
   challenges:
     - Full-stack developer
-    - Development of MyJacoti, a web service that allows audiologists and users to store audio profiles in the cloud and share them across devices. Users can connect to a remote Hearing Expert for remote fitting adjustment.
-
+    - Development of earCloud®, a web service that allows audiologists and users
+      to store audio profiles in the cloud and share them across devices. Users
+      can connect to a remote Hearing Expert for remote fitting adjustment.
 - name: Ironhack Barcelona
   url: https://www.ironhack.com/
-  description: |
-    Intensive courses & bootcamps in Web Development, UX/UI Design & Data Analytics
+  description: >
+    Intensive courses & bootcamps in Web Development, UX/UI Design & Data
+    Analytics
   range: September 2017
   tags:
     - HTML
@@ -28,11 +31,11 @@
     - Bootstrap
   challenges:
     - Web Development teacher of the UX/UI Design bootcamp
-
 - name: Factorial HR
   url: https://factorialhr.com/
-  description: |
-    Online HR solution for small and medium companies. Documents, compensation, holidays, sick leaves and benefits for employees
+  description: >
+    Online HR solution for small and medium companies. Documents, compensation,
+    holidays, sick leaves and benefits for employees
   range: December 2016 - January 2017
   tags:
     - Ruby
@@ -43,11 +46,11 @@
     - Full-stack developer
     - Build a minimum viable product in a timely manner
     - Development of rich interactive React components
-
 - name: Mindo
   url: https://www.mindo.io/
-  description: |
-    Audiological research and software develoment agency specialized in medical hardware appliances.
+  description: >
+    Audiological research and software develoment agency specialized in medical
+    hardware appliances.
   range: August 2015 - March 2017
   tags:
     - Node.js
@@ -55,10 +58,14 @@
     - React
   challenges:
     - Co-founder and CTO
-    - Development of back-end and front-end applications to support hearing aid and heart rate monitoring devices.
-
+    - Development of back-end and front-end applications to support hearing aid
+      and heart rate monitoring devices.
 - name: Aran Jewels
   url: http://aranjewels.com/
+  description: |
+    Small jewelry producer from Fornells de la Selva.
+    They design minimalist pieces of silver and silver plated in gold,
+    produced at small scale.
   range: December 2014 - January 2016
   tags:
     - Ruby
@@ -69,17 +76,14 @@
     - Migrate from existing site built with Laravel
     - Build a jewelry focused e-commerce and CMS.
     - Increase conversion rates by improving UX
-  description: |
-    Small jewelry producer from Fornells de la Selva.
-    They design minimalist pieces of silver and silver plated in gold,
-    produced at small scale.
-
 - name: Camaloon
   url: https://camaloon.com/
-  range: January 2012 - January 2016
-  description: |
+  description: >
     Young, multicultural and multidisciplinary startup-company from Barcelona.
-    On their platform you can create and buy your own products or browse and buy artworks created by exceptional designers
+
+    On their platform you can create and buy your own products or browse and buy
+    artworks created by exceptional designers
+  range: January 2012 - January 2016
   tags:
     - AngularJS
     - Ruby
@@ -92,9 +96,12 @@
     - Automated multi-product print sheet generation
     - Multi-factory order priorization and production
     - Localization and internationalization
-
 - name: Wuaki.tv
   url: https://wuaki.tv/
+  description: >
+    Netflix-alike online video streaming service for the european market where
+    movies, tv shows, documentaries and live retransmissions can be purchased or
+    rented.
   range: January 2011 - January 2012
   tags:
     - Ruby
@@ -102,20 +109,15 @@
     - Java
     - MySQL
     - Redis
-  description: |
-    Netflix-alike online video streaming service for the european market where movies, tv shows, documentaries and live retransmissions can be purchased or rented.
-
   challenges:
     - Full-stack developer
     - Build the platform from zero
     - Massively scaling for million users
     - Cross-device development
-
 - name: NicePeopleAtWork
   url: https://nicepeopleatwork.com/
+  description: Web development agency specialized in video streaming solutions.
   range: January 2010 - January 2011
-  description:
-    Web development agency specialized in video streaming solutions.
   tags:
     - Ruby
     - Rails
@@ -127,12 +129,12 @@
     - Youtube-like video portal for a summer contest for Grupo Godó
     - Simple online booking book for restaurants
     - Back-end for the iPhone application of Atrápalo Hoteles
-
 - name: Evolium
   url: http://www.evolium.com/
+  description: >
+    Evolium delivers innovative information technology security solutions for
+    businesses.
   range: January 2008 - March 2010
-  description: |
-    Evolium delivers innovative information technology security solutions for businesses.
   tags:
     - ASP.NET
     - CakePHP
@@ -146,13 +148,14 @@
     - AVG's threat blocking browser extension
     - AVG's web-based virus scan service
     - AVG's internal crash analysis and reporting tool.
-    - Customer sensitive information tracking and project audition for Generalitat de Catalunya
-
+    - Customer sensitive information tracking and project audition for
+      Generalitat de Catalunya
 - name: Tresce
   url: http://www.tresce.com/
+  description: >
+    Tresce is an online marketing agency in which they work globally to advise
+    and accompany your company in their immersion in the 3.0 era.
   range: May 2007 - January 2008
-  description: |
-    Tresce is an online marketing agency in which they work globally to advise and accompany your company in their immersion in the 3.0 era.
   tags:
     - PHP
     - CodeIgniter
