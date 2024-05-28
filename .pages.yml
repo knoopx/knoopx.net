@@ -3,14 +3,17 @@ content:
     label: Projects
     path: src/content/open-source.yaml
     type: file
-    format: yaml
-    # fields:
-    #   - name: name
-    #     label: Name
-    #     type: string
-    #   - name: url
-    #     label: URL
-    #     type: string
-    #   - name: description
-    #     label: Description
-    #     type: rich-text
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: url
+        label: URL
+        type: string
+      - name: image
+        label: Image
+        type: Image
+      - name: description
+        label: Description
+        type: rich-text
