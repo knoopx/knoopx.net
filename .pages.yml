@@ -50,3 +50,25 @@ content:
       - name: description
         label: Description
         type: rich-text
+
+  - name: recommendations
+    label: Recommendations
+    path: src/content/recommendations.yaml
+    type: file
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: role
+        label: Role
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+      - name: image
+        label: Image
+        type: image
+        options:
+          input: src/app/recommendations      
+      
