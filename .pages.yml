@@ -3,6 +3,41 @@ media:
   output: ""
 
 content:
+  - name: experience
+    label: Experience
+    path: src/content/experience.yaml
+    type: file
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: url
+        label: URL
+        type: string
+      - name: description
+        label: Description
+        type: text  
+      - name: range
+        label: Date Range
+        type: string
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: challenges
+        label: Challenges
+        type: string
+        list: true
+      - name: image
+        label: Image
+        type: image
+        options:
+          input: src/app/open-source/images
+      - name: description
+        label: Description
+        type: rich-text
+        
   - name: project
     label: Projects
     path: src/content/open-source.yaml
