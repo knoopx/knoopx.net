@@ -13,7 +13,7 @@ content:
         type: string
       - name: image
         label: Image
-        type: Image
+        type: image
       - name: description
         label: Description
         type: rich-text
