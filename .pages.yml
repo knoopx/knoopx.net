@@ -17,7 +17,7 @@ content:
         type: string
       - name: description
         label: Description
-        type: text  
+        type: rich-text
       - name: range
         label: Date Range
         type: string
@@ -29,14 +29,6 @@ content:
         label: Challenges
         type: string
         list: true
-      - name: image
-        label: Image
-        type: image
-        options:
-          input: src/app/open-source/images
-      - name: description
-        label: Description
-        type: rich-text
         
   - name: project
     label: Projects
