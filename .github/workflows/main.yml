@@ -41,6 +41,7 @@ jobs:
         run: |
           rm -rf dist/**/*
           bun run build
+          cp CNAME dist/CNAME
           touch dist/.nojekyll
           cd dist
           git add -f .

@@ -1,6 +1,5 @@
 {
   "name": "knoopx.net",
-  "productName": "Víctor Martínez",
   "type": "module",
   "scripts": {
     "dev": "vite",
