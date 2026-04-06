@@ -1,71 +1,183 @@
 - name: Rent-o-matic
   url: "https://github.com/knoopx/rentomatic"
   image: rentomatic.png
+  date: "2011-08-01"
+  tags:
+    - JavaScript
+    - React
+    - Electron
+    - MobX
+    - Tailwind CSS
   description: |
-    An app to track and find real state opportunities. Notifies you whenever a new listing is posted matching your search criteria.
-
-- name: Pull.app
-  url: "https://github.com/knoopx/pull.app"
-  image: pull-app-1.png
-  description: |
-    A Google Reader-alike app that allows you to aggregate content all over Internet by scraping content via XPath/CSS selectors.
-
-- name: Alpine Linux for Raspberry PI
-  url: "https://github.com/knoopx/alpine-raspberry-pi"
-  image: alpine-rpi.png
-  framed: true
-  description: |
-    Super-lightweight (~200mb) built from scratch Alpine Linux image for RPI 2, 3 and 4. Perfect as a base for customization and distribution of custom software.
-
-- name: CoinMarketCap Menulet
-  url: "https://github.com/knoopx/cmc-menulet"
-  image: cmc-menulet.png
-  description: |
-    Real-time tracking of your cryptocurrency portfolio from the Mac OS menu bar.
-
-- name: Atom Javascript Intentions
-  url: "https://github.com/knoopx/atom-intentions-javascript"
-  image: atom-intentions-javascript.png
-  framed: true
-  description: |
-    Automatic Javascript refactoring: rename identifier, stateful react class to stateless function, string to template string, sort array values, sort object keys, named to default export, de-anonymify class declaration, transform import to require, transform function to arrow function, and many more!
-
-- name: eslint JSX className plugin
-  url: "https://github.com/knoopx/eslint-plugin-jsx-classname"
-  image: eslint-plugin-jsx-classname.png
-  framed: true
-  description: |
-    A set of rules (with autofix!) to enforce className consistency on JSX files: disallow empty className, enforce order (includes tailwindcss preset), disallow duplicate classes, disallow extra whitespace.
-
-- name: Huelet
-  url: "https://github.com/knoopx/huelet"
-  image: huelet.png
-  description: |
-    An app to control Hue lights from the Mac OS menu bar.
-
-- name: Pebble Watchface
-  url: "https://github.com/knoopx/pebble-48h-weather-forecast-watchface-rockyjs"
-  image: pebble-watchface.jpg
-  framed: true
-  description: |
-    48 hour weather forecast watch face pulling data from darksky.net
-
-- name: Plex Music
-  url: "https://github.com/knoopx/plex-music"
-  image: plex-music-1.png
-  description: |
-    Fast, cross-platform (also web!) client and music player for Plex Media Server.
-
-- name: Poloniex App
-  url: "https://github.com/knoopx/poloniex-watch-app"
-  image: poloniex.png
-  description: |
-    A desktop client for poloniex.com. Watch markets and track
-    your orders from the Mac OS menu bar.
+    A real estate opportunity tracking application. Edit providers and pages to customize your property search criteria.
 
 - name: Eleventh
   url: "https://github.com/knoopx/eleventh"
   image: eleventh.png
   framed: true
+  date: "2011-08-01"
+  tags:
+    - Ruby
+    - Security
   description: |
-    An automated, all-in-one command-line dictionary generator and WEP cracker.
+    An automated, all-in-one dictionary generator and WEP cracker.
+
+- name: Poloniex App
+  url: "https://github.com/knoopx/poloniex-watch-app"
+  image: poloniex.png
+  date: "2016-07-31"
+  tags:
+    - JavaScript
+    - React
+    - Electron
+    - MobX
+  description: |
+    A desktop client for poloniex.com. Watch markets and track your orders from your menu bar.
+
+- name: Plex Music
+  url: "https://github.com/knoopx/plex-music"
+  image: plex-music-1.png
+  date: "2016-12-24"
+  tags:
+    - JavaScript
+    - React
+    - Electron
+    - MobX
+  description: |
+    A music client and player for Plex Media Server.
+
+- name: Pebble Watchface
+  url: "https://github.com/knoopx/pebble-48h-weather-forecast-watchface-rockyjs"
+  image: pebble-watchface.jpg
+  framed: true
+  date: "2016-12-27"
+  tags:
+    - JavaScript
+    - Hardware
+    - Wearable
+  description: |
+    A modern, colorful and minimalist Pebble watchface displaying a complete 48-hour weather forecast at a single glance. Features temperature bars, precipitation probability indicators, and powered by forecast.io.
+
+- name: CoinMarketCap Menulet
+  url: "https://github.com/knoopx/cmc-menulet"
+  image: cmc-menulet.png
+  date: "2017-08-31"
+  tags:
+    - Ruby
+    - REST
+  description: |
+    Track CoinMarketCap on your menubar along with your portfolio value.
+
+- name: Huelet
+  url: "https://github.com/knoopx/huelet"
+  image: huelet.png
+  date: "2017-10-20"
+  tags:
+    - Ruby
+    - Hardware
+  description: |
+    Control Philips Hue lights from your Mac menu bar.
+
+- name: Pull.app
+  url: "https://github.com/knoopx/pull.app"
+  image: pull-app-1.png
+  date: "2018-04-11"
+  tags:
+    - JavaScript
+    - React
+    - Electron
+    - MobX
+    - Tailwind CSS
+  description: |
+    A content aggregation application that scrapes and aggregates content from across the internet.
+
+- name: Atom Javascript Intentions
+  url: "https://github.com/knoopx/atom-intentions-javascript"
+  image: atom-intentions-javascript.png
+  framed: true
+  date: "2018-04-12"
+  tags:
+    - JavaScript
+    - TypeScript
+    - Developer Tools
+  description: |
+    An Atom package for automatic JavaScript refactoring with intentions-based transformations.
+
+- name: Alpine Linux for Raspberry PI
+  url: "https://github.com/knoopx/alpine-raspberry-pi"
+  image: alpine-rpi.png
+  framed: true
+  date: "2019-07-02"
+  tags:
+    - Linux
+    - Hardware
+    - Raspberry Pi
+  description: |
+    A customizable set of scripts to build Alpine Linux System Disk Mode installation images for Raspberry Pi 3B, 3B+, and 4. Features lightweight Alpine Linux with WiFi/Bluetooth support, Docker build capability, auto-expanding root partition, and flashable via balenaEtcher.
+
+- name: eslint JSX className plugin
+  url: "https://github.com/knoopx/eslint-plugin-jsx-classname"
+  image: eslint-plugin-jsx-classname.png
+  framed: true
+  date: "2019-08-01"
+  tags:
+    - JavaScript
+    - TypeScript
+    - Front-end
+  description: |
+    An ESLint plugin to enforce className consistency in JSX files. Includes rules for sorting className values with customizable patterns, tailwindcss preset support, and autofix capabilities.
+
+- name: LLM Workbench
+  url: "https://github.com/knoopx/llm-workbench"
+  image: llm-workbench.png
+  date: "2023-10-30"
+  tags:
+    - TypeScript
+    - React
+    - MobX
+    - Tailwind CSS
+    - AI
+    - LLMs
+  description: |
+    A user-friendly web interface for large language models, built with React and MobX, styled using Shadcn UI. Features a chat interface with output streaming, a playground for copilot-alike inline completions, and agent support with connection adapters for Ollama and HuggingFace TGI. Supports file attachments, markdown rendering, and dark mode.
+
+- name: kOS (NixOS)
+  url: "https://github.com/knoopx/nix"
+  image: nix-desktop.png
+  date: "2024-07-27"
+  tags:
+    - NixOS
+    - Nix
+    - Nix Flakes
+    - Home Manager
+    - Linux
+    - Astal
+    - Niri
+  description: |
+    A personal NixOS configuration for a clean, keyboard-focused development machine. Features Niri tiling window manager, Astal dynamic shell, unified theming via Stylix, and an unattended installer ISO. Includes development environments for Crystal, Go, JavaScript, Nix, Nu Shell, Python, Ruby, and Rust.
+
+- name: Vicinae Extensions
+  url: "https://github.com/knoopx/vicinae-extensions"
+  image: vicinae-extensions.png
+  date: "2025-11-02"
+  tags:
+    - TypeScript
+    - Vicinae
+  description: |
+    A collection of 24 Vicinae launcher extensions for Linux desktop productivity.
+    Includes GitHub (issues, PRs, notifications), Jujutsu version control, Nix package search,
+    Podman container management, systemd service control, Niri window manager,
+    Tmux session management, Llama.cpp model browser, Home Assistant integration,
+    OTP codes, stocks, agenda, notes, and more.
+
+- name: kPI (Pi Config)
+  url: "https://github.com/knoopx/pi"
+  image: pi-config.png
+  date: "2026-01-14"
+  tags:
+    - TypeScript
+    - Pi Coding Agent
+    - Jujutsu
+    - TUI
+  description: |
+    Personal Pi Coding Agent configuration with 13 extensions and 18 skills. Features a full TUI IDE with file/symbol browsing, jujutsu version control, workspace management, Linear/GitHub integration, guardrails for security, hooks for lifecycle commands, and tools for DuckDuckGo, GitHub, Nix, npm, and PyPI.

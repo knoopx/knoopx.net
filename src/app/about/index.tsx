@@ -30,27 +30,31 @@ const About = () => {
           <div className="order-0 lg:order-1 lg:pl-16">
             <header className="mb-8">
               <h1 className="mb-2 text-5xl font-semibold leading-none">
-                Hello, I'm Víctor
+                Hi, I'm Víctor Martínez
               </h1>
               <h2 className="text-2xl">
-                a full-stack web developer from Barcelona.
+                a polyglot software engineer from Barcelona.
               </h2>
             </header>
 
             <div className="max-w-md text-2xl font-light leading-normal">
               <p className="mb-6">
-                I'm a self-taught{" "}
-                <span className="font-semibold">computer hacker</span>. I build{" "}
-                <span className="font-semibold">successful</span> Internet
-                businesses with the{" "}
-                <span className="font-semibold">best-of-breed</span> languages
-                and libraries.
+                I've been building software for over 20 years. I'm an engineer
+                who operates across the entire stack, with deep experience in{" "}
+                <span className="font-semibold">systems programming</span>,{" "}
+                <span className="font-semibold">web applications</span>, and{" "}
+                <span className="font-semibold">AI/ML</span> infrastructure.
+                I've spent a large part of my career as a{" "}
+                <span className="font-semibold">Co-founder & CTO</span>.
               </p>
               <p className="mb-6">
-                I develop both <span className="font-semibold">back-end</span>{" "}
-                and <span className="font-semibold">front-end</span> and deliver{" "}
-                <span className="font-semibold">engaging</span> user experiences
-                in a <span className="font-semibold">timely manner</span>.
+                My expertise ranges from building low-level{" "}
+                <span className="font-semibold">Linux systems</span> and{" "}
+                <span className="font-semibold">embedded hardware</span> to
+                scaling <span className="font-semibold">Ruby on Rails</span> and{" "}
+                <span className="font-semibold">React</span> applications.
+                Currently, focusing on practical application of{" "}
+                <span className="font-semibold">AI/ML</span>.
               </p>
             </div>
           </div>

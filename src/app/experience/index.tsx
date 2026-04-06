@@ -23,7 +23,7 @@ const Experience = () => {
             Professional Experience
           </h1>
           <h2 className="mt-1 text-2xl text-gray-6 font-normal leading-none">
-            more than ten years of web development
+            full-stack, AI/ML, and systems programming
           </h2>
         </header>
 

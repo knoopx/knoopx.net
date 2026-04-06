@@ -22,12 +22,18 @@ import pebbleWatchface from "./images/pebble-watchface.jpg";
 import plexMusic1 from "./images/plex-music-1.png";
 import poloniex from "./images/poloniex.png";
 import eleventh from "./images/eleventh.png";
+import nixDesktop from "./images/nix-desktop.png";
+import llmWorkbench from "./images/llm-workbench.png";
+import piConfig from "./images/pi-config.png";
+import vicinaeExtensions from "./images/vicinae-extensions.png";
 
 interface ProjectData {
   name: string;
   url: string;
   image: string;
   description: string;
+  date?: string;
+  tags?: string[];
   framed?: boolean;
 }
 
@@ -36,6 +42,7 @@ interface ProjectProps {
   url: string;
   children: React.ReactNode;
   image: string;
+  tags?: string[];
   framed?: boolean;
 }
 
@@ -51,6 +58,10 @@ const imageMap: Record<string, string> = {
   "plex-music-1.png": plexMusic1,
   "poloniex.png": poloniex,
   "eleventh.png": eleventh,
+  "nix-desktop.png": nixDesktop,
+  "llm-workbench.png": llmWorkbench,
+  "pi-config.png": piConfig,
+  "vicinae-extensions.png": vicinaeExtensions,
 };
 
 const Project = ({
@@ -58,6 +69,7 @@ const Project = ({
   url,
   children,
   image,
+  tags = [],
   framed = false,
 }: ProjectProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -83,6 +95,18 @@ const Project = ({
       <div className="block pb-4 sm:px-0">
         <h3 className="mb-0 text-base font-medium gray-7">{name}</h3>
         <h3 className="mt-2 text-sm font-light gray-6">{children}</h3>
+        {tags.length > 0 && (
+          <div className="mt-2 flex flex-wrap gap-1">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="inline-block px-2 py-0.5 text-xs rounded bg-gray-2 text-gray-7"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </a>
   );
@@ -92,9 +116,9 @@ const OpenSource = () => {
   const projectArray = projects as ProjectData[];
 
   const gridItems = projectArray
-    .sort((a, b) => a.name.localeCompare(b.name))
-    .map(({ image, description, framed, ...project }) => (
-      <Project {...project} image={image} framed={framed}>
+    .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
+    .map(({ image, description, tags, framed, ...project }) => (
+      <Project {...project} image={image} tags={tags} framed={framed}>
         {description}
       </Project>
     ));

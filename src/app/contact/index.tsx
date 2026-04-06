@@ -1,9 +1,5 @@
-import {
-  FaLinkedin,
-  FaGithub,
-  FaTwitter,
-  FaStackOverflow,
-} from "react-icons/fa";
+import { FaGithub, FaStackOverflow, FaCube } from "react-icons/fa";
+import { FaBluesky } from "react-icons/fa6";
 
 import { Container } from "ui/layout";
 
@@ -29,13 +25,6 @@ const Contact = () => (
             <div className="-m-2">
               <a
                 className="inline-block p-2 text-white"
-                href="https://www.linkedin.com/in/victormartinezgarcia/"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin size={48} />
-              </a>
-              <a
-                className="inline-block p-2 text-white"
                 href="http://github.com/knoopx"
                 aria-label="GitHub"
               >
@@ -43,10 +32,17 @@ const Contact = () => (
               </a>
               <a
                 className="inline-block p-2 text-white"
-                href="http://twitter.com/knoopx"
-                aria-label="Twitter"
+                href="https://bsky.app/profile/knoopx.bsky.social"
+                aria-label="Bluesky"
               >
-                <FaTwitter size={48} />
+                <FaBluesky size={48} />
+              </a>
+              <a
+                className="inline-block p-2 text-white"
+                href="https://www.printables.com/@knoopx_39679"
+                aria-label="Printables"
+              >
+                <FaCube size={48} />
               </a>
               <a
                 className="inline-block p-2 text-white"

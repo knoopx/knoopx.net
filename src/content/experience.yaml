@@ -1,9 +1,39 @@
+- name: SLNG.ai
+  url: https://slng.ai/
+  description: >
+    Global Voice AI Infrastructure. Extending voice stack across regions, models,
+    and runtimes.
+  range: November 2025 - March 2026
+  tags:
+    - TypeScript
+    - Python
+    - Cloudflare
+    - AWS
+  challenges:
+    - AI Fullstack Engineer
+    - Built inference API gateway for voice AI platform
+    - Implemented geo-routing for low-latency global deployment
+- name: Factorial HR
+  url: https://factorialhr.com/
+  description: >
+    Online HR solution for small and medium companies. Documents, compensation,
+    holidays, sick leaves and benefits for employees.
+  range: September 2025 - October 2025
+  tags:
+    - TypeScript
+    - Mastra
+    - Azure
+  challenges:
+    - Senior Staff Engineer
+    - AI chatbot integration using Mastra
+    - Agentic Orchestration
+    - Prompt and context engineering
 - name: Jacoti
   url: https://www.jacoti.com/
   description: >
     Jacoti, a Belgium-based hearing software research company seeking to make
     hearing assistance normative and ubiquitous.
-  range: December 2017 - Now
+  range: December 2017 - February 2025
   tags:
     - React
     - MobX
@@ -14,7 +44,7 @@
     - TailwindCSS
     - D3.js
   challenges:
-    - Full-stack developer
+    - Co-founder and CTO
     - Development of earCloud®, a web service that allows audiologists and users
       to store audio profiles in the cloud and share them across devices. Users
       can connect to a remote Hearing Expert for remote fitting adjustment.
@@ -22,8 +52,8 @@
   url: https://www.ironhack.com/
   description: >
     Intensive courses & bootcamps in Web Development, UX/UI Design & Data
-    Analytics
-  range: September 2017
+    Analytics.
+  range: September 2017 - March 2018
   tags:
     - HTML
     - CSS
@@ -31,11 +61,25 @@
     - Bootstrap
   challenges:
     - Web Development teacher of the UX/UI Design bootcamp
+- name: Mindo
+  url: https://www.mindo.io/
+  description: >
+    Audiological research and software development agency specialized in medical
+    hardware appliances.
+  range: August 2015 - November 2017
+  tags:
+    - Node.js
+    - MongoDB
+    - React
+  challenges:
+    - Co-founder and CTO
+    - Development of back-end and front-end applications to support hearing aid
+      and heart rate monitoring devices.
 - name: Factorial HR
   url: https://factorialhr.com/
   description: >
     Online HR solution for small and medium companies. Documents, compensation,
-    holidays, sick leaves and benefits for employees
+    holidays, sick leaves and benefits for employees.
   range: December 2016 - January 2017
   tags:
     - Ruby
@@ -46,23 +90,9 @@
     - Full-stack developer
     - Build a minimum viable product in a timely manner
     - Development of rich interactive React components
-- name: Mindo
-  url: https://www.mindo.io/
-  description: >
-    Audiological research and software develoment agency specialized in medical
-    hardware appliances.
-  range: August 2015 - March 2017
-  tags:
-    - Node.js
-    - MongoDB
-    - React
-  challenges:
-    - Co-founder and CTO
-    - Development of back-end and front-end applications to support hearing aid
-      and heart rate monitoring devices.
 - name: Aran Jewels
   url: http://aranjewels.com/
-  description: |
+  description: >
     Small jewelry producer from Fornells de la Selva.
     They design minimalist pieces of silver and silver plated in gold,
     produced at small scale.
@@ -82,7 +112,7 @@
     Young, multicultural and multidisciplinary startup-company from Barcelona.
 
     On their platform you can create and buy your own products or browse and buy
-    artworks created by exceptional designers
+    artworks created by exceptional designers.
   range: January 2012 - January 2016
   tags:
     - AngularJS
@@ -126,7 +156,7 @@
     - Sinatra
   challenges:
     - Full-stack developer
-    - Youtube-like video portal for a summer contest for Grupo Godó
+    - Youtube-like video portal for a summer contest for Grupo Godó
     - Simple online booking book for restaurants
     - Back-end for the iPhone application of Atrápalo Hoteles
 - name: Evolium

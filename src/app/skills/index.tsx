@@ -1,5 +1,4 @@
 import { Container } from "ui/layout";
-import Link from "ui/link";
 
 import TechnologyIcons from "./technology-icons";
 
@@ -23,54 +22,42 @@ const Skills = () => {
       <Container className="py-12">
         <header className="mb-12 text-center">
           <h1 className="mb-2 text-5xl text-gray-9 font-bold leading-none">
-            Top-notch web development
+            Full-stack, AI/ML & Systems
           </h1>
           <h2 className="text-2xl text-gray-6 font-normal leading-none">
-            with industry-leading technologies
+            building intelligent systems from infrastructure to cloud
           </h2>
         </header>
 
-        <div className="gap-4 grid lg:grid-cols-3">
-          <Block title="Front-end development">
+        <div className="gap-4 grid lg:grid-cols-4">
+          <Block title="Web Applications">
             <p>
-              Rich, interactive,{" "}
-              <Link href="https://en.wikipedia.org/wiki/Responsive_web_design">
-                responsive
-              </Link>{" "}
-              and{" "}
-              <Link href="https://en.wikipedia.org/wiki/Progressive_web_app">
-                progressive
-              </Link>{" "}
-              web applications that run on any device and platform. From static
-              web sites to{" "}
-              <Link href="https://en.wikipedia.org/wiki/E-commerce">
-                e-commerce
-              </Link>
-              ,{" "}
-              <Link href="https://en.wikipedia.org/wiki/Software_as_a_service">
-                SaaS
-              </Link>{" "}
-              and{" "}
-              <Link href="https://en.wikipedia.org/wiki/Content_management_system">
-                CMS
-              </Link>
-              , I build web applications that fulfil today's requirements.
+              18+ years of experience building scalable web platforms. From
+              e-commerce to SaaS, I build robust applications with a focus on
+              performance and maintainability.
             </p>
           </Block>
 
-          <Block title="Back-end development">
+          <Block title="AI/ML Focus">
             <p>
-              Robust, scalable and maintainable back-ends to support all your
-              application needs. APIs, authentication, internationalization,
-              data persistence, file storage, task automation and integrations
-              with third-parties.
+              Currently focusing on the practical application of LLMs and
+              agentic workflows. Extensive experience with prompt/context
+              engineering, model deployment into production environments.
             </p>
           </Block>
 
-          <Block title="Other skills">
+          <Block title="Systems & Linux">
             <p>
-              Infrastructure management, application deployment and version
-              control following industry's best practices.
+              Deep expertise in Linux internals and system administration.
+              Specializing in NixOS for reproducible infrastructure.
+            </p>
+          </Block>
+
+          <Block title="Hardware & Design">
+            <p>
+              Industrial design and embedded systems development. Proficient in
+              CAD modeling, 3D printing, and rapid prototyping for IoT and
+              medical hardware.
             </p>
           </Block>
         </div>

@@ -58,7 +58,7 @@ const Projects = ({ limit = 8, username = "knoopx" }: ProjectsProps) => {
     );
   }
 
-  if (hasError) {
+  if (hasError || !Array.isArray(repos) || repos.length === 0) {
     return (
       <div className="flex items-center justify-center mb-4 p-4 border border-red-9 rounded bg-red-5">
         <h5 className="flex items-center text-white">
@@ -69,10 +69,12 @@ const Projects = ({ limit = 8, username = "knoopx" }: ProjectsProps) => {
     );
   }
 
-  const sourceRepos = repos
-    .filter((repo) => !repo.fork)
-    .sort((a, b) => b.stargazers_count - a.stargazers_count)
-    .slice(0, limit);
+  const sourceRepos = Array.isArray(repos)
+    ? repos
+        .filter((repo) => !repo.fork)
+        .sort((a, b) => b.stargazers_count - a.stargazers_count)
+        .slice(0, limit)
+    : [];
 
   return (
     <>

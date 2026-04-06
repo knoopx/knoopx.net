@@ -6,38 +6,50 @@ import { useTheme } from "hooks/useTheme";
 import Pill from "ui/pill";
 import { Container } from "ui/layout";
 
-type TechnologyCategory = "Front-end" | "Back-end" | "Other";
+type TechnologyCategory =
+  | "Languages"
+  | "Front-end"
+  | "Back-end"
+  | "AI/ML"
+  | "DevOps"
+  | "Hardware";
 
 const technologies: Record<TechnologyCategory, string[]> = {
+  Languages: [
+    "TypeScript",
+    "JavaScript (ES6+)",
+    "Python",
+    "Ruby",
+    "Rust",
+    "Go",
+    "Crystal",
+    "Bash",
+    "Fish",
+    "Nushell",
+    "SQL",
+  ],
   "Front-end": [
     "React",
-    "Angular.js",
-    "LESS",
-    "SASS",
-    "vue.js",
+    "Vue.js",
     "MobX",
     "Redux",
-    "Tachyons",
-    "TailwindCSS",
-    "Bootstrap",
-    "Foundation",
-    "ES6",
-    "TypeScript",
-    "JavaScript",
-    "D3",
-    "SVG",
     "HTML5",
     "CSS3",
+    "SASS",
+    "LESS",
     "PostCSS",
-    "Babel",
-    "Webpack",
+    "TailwindCSS",
+    "D3.js",
+    "Electron",
+    "React Native",
+    "GTK",
   ],
   "Back-end": [
-    "Ruby",
-    "Ruby On Rails",
+    "Ruby on Rails",
     "Sinatra",
     "Node.js",
     "Express.js",
+    "Django",
     "RSpec",
     "MySQL",
     "SQLite",
@@ -50,31 +62,58 @@ const technologies: Record<TechnologyCategory, string[]> = {
     "REST",
     "GraphQL",
   ],
-  Other: [
-    "Git",
-    "GitHub",
-    "Linux",
-    "Windows",
-    "MacOSX",
+  "AI/ML": [
+    "Mastra",
+    "PyTorch",
+    "Hugging Face Transformers",
+    "Hugging Face Diffusers",
+    "LLMs",
+    "llama.cpp",
+    "Diffusion Models",
+    "Prompt Engineering",
+    "Context Engineering",
+    "Voice AI",
+    "Speech-to-Text",
+    "Text-to-Speech",
+    "Coding Agents",
+    "Pi Coding Agent",
+  ],
+  DevOps: [
     "Docker",
-    "Capistrano",
     "Ansible",
-    "Electron",
-    "React Native",
-    "Heroku",
-    "Digital Ocean",
-    "AWS",
     "Puppet",
-    "Computer Vision",
-    "Graphite",
+    "Capistrano",
+    "GitHub Actions",
+    "AWS",
+    "Digital Ocean",
+    "Heroku",
+    "NixOS",
+    "Jujutsu",
+    "Git",
+  ],
+  Hardware: [
     "Arduino",
-    "Raspberry PI",
+    "Raspberry Pi",
+    "ESP32",
+    "Home Assistant",
+    "Zigbee2MQTT",
+    "Firmware Development",
+    "3D Printing",
+    "3D Modeling",
+    "Radio Control/Wireless Transmissions",
+    "FPV Drones",
+    "Mechanical Keyboards",
   ],
 };
 
-const categories: TechnologyCategory[] = Object.keys(
-  technologies,
-) as TechnologyCategory[];
+const categories: TechnologyCategory[] = [
+  "Languages",
+  "Front-end",
+  "Back-end",
+  "AI/ML",
+  "DevOps",
+  "Hardware",
+];
 
 const Technology = () => {
   const { baseColor } = useTheme();
@@ -86,7 +125,7 @@ const Technology = () => {
     <section id="technology">
       <Container className="py-12">
         <header className="mb-8 text-center">
-          <h1 className="mb-1 mb-2 text-5xl text-gray-9 font-bold leading-none">
+          <h1 className="mb-2 text-5xl text-gray-9 font-bold leading-none">
             Skills
           </h1>
           <h2 className="mt-1 text-2xl text-gray-6 font-medium leading-none">

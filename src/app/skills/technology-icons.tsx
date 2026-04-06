@@ -3,38 +3,34 @@ import { useTrail, animated } from "react-spring";
 
 import useVisiblity from "hooks/useVisibility";
 
-import html5 from "./images/html5.svg";
-import css3 from "./images/css3.svg";
-import javascript from "./images/javascript.svg";
+import typescript from "./images/typescript.svg";
 import react from "./images/react.svg";
-import angular from "./images/angular.svg";
-import ruby from "./images/ruby.svg";
-import rails from "./images/rails.svg";
 import nodejs from "./images/nodejs.svg";
-import mysql from "./images/mysql.svg";
+import python from "./images/python.svg";
+import rust from "./images/rust.svg";
+import nix from "./images/nix.svg";
+import linux from "./images/linux.svg";
 import postgresql from "./images/postgresql.svg";
+import git from "./images/git.svg";
+import django from "./images/django.svg";
 import mongodb from "./images/mongodb.svg";
 import redis from "./images/redis.svg";
-import webpack from "./images/webpack.svg";
-import electron from "./images/electron.svg";
-import git from "./images/git.svg";
+import pytorch from "./images/pytorch.svg";
 
 const images = [
-  html5,
-  css3,
-  javascript,
+  typescript,
   react,
-  angular,
-  ruby,
-  rails,
   nodejs,
-  mysql,
+  python,
+  rust,
+  nix,
+  linux,
   postgresql,
+  git,
+  django,
   mongodb,
   redis,
-  webpack,
-  electron,
-  git,
+  pytorch,
 ];
 
 interface ImageProps {
