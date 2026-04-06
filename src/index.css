@@ -11,13 +11,14 @@ body {
 }
 
 .ts {
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-a {
-  @apply .underline;
+.pv0-s {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-a.link {
-  @apply .no-underline;
+.ba-2 {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

@@ -7,34 +7,41 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
 
-    - uses: actions/cache@v1
-      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
+      - name: Get bun cache directory path
+        id: bun-cache-dir-path
+        run: echo "dir=$(bun pm cache path)" >> "$GITHUB_OUTPUT"
 
-    - name: prepare
-      run: |
-        sudo apt-get install -y graphicsmagick
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git fetch --no-tags --prune --depth=1 origin gh-pages
-        git worktree add dist gh-pages
-        yarn install
+      - name: Cache bun dependencies
+        uses: actions/cache@v4
+        id: bun-cache
+        with:
+          path: ${{ steps.bun-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
 
-    - name: build
-      run: |
-        rm -rf dist/**/*
-        yarn build
-        cd dist
-        git add -f .
-        git commit -m "$(date +%Y%m%d)"
-        git push
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Setup git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git fetch --no-tags --prune --depth=1 origin gh-pages
+          git worktree add dist gh-pages
+
+      - name: Build
+        run: |
+          rm -rf dist/**/*
+          bun run build
+          cd dist
+          git add -f .
+          git commit -m "$(date +%Y%m%d)" || true
+          git push || true

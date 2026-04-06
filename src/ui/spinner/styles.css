@@ -1,5 +1,7 @@
 @keyframes spinner-wave {
-  0%, 40%, 100% {
+  0%,
+  40%,
+  100% {
     transform: scaleY(0.4);
   }
   20% {
@@ -7,28 +9,25 @@
   }
 }
 
-:local(.spinner) {
+.spinner {
   display: flex;
   flex-direction: row;
 }
 
-:local(.bar) {
+.bar {
   flex: 1;
   margin: 5%;
   animation: spinner-wave 1.2s infinite ease-in-out;
 }
 
-:local(.first) {
-  composes: bar;
+.first {
   animation-delay: -1.2s;
 }
 
-:local(.second) {
-  composes: bar;
+.second {
   animation-delay: -1.1s;
 }
 
-:local(.third) {
-  composes: bar;
+.third {
   animation-delay: -1s;
 }
