@@ -44,7 +44,6 @@
     - TailwindCSS
     - D3.js
   challenges:
-    - Co-founder and CTO
     - Development of earCloud®, a web service that allows audiologists and users
       to store audio profiles in the cloud and share them across devices. Users
       can connect to a remote Hearing Expert for remote fitting adjustment.
