@@ -41,6 +41,7 @@ jobs:
         run: |
           rm -rf dist/**/*
           bun run build
+          touch dist/.nojekyll
           cd dist
           git add -f .
           git commit -m "$(date +%Y%m%d)" || true
